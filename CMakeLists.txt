@@ -1,6 +1,9 @@
 # CMaken minimiversio
 cmake_minimum_required(VERSION 3.20)
 
+# Enemm‰n tietoa build-prosessista
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
 # Projektin nimi ja kieli
 project(enigma_demo LANGUAGES CXX)
 
@@ -24,7 +27,7 @@ add_executable(enigma_demo
 
 # Helpompi t‰‰lt‰ lis‰t‰ buildiin
 add_library(enigma_libs STATIC
-    src/dummy.cpp
+    src/reflector.cpp
 )
 
 # Linkit‰ raylib
@@ -47,7 +50,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(catch2)
 
 add_executable(tests_enigma
-    tests/test_dummy.cpp
+    tests/test_reflector.cpp
 )
 
 # Linkit‰ Catch2
