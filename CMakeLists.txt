@@ -93,3 +93,13 @@ set_target_properties(tests_enigma PROPERTIES
 include(CTest)
 include(Catch)
 catch_discover_tests(tests_enigma)
+
+# ==============================================================================
+# ASSET COPY TASK
+# ==============================================================================
+
+add_custom_command(TARGET enigma_demo POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/assets
+    $<TARGET_FILE_DIR:enigma_demo>/assets
+)
