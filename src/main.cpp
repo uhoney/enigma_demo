@@ -2,76 +2,89 @@
 #include <iostream>
 #include "reflector.h"
 #include "m_button.h"
-#include <list>
+#include <vector>
 
 int main(void)
 {
-	// Aakkokstaulukko nappeja varten
+	// // Aakkokstaulukko nappeja varten
 	// char teksti[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char teksti[] = "ABC";
+	// char aakkoslista[] = "ABC";
 
-	std::list<M_button> napit;
+	std::vector<M_button> buttons{M_button::create_all_buttons()};
 
-	// Luo napit aakkosista
-	for (auto& kirjain : teksti)
+	for (auto& button : buttons)
 	{
-		M_button nappi = M_button(kirjain);
-		napit.emplace_back(nappi);
+		TraceLog(LOG_INFO, "Nappulan kirjain on: %c", button.get_label());
+		// TraceLog(LOG_INFO, "Nappulan kirjain GUI:lle on: %c", *(button.get_char_for_GUI()));
+		
 		
 	}
-	// Poista viimenen nappi ( == '\0')
-	napit.pop_back();
+	// // Luo napit aakkosista
+	// for (auto& kirjain : aakkoslista)
+	// {
+	// 	M_button nappi = M_button(kirjain);
+	// 	napit.emplace_back(nappi);	
+	// }
+	// // Poista viimenen nappi ( == '\0')
+	// napit.pop_back();
 
-	// Tulosta napit
-	for (auto& nappi : napit)
+	// // Tulosta napit
+	// for (auto& nappi : napit)
+	// {
+	// 	TraceLog(LOG_INFO, "Nappulan kirjain on: %c", nappi.get_label());
+	// 	// TraceLog(LOG_INFO, "Nappulan kirjain GUI:lle on: %c", *(nappi.get_char_for_GUI()));
+	// }
+
+
+
+
+   // Initialization
+   //--------------------------------------------------------------------------------------
+   const int screenWidth = 800;
+   const int screenHeight = 450;
+
+   InitWindow(screenWidth, screenHeight, "Testauksia...");
+
+   // Fonttihommat - default font
+	GetFontDefault();
+
+
+   SetTargetFPS(30);
+
+   // Main game loop
+   while (!WindowShouldClose())    // Detect window close button or ESC key
+   {
+       // Update
+       //----------------------------------------------------------------------------------
+
+
+       //----------------------------------------------------------------------------------
+
+       // Draw
+       //----------------------------------------------------------------------------------
+       BeginDrawing();
+       ClearBackground(RAYWHITE);
+
+
+	//    BUTTONS
+	for (auto& button : buttons)
 	{
-		TraceLog(LOG_INFO, "Nappulan kirjain on: %c", nappi.get_label());
-		TraceLog(LOG_INFO, "Nappulan kirjain GUI:lle on: %c", *(nappi.get_char_for_GUI()));
-	}
+		   DrawCircleV({ button.get_position() }, 30.0f, LIGHTGRAY);
+		   DrawCircleV({ button.get_position() }, 25.0f, DARKGRAY);
+	}    
+	
+	//    Text
+    //    DrawText(nappi_a.get_char_for_GUI(), ballPosition.x, ballPosition.y, 40, WHITE);
 
 
- //   // Initialization
- //   //--------------------------------------------------------------------------------------
- //   const int screenWidth = 800;
- //   const int screenHeight = 450;
+       EndDrawing();
+       //----------------------------------------------------------------------------------
+   }
 
- //   InitWindow(screenWidth, screenHeight, "Testauksia...");
-
- //   // Fonttihommat
-	//GetFontDefault();
-
- //   
- //   
- //   Vector2 ballPosition = { 100.0f, 100.0f };
-
- //   SetTargetFPS(30);
-
- //   // Main game loop
- //   while (!WindowShouldClose())    // Detect window close button or ESC key
- //   {
- //       // Update
- //       //----------------------------------------------------------------------------------
-
-
- //       //----------------------------------------------------------------------------------
-
- //       // Draw
- //       //----------------------------------------------------------------------------------
- //       BeginDrawing();
- //       ClearBackground(RAYWHITE);
-
- //       
- //       // Text
- //       //DrawText(teksti, 190, 200, 20, BLACK);
-
- //       EndDrawing();
- //       //----------------------------------------------------------------------------------
- //   }
-
- //   // De-Initialization
- //   //--------------------------------------------------------------------------------------
- //   CloseWindow();        // Close window and OpenGL context
- //   //--------------------------------------------------------------------------------------
+   // De-Initialization
+   //--------------------------------------------------------------------------------------
+   CloseWindow();        // Close window and OpenGL context
+   //--------------------------------------------------------------------------------------
 
     return 0;
 }
