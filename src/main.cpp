@@ -3,17 +3,13 @@
 #include "reflector.h"
 #include "m_button.h"
 #include <vector>
+#include <memory>
 
 int main(void)
 {
 
 	//	Create a list of all keys (buttons)
-	std::vector<M_button> buttons{ M_button::create_all_buttons(250.0f, 400.0f, "QWERTZUIOASDFGHJKPYXCVBNML") };
-
-	// for (auto& button : buttons)
-	//{
-	//	TraceLog(LOG_INFO, "Nappulan kirjain on: %c", button.get_label());
-	//}
+	std::vector<M_button> buttons{M_button::create_all_buttons(250.0f, 400.0f, "QWERTZUIOASDFGHJKPYXCVBNML")};
 
 	//--------------------------------------------------------------------------------------
 	//	Initialization
@@ -25,30 +21,49 @@ int main(void)
 
 	SetTargetFPS(30);
 
-	//	TODO: Testing fonts and character offsets, USE A MONOSPACED FONT !!!
 	Font font = LoadFontEx("assets/fonts/UbuntuMono-R.ttf", 80, NULL, 0);
-	Vector2 font_offset = { 10.0f, 20.0f };
-	
+	Vector2 font_offset = {10.0f, 20.0f};
+
+	// Testing pointer to pressed button
+	M_button *p_pressed_button {nullptr};
+
 	//	Main game loop
 	while (!WindowShouldClose()) // Detect window close button or ESC key
 	{
-		//----------------------------------------------------------------------------------
 		//	Update
 		//----------------------------------------------------------------------------------
 
-		//	TODO: mouse press detection for buttons
+		Vector2 mouse_position = GetMousePosition();
 
+		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && p_pressed_button == nullptr)
+		{
+			for (auto &button : buttons)
+			{
+				if (CheckCollisionPointCircle(mouse_position, button.get_position(), button.get_button_size()))
+				{
+					TraceLog(LOG_INFO, "Nappulaa %c painettu!", button.get_label());
+					p_pressed_button = &button;
+					p_pressed_button->set_size_multiplier(0.8f);
+					break;
+				}
+			}
+		}
+
+		else if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && p_pressed_button != nullptr)
+		{
+			p_pressed_button->set_size_multiplier(1.0f);
+			p_pressed_button = nullptr;
+		}
 		//----------------------------------------------------------------------------------
+
 		//	Draw
 		//----------------------------------------------------------------------------------
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
 
 		//	DRAW BUTTONS
-		//	NOTE: Simple drawing moved inside the button class, no fancy stuff. Main is cleaner now.
-		for (auto& button : buttons)
+		for (auto &button : buttons)
 		{
-			// FIXME: Maybe a state for button pressed / not pressed
 			button.draw_button(font, font_offset);
 		}
 
@@ -58,7 +73,12 @@ int main(void)
 
 	//	De-Initialization
 	//--------------------------------------------------------------------------------------
-	CloseWindow();	// Close window and OpenGL context
+	// Unload, delete, derefeence my own stuff
+	UnloadFont(font);
+	p_pressed_button = nullptr;
+	delete p_pressed_button;
+	//
+	CloseWindow(); // Close window and OpenGL context
 	//--------------------------------------------------------------------------------------
 
 	return 0;

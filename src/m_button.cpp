@@ -72,7 +72,7 @@ void M_button::draw_button(Font font, Vector2 font_offset)
 	DrawCircleV({ this->position }, this->size_multiplier * this->inner_ring, BLACK);
 	DrawTextEx(
 		font,
-		this->get_text(),	// takes in const char pointer
+		this->get_text(),
 		{ this->position.x - (font_offset.x * this->size_multiplier), this->position.y - (font_offset.y * this->size_multiplier) },
 		this->size_multiplier * 40.0f,
 		0.0f,
