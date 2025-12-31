@@ -1,25 +1,25 @@
-#include "m_button.h"
+#include "key.h"
 
-M_button::M_button(char character, Vector2 position) :
+Key::Key(char character, Vector2 position) :
 	character{ character, '\0' },
 	position{ position }
 {
 }
 
-M_button::~M_button()
+Key::~Key()
 {
 }
 
-std::vector<M_button> M_button::create_all_buttons(float x, float y, std::string button_characters)
+std::vector<Key> Key::create_all_keys(float x, float y, std::string_view keyboard_characters)
 {
-	std::vector<M_button> buttons;
+	std::vector<Key> buttons;
 	float temp_x{ x };
 	float temp_y{ y };
 
-	// button_characters == "QWERTZUIOASDFGHJKPYXCVBNML"
+	// keyboard_characters == "QWERTZUIOASDFGHJKPYXCVBNML"
 
 	// FIXME: Does what it's supposed to do. Human readable, but ugly.
-	for (char character : button_characters)
+	for (char character : keyboard_characters)
 	{
 		if (character == 'A')
 		{
@@ -33,40 +33,40 @@ std::vector<M_button> M_button::create_all_buttons(float x, float y, std::string
 		}
 
 		buttons.emplace_back(character, Vector2{ temp_x, temp_y });
-		temp_x += BUTTON_PADDING;
+		temp_x += KEY_PADDING;
 
 	}
 	return buttons;
 }
 
-char M_button::get_label() const
+char Key::get_label() const
 {
 	return this->character[0];		// null terminate '/0' included in this->character
 }
 
-const char* M_button::get_text()
+const char* Key::get_text()
 {
 	// for raylib DrawTextEx()
 	// TODO: Check if you can magically get rid of this helper
 	return this->character;
 }
 
-Vector2 M_button::get_position() const
+Vector2 Key::get_position() const
 {
 	return this->position;
 }
 
-float M_button::get_button_size() const
+float Key::get_key_size() const
 {
 	return this->outer_ring;
 }
 
-void M_button::set_size_multiplier(float new_size_multiplier)
+void Key::set_size_multiplier(float new_size_multiplier)
 {
 	this->size_multiplier = new_size_multiplier;
 }
 
-void M_button::draw_button(Font font, Vector2 font_offset)
+void Key::draw_key(Font font, Vector2 font_offset)
 {
 	DrawCircleV({ this->position }, this->size_multiplier * this->outer_ring, LIGHTGRAY);
 	DrawCircleV({ this->position }, this->size_multiplier * this->inner_ring, BLACK);

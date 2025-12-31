@@ -44,7 +44,7 @@ FetchContent_MakeAvailable(catch2)
 # Enigma-kirjasto (jaettu p‰‰ohjelman ja testien kanssa)
 add_library(enigma_libs STATIC
     src/reflector.cpp
-    src/m_button.cpp
+    "src/key.cpp"
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)
