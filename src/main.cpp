@@ -2,6 +2,7 @@
 #include <iostream>
 #include "reflector.h"
 #include "key.h"
+#include "rotor.h"
 #include "keyboard.h"
 #include <vector>
 #include <memory>
@@ -29,13 +30,13 @@ int main(void)
 		Vector2 mouse_position = GetMousePosition();
 
 		// CHECK IF KEY IS PRESSED => key pointer is set
-		keyboard.isKeyPressed(mouse_position);
+		keyboard.isKeyPressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON));
 		// NOTE: Everything goes between isKeyPressed() and isKeyReleased()!!
 
 
 
 		// FINALLY CHECK IF KEY IS RELEASED => key is nullptr again
-		keyboard.isKeyReleased(mouse_position);
+		keyboard.isKeyReleased(IsMouseButtonReleased(MOUSE_LEFT_BUTTON));
 		// END UPDATE-----------------------------------------------------------------------
 
 

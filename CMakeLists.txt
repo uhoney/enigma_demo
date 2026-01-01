@@ -12,7 +12,7 @@ project(enigma_demo LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-# Enemmän tietoa build-prosessista
+# Enemmï¿½n tietoa build-prosessista
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # ==============================================================================
@@ -41,11 +41,12 @@ FetchContent_MakeAvailable(catch2)
 # LIBRARY TARGET
 # ==============================================================================
 
-# Enigma-kirjasto (jaettu pääohjelman ja testien kanssa)
+# Enigma-kirjasto (jaettu pï¿½ï¿½ohjelman ja testien kanssa)
 add_library(enigma_libs STATIC
     src/reflector.cpp
     src/key.cpp
     src/keyboard.cpp
+    src/rotor.cpp
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)
@@ -59,7 +60,7 @@ set_target_properties(enigma_libs PROPERTIES
 # MAIN EXECUTABLE
 # ==============================================================================
 
-# Pääohjelma
+# Pï¿½ï¿½ohjelma
 add_executable(enigma_demo
     src/main.cpp
 )
@@ -78,6 +79,7 @@ set_target_properties(enigma_demo PROPERTIES
 # Testit
 add_executable(tests_enigma
     tests/test_reflector.cpp
+    tests/test_keyboard.cpp
 )
 
 target_link_libraries(tests_enigma PRIVATE 
