@@ -2,6 +2,7 @@
 #include <iostream>
 #include "reflector.h"
 #include "key.h"
+#include "rotor.h"
 #include "keyboard.h"
 #include <vector>
 #include <memory>

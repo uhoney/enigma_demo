@@ -46,6 +46,7 @@ add_library(enigma_libs STATIC
     src/reflector.cpp
     src/key.cpp
     src/keyboard.cpp
+    src/rotor.cpp
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)
