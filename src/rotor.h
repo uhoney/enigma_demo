@@ -7,7 +7,7 @@ namespace enigma
 	private:
 
 	public:
-		Rotor() = default;
-		~Rotor() = default;
+		Rotor();
+		~Rotor();
 	};
 }
