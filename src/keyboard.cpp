@@ -27,7 +27,6 @@ enigma::KeyBoard::KeyBoard()
 enigma::KeyBoard::~KeyBoard()
 {
 	this->p_key_pressed = nullptr;
-	delete this->p_key_pressed;
 }
 
 std::vector<enigma::Key>& enigma::KeyBoard::get_keys()
@@ -37,22 +36,31 @@ std::vector<enigma::Key>& enigma::KeyBoard::get_keys()
 
 void enigma::KeyBoard::isKeyPressed(Vector2& mouse_position)
 {
-	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && p_key_pressed == nullptr)
+	if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && this->p_key_pressed == nullptr)
 	{
 		for (auto& key : this->keys)
 		{
 			if (CheckCollisionPointCircle(mouse_position, key.get_position(), key.get_key_size()))
 			{
 				TraceLog(LOG_INFO, "Key %c pressed!", key.get_label());
-				p_key_pressed = &key;
-				p_key_pressed->set_size_multiplier(0.8f);
+				this->p_key_pressed = &key;
+				this->p_key_pressed->set_size_multiplier(0.8f);
 				break;
 			}
 		}
 	}
-	else if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && p_key_pressed != nullptr)
+}
+
+void enigma::KeyBoard::isKeyReleased(Vector2& mouse_position)
+{
+	if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && this->p_key_pressed != nullptr)
 	{
-		p_key_pressed->set_size_multiplier(1.0f);
-		p_key_pressed = nullptr;
+		this->p_key_pressed->set_size_multiplier(1.0f);
+		this->p_key_pressed = nullptr;
 	}
+}
+
+enigma::Key* enigma::KeyBoard::get_p_pressed_key()
+{
+	return this->p_key_pressed;
 }

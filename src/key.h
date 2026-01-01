@@ -46,8 +46,7 @@ namespace enigma
 
 	public:
 		/**
-		 * @brief Constructor
-		 * Uses curlybrace initialization -- supposedly modern C++ style
+		 * @brief Constructor uses curlybrace initialization
 		 * @param char Character label of the key
 		 * @param pos Position of the key center
 		 */
@@ -59,11 +58,11 @@ namespace enigma
 		 */
 		char get_label() const;
 		/**
-		 * @brief Returns the character label as a C-string (for raylib DrawTextEx())
+		 * @brief Returns the character label
 		 */
 		const char* get_text();
 		/**
-		 * @brief Returns the position of the key center
+		 * @brief Returns the character label as a C-string (for raylib DrawTextEx())
 		 */
 		Vector2 get_position() const;
 		/**

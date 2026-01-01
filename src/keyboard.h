@@ -7,7 +7,6 @@
 namespace enigma
 {
 	class KeyBoard
-
 	{
 	private:
 		/**
@@ -23,7 +22,7 @@ namespace enigma
 		/**
 		* @brief Vector of all keys in the keyboard
 		*/
-		enigma::Key* p_key_pressed{ nullptr };
+		enigma::Key* p_key_pressed{ nullptr };						///< curlybrace initialization is on stack
 		std::vector<enigma::Key> keys{};
 
 	public:
@@ -40,7 +39,19 @@ namespace enigma
 		 */
 		std::vector<enigma::Key>& get_keys();
 
+		/**
+		* @brief Checks if a key is pressed and sets the pointer to the pressed key.
+		*/
 		void isKeyPressed(Vector2&);
 
+		/**
+		* @brief Checks if a key is released and resets the pointer to nullptr.
+		*/
+		void isKeyReleased(Vector2&);
+
+		/**
+		* @brief Returns pointer to the currently pressed key. nullptr if no key is pressed.
+		*/
+		enigma::Key* get_p_pressed_key();
 	};
 }

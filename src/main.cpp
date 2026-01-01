@@ -8,53 +8,53 @@
 
 int main(void)
 {
-	//--------------------------------------------------------------------------------------
-	//	Initialization
-	//--------------------------------------------------------------------------------------
+	// INITIALIZAZTION ----------------------------------------------------------------------
 	const int screenWidth = 1080;
 	const int screenHeight = 800;
-	
+
 	InitWindow(screenWidth, screenHeight, "Testauksia...");
-	
+
 	SetTargetFPS(30);
-	
+
 	Font font = LoadFontEx("assets/fonts/UbuntuMono-R.ttf", 80, NULL, 0);
-	Vector2 font_offset = {10.0f, 20.0f};
-	
-	enigma::KeyBoard keyboard {};
+	Vector2 font_offset = { 10.0f, 20.0f };
+
+	enigma::KeyBoard keyboard{};
+	// END INITIALIZATION -------------------------------------------------------------------
 
 	//	Main game loop
 	while (!WindowShouldClose()) // Detect window close button or ESC key
 	{
-		//	Update
-		//----------------------------------------------------------------------------------
-
+		// UPDATE --------------------------------------------------------------------------
 		Vector2 mouse_position = GetMousePosition();
 
+		// CHECK IF KEY IS PRESSED => key pointer is set
 		keyboard.isKeyPressed(mouse_position);
+		// NOTE: Everything goes between isKeyPressed() and isKeyReleased()!!
 
-		//	Draw
-		//----------------------------------------------------------------------------------
+
+
+		// FINALLY CHECK IF KEY IS RELEASED => key is nullptr again
+		keyboard.isKeyReleased(mouse_position);
+		// END UPDATE-----------------------------------------------------------------------
+
+
+		// DRAW ----------------------------------------------------------------------------
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
 
 		//	DRAW KEYBOARD
-		for (auto &key : keyboard.get_keys())
+		for (auto& key : keyboard.get_keys())
 		{
 			key.draw_key(font, font_offset);
 		}
-
 		EndDrawing();
-		//----------------------------------------------------------------------------------
+		// END DRAW ------------------------------------------------------------------------
 	}
-
 	//	De-Initialization
 	//--------------------------------------------------------------------------------------
 	// Unload, delete, derefeence my own stuff
 	UnloadFont(font);
-	//p_key_pressed = nullptr;
-	//delete p_key_pressed;
-	//
 	CloseWindow(); // Close window and OpenGL context
 	//--------------------------------------------------------------------------------------
 
