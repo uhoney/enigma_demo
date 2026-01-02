@@ -1,15 +1,14 @@
 #include "rotor.h"
 #include "rotor.h"
+#include "rotor.h"
+#include "rotor.h"
+#include "rotor.h"
+#include "rotor.h"
+#include "rotor.h"
 
-enigma::Rotor::Rotor(std::string_view& wiring, char notch) :
-	turnover{ notch }, current_position{ wiring[0] }
+enigma::Rotor::Rotor(std::string_view wiring, char& turnover) :
+	turnover{ turnover }, rotor_wiring{ wiring }
 {
-	int index = 0;
-	for (auto& character : wiring)
-	{
-		this->reflector_array['A' + index] = character;
-		++index;
-	}
 }
 
 enigma::Rotor::~Rotor()
@@ -21,12 +20,56 @@ char enigma::Rotor::get_turnover() const
 	return this->turnover;
 }
 
-char enigma::Rotor::get_current_position() const
+char enigma::Rotor::rotor_substitute() const
 {
-	return this->current_position;
+	return this->rotor_wiring[this->position_index];
 }
 
-void enigma::Rotor::turn_rotor()
+char enigma::Rotor::rotor_reverse_substitute() const
 {
-	++this->current_position;
+	return this->ALPHABETS[this->position_index];
+}
+
+int enigma::Rotor::get_position_index() const
+{
+	return this->position_index;
+}
+
+void enigma::Rotor::set_position_index(int new_index)
+{
+	this->position_index = new_index;
+}
+
+void enigma::Rotor::add_position_index()
+{
+	if (this->position_index < 25)
+	{
+		++this->position_index;
+	}
+	else
+	{
+		this->position_index = 0;
+	}
+}
+
+void enigma::Rotor::substract_position_index()
+{
+	if (this->position_index > 0)
+	{
+		--this->position_index;
+	}
+	else
+	{
+		this->position_index = 25;
+	}
+}
+
+std::string_view enigma::Rotor::get_wiring() const
+{
+	return this->rotor_wiring;
+}
+
+std::string_view enigma::Rotor::get_alphabets() const
+{
+	return this->ALPHABETS;
 }
