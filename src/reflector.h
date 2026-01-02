@@ -49,7 +49,6 @@ namespace enigma
 		 * @param character The input character to swap
 		 */
 		char swap_character(const char& character);
-
 		/**
 		 * @name Getter functions for UKW wiring configurations
 		 * @{
