@@ -1,9 +1,8 @@
 #include "reflector.h"
 #include <array>
 
-enigma::Reflector::Reflector()
+enigma::Reflector::Reflector() : reflector_wiring{enigma::UKW_A_WIRING}
 {
-	this->initialize_UKW(UKW_A_WIRING);
 }
 
 enigma::Reflector::~Reflector()
@@ -12,37 +11,24 @@ enigma::Reflector::~Reflector()
 
 void enigma::Reflector::initialize_UKW(std::string_view wiring)
 {
-	int index = 0;
-	for (auto& character : wiring)
-	{
-		this->reflector_array['A' + index] = character;
-		index++;
-	}
+	this->reflector_wiring = wiring;
 }
 
-char enigma::Reflector::swap_character(const char& character)
+int enigma::Reflector::get_index_from_char(char character_input)
 {
-	if (character < 'A' || character > 'Z')
-	{
-		return '0';
-	}
+	auto index = std::find(enigma::ALPHABETS.begin(), enigma::ALPHABETS.end(), character_input);
 
+	if (index != enigma::ALPHABETS.end())
+	{
+		return static_cast<int>(std::distance(enigma::ALPHABETS.begin(), index));
+	}
 	else
 	{
-		return this->reflector_array[character];
+		return 0;	// default to 0 to shut up compiler warning
 	}
 }
-std::string_view enigma::Reflector::get_UKW_A_WIRING()
-{
-	return this->UKW_A_WIRING;
-}
 
-std::string_view enigma::Reflector::get_UKW_B_WIRING()
+char enigma::Reflector::swap_character(char character)
 {
-	return this->UKW_B_WIRING;
-}
-
-std::string_view enigma::Reflector::get_UKW_C_WIRING()
-{
-	return this->UKW_C_WIRING;
+	return this->reflector_wiring[get_index_from_char(character)];
 }

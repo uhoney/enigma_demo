@@ -47,6 +47,8 @@ add_library(enigma_libs STATIC
     src/key.cpp
     src/keyboard.cpp
     src/rotor.cpp
+    src/lampboard.cpp
+    src/lamp.cpp
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)
@@ -81,6 +83,8 @@ add_executable(tests_enigma
     tests/test_reflector.cpp
     tests/test_keyboard.cpp
     tests/test_rotor.cpp
+    tests/test_lampboard.cpp
+    tests/test_lamp.cpp
 )
 
 target_link_libraries(tests_enigma PRIVATE 

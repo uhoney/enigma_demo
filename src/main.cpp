@@ -4,6 +4,8 @@
 #include "key.h"
 #include "rotor.h"
 #include "keyboard.h"
+#include "constants.h"
+#include "lampboard.h"
 #include <vector>
 #include <memory>
 
@@ -45,6 +47,13 @@ int main(void)
 		// DRAW ----------------------------------------------------------------------------
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
+		
+		// BACKGROUND
+		DrawRectangle(150, 25, 800, 650, BEIGE);
+		DrawRectangle(175, 50, 750, 600, DARKGRAY);
+
+		// LAMPBOARD
+
 
 		//	DRAW KEYBOARD
 		for (auto& key : keyboard.get_keys())

@@ -6,13 +6,8 @@
 
 TEST_CASE("Rotor test", "[rotor]")
 {
-	// Alphabets			"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	// Rotor I wiring:		"EKMFLGDQVZNTOWYHXUSPAIBRCJ"
-
-	std::string_view wiring{ "EKMFLGDQVZNTOWYHXUSPAIBRCJ" };
-	char turnover = 'Q';
-	enigma::Rotor rotor{ wiring , turnover };
-	REQUIRE(rotor.get_turnover() == turnover);
+	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
+	REQUIRE(rotor.get_turnover() == 'Q');
 
 	rotor.add_position_index();
 	REQUIRE(rotor.rotor_substitute() == 'K');

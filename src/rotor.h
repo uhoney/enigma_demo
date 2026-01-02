@@ -1,49 +1,69 @@
 #pragma once
 #include <string_view>
 #include <array>
+#include "constants.h"
 
 namespace enigma
 {
+	/**
+	 * @class Rotor
+	 * Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.
+	 */
 	class Rotor
 	{
 	private:
-
-		/*
-		* Eli jos roottorissa olis 'D' näkyvissä, se ei vielä avaa R2 lukitusta.
-		* Nappia painetaan ja R1 kääntyy nyt näyttämään 'Q'. R2 lukko on kiinni edelleen.
-		* NYT jos nappia painetaan, R2 lukko aukeaa ja pyörähtää samalla R1 kanssa.
-		*
-		* Tarkista oikeassa järjestyksessä. R1 pyörähtää AINA.
-		* R3 voi pyörähtää ilman R2:n pyörähtämistä, mutta R2 ei voi pyörähtää ilman R1:n pyörähtämistä.
-		* Eli R1 aina true, R2 ja R3 tarkistetaan erikseen.
-		*/
-
-		// Alphabets			"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		// 
-		// Rotor I wiring:		"EKMFLGDQVZNTOWYHXUSPAIBRCJ"
-		// Turnover:			"Q"
-
-		static constexpr std::string_view ALPHABETS{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
-
+		 /**
+		  * @brief The wiring configuration of the rotor as a string view.
+		  */
 		std::string_view rotor_wiring{};
+		/**
+		 * @brief The turnover character that indicates when the next rotor unlocks for rotation.
+		 */
 		char turnover{};
-		int position_index{ 0 };
+		/**
+		 * @brief The current position index of the rotor (0-25). Used for GUI display and substitution calculations.
+		 */
+		int position_index{0};
 
 	public:
-		Rotor(std::string_view, char&);
+		Rotor(std::string_view, char );
 		~Rotor();
 
+		/**
+		 * @brief Get the turnover character of the rotor.
+		 */
 		char get_turnover() const;
 
+		/**
+		 * @brief Substitute the character at the current position index using the rotor wiring.
+		 */
 		char rotor_substitute() const;
+
+		/**
+		 * @brief Reverse substitute the character at the current position index using the alphabets.
+		 */
 		char rotor_reverse_substitute() const;
 
+		/**
+		 * @brief Get the current position index of the rotor.
+		 */
 		int get_position_index() const;
-		void set_position_index(int);	// for debug only
+
+		void set_position_index(int); // TODO: DEBUG ONLY, delete later
+
+		/**
+		 * @brief Increment the position index of the rotor, wrapping around to 0 after 25.
+		 */
 		void add_position_index();
+
+		/**
+		 * @brief Decrement the position index of the rotor, wrapping around to 25 after 0.
+		 */
 		void substract_position_index();
 
+		/**
+		 * @brief Get the wiring of the rotor.
+		 */
 		std::string_view get_wiring() const;
-		std::string_view get_alphabets() const;
 	};
 }

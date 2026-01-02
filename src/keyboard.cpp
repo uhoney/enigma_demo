@@ -2,25 +2,25 @@
 
 enigma::KeyBoard::KeyBoard()
 {
-	float temp_x{ KEYBOARD_POSITION_X };
-	float temp_y{ KEYBOARD_POSITION_Y };
+	float temp_x{ enigma::KEYBOARD_POSITION_X };
+	float temp_y{ enigma::KEYBOARD_POSITION_Y };
 
 	// FIXME: Does what it's supposed to do. Ugly but human readable.
-	for (char character : ENIGMA_KEYBOARD_CHARACTERS)
+	for (char character : enigma::ENIGMA_KEYBOARD_CHARACTERS)
 	{
 		if (character == 'A')
 		{
-			temp_x = KEYBOARD_POSITION_X + 25.0f;
-			temp_y = KEYBOARD_POSITION_Y + 75.0f;
+			temp_x = enigma::KEYBOARD_POSITION_X + 25.0f;
+			temp_y = enigma::KEYBOARD_POSITION_Y + 75.0f;
 		}
 		else if (character == 'P')
 		{
-			temp_x = KEYBOARD_POSITION_X;
+			temp_x = enigma::KEYBOARD_POSITION_X;
 			temp_y += 75.0f;
 		}
 
 		this->keys.emplace_back(character, Vector2{ temp_x, temp_y });
-		temp_x += KEY_PADDING;
+		temp_x += enigma::KEY_PADDING;
 	}
 }
 

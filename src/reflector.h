@@ -1,61 +1,42 @@
 #pragma once
 #include <array>
 #include <string_view>
+#include <algorithm>
+#include "constants.h"
 
 namespace enigma
 {
 	/**
-	 * @brief Represents a reflector component used in an Enigma machine cipher system, which swaps input characters according to a configured wiring pattern.
+	 * @class Reflector
+	 * Represents a reflector component used in an Enigma machine cipher system, which swaps input characters according to a configured wiring pattern.
 	 */
 	class Reflector
 	{
 	private:
-		/**
-		 * @brief
-		 * Predefined array representing the wiring of the reflector, mapping each character to its corresponding index.
-		 * I.e 'A' maps to index 65 in UTF-8, so the reflector_array[65] gives the character that 'A' is mapped to.
-		 */
-		std::array<char, 91> reflector_array{ {} };
-		/**
-		 * @name UKW Wiring Configurations
-		 * just string views for different reflector wirings
-		 * @{
-		 */
-		static constexpr std::string_view UKW_A_WIRING = "EJMZALYXVBWFCRQUONTSPIKHGD";
-		static constexpr std::string_view UKW_B_WIRING = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
-		static constexpr std::string_view UKW_C_WIRING = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
-		/** @} */
+		std::string_view reflector_wiring{};
 
 	public:
 		/**
 		 * @brief
-		 * Constructor initialization uses UKW_A wiring by default.
+		 * Constructor initialization uses UKW_A_WIRING by default.
 		 */
 		Reflector();
 		~Reflector();
 
 		/**
-		 * @brief Reflector wiring initialization
-		 * Initializes the reflector wiring based on the provided wiring string.
-		 * UKW_A wiring: "EJMZALYXVBWFCRQUONTSPIKHGD"
-		 * UKW_B wiring: "YRUHQSLDPXNGOKMIEBFZCWVJAT"
-		 * UKW_C wiring: "FVPJIAOYEDRZXWGCTKUQSBNMHL"
+		 * @brief Initializes the reflector with specific wiring.
+		 * Possible wirings; UKW_A, UKW_B, UKW_C
+		 * @param wiring A string_view representing the wiring pattern for the reflector.
 		 */
 		void initialize_UKW(std::string_view);
-
 		/**
-		 * @brief Returns the swapped character for a given input character.
-		 * Returns a character according to the current reflector configuration.
-		 * @param character The input character to swap
+		 * @brief Gets the index of a character in the alphabet.
 		 */
-		char swap_character(const char& character);
+		int get_index_from_char(char);
 		/**
-		 * @name Getter functions for UKW wiring configurations
-		 * @{
+		 * @brief Swaps the input character according to the reflector wiring.
+		 * @param character The input character to be swapped.
 		 */
-		std::string_view get_UKW_A_WIRING();
-		std::string_view get_UKW_B_WIRING();
-		std::string_view get_UKW_C_WIRING();
-		/** @} */
+		char swap_character(char);
 	};
 } // namespace enigma

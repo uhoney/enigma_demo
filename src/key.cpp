@@ -29,7 +29,7 @@ Vector2 enigma::Key::get_position() const
 
 float enigma::Key::get_key_size() const
 {
-	return this->outer_ring;
+	return enigma::KEY_OUTER_RING;
 }
 
 void enigma::Key::set_size_multiplier(float new_size_multiplier)
@@ -39,8 +39,8 @@ void enigma::Key::set_size_multiplier(float new_size_multiplier)
 
 void enigma::Key::draw_key(Font font, Vector2 font_offset)
 {
-	DrawCircleV({ this->position }, this->size_multiplier * this->outer_ring, LIGHTGRAY);
-	DrawCircleV({ this->position }, this->size_multiplier * this->inner_ring, BLACK);
+	DrawCircleV({ this->position }, this->size_multiplier * enigma::KEY_OUTER_RING, LIGHTGRAY);
+	DrawCircleV({ this->position }, this->size_multiplier * enigma::KEY_INNER_RING, BLACK);
 	DrawTextEx(
 		font,
 		this->get_text(),

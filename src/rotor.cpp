@@ -1,13 +1,6 @@
 #include "rotor.h"
-#include "rotor.h"
-#include "rotor.h"
-#include "rotor.h"
-#include "rotor.h"
-#include "rotor.h"
-#include "rotor.h"
 
-enigma::Rotor::Rotor(std::string_view wiring, char& turnover) :
-	turnover{ turnover }, rotor_wiring{ wiring }
+enigma::Rotor::Rotor(std::string_view wiring, char turnover) : turnover{turnover}, rotor_wiring{wiring}
 {
 }
 
@@ -27,7 +20,7 @@ char enigma::Rotor::rotor_substitute() const
 
 char enigma::Rotor::rotor_reverse_substitute() const
 {
-	return this->ALPHABETS[this->position_index];
+	return enigma::ALPHABETS[this->position_index];
 }
 
 int enigma::Rotor::get_position_index() const
@@ -67,9 +60,4 @@ void enigma::Rotor::substract_position_index()
 std::string_view enigma::Rotor::get_wiring() const
 {
 	return this->rotor_wiring;
-}
-
-std::string_view enigma::Rotor::get_alphabets() const
-{
-	return this->ALPHABETS;
 }
