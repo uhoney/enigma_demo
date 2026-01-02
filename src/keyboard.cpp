@@ -42,7 +42,7 @@ void enigma::KeyBoard::isKeyPressed(Vector2& mouse_position, bool is_mouse_press
 		{
 			if (CheckCollisionPointCircle(mouse_position, key.get_position(), key.get_key_size()))
 			{
-				TraceLog(LOG_INFO, "Key %c pressed!", key.get_label());
+				// DEBUG: TraceLog(LOG_INFO, "Key %c pressed!", key.get_label());
 				this->p_key_pressed = &key;
 				this->p_key_pressed->set_size_multiplier(0.8f);
 				break;

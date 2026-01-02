@@ -80,6 +80,7 @@ set_target_properties(enigma_demo PROPERTIES
 add_executable(tests_enigma
     tests/test_reflector.cpp
     tests/test_keyboard.cpp
+    tests/test_rotor.cpp
 )
 
 target_link_libraries(tests_enigma PRIVATE 

@@ -21,6 +21,8 @@ int main(void)
 	Vector2 font_offset = { 10.0f, 20.0f };
 
 	enigma::KeyBoard keyboard{};
+
+
 	// END INITIALIZATION -------------------------------------------------------------------
 
 	//	Main game loop
