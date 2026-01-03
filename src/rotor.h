@@ -35,31 +35,20 @@ namespace enigma
 		~Rotor();
 
 		/**
- * @brief Substitute the character at the current position index using the rotor wiring.
- */
-		char substitute(char) const;
+		* @brief Substitute the character at the current position index using the rotor wiring.
+		*/
+		char pass_through(char) const;
 
 		/**
 		 * @brief Reverse substitute the character at the current position index using the alphabets.
 		 */
-		char reverse_substitute() const;
+		char reverse_pass_through(char) const;
 
 		void set_position_index(int); // TODO: DEBUG ONLY, delete later
-
-		/**
-		* @brief Pass a character through the rotor, incrementing the rotor position and outputs substituted character.
-		* Use this when going towards reflector.
-		*/
-		char pass_through(char);
-
-		/*
-		* @brief Pass a character back through the rotor in reverse direction, outputting the reverse substituted character.
-		* Use this when returning from reflector.
-		*/
-		char reverse_pass_through(char);
-
+				
 		/**
 		 * @brief Increment the position index of the rotor, wrapping around to 0 after 25.
+		 * Keeps this specifically separate. You do not want to change index when passing through.
 		 */
 		void turn_rotor();
 
@@ -73,7 +62,7 @@ namespace enigma
 		 * @brief Get position of char in selected std::string_view
 		 * Basically either ALPHABETS or ROTOR_X_WIRING
 		 */
-		int get_index_of_char(char) const;
+		int get_index_of_char(std::string_view, char) const;
 
 		/**
 		 * @brief Get the turnover character of the rotor.

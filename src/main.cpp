@@ -25,9 +25,10 @@ int main(void)
 	enigma::KeyBoard keyboard{};
 	enigma::Lampboard lampboard{};
 
-
-	//DEBUG: Testing rotor
+	//DEBUG: Testing rotor and reflector 
 	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
+	enigma::Reflector reflector{};
+
 
 	// END INITIALIZATION -------------------------------------------------------------------
 
@@ -45,6 +46,17 @@ int main(void)
 			// TraceLog(LOG_INFO, "Pressed key: %c", keyboard.get_p_pressed_key()->get_label());
 			// TraceLog(LOG_INFO, "Rotor position : %d", rotor.get_position_index()); // method deleted
 			
+			rotor.turn_rotor();
+			TraceLog(LOG_INFO, "Rotor turned to position : %d", rotor.get_rotor_index());
+			char unnamed_char = keyboard.get_p_pressed_key()->get_label();
+			TraceLog(LOG_INFO, "Pressed key: %c", unnamed_char);
+			unnamed_char = rotor.pass_through(unnamed_char);
+			TraceLog(LOG_INFO, "Rotor output: %c", unnamed_char);
+			unnamed_char = reflector.swap_character(unnamed_char);
+			TraceLog(LOG_INFO, "Reflector output: %c", unnamed_char);
+			unnamed_char = rotor.reverse_pass_through(unnamed_char);
+			TraceLog(LOG_INFO, "Rotor reverse output: %c", unnamed_char);
+			lampboard.turn_on_lamp(unnamed_char);
 
 		}
 
