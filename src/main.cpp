@@ -40,11 +40,10 @@ int main(void)
 		// CHECK IF KEY IS PRESSED => key pointer is set
 		if (keyboard.isKeyPressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 		{
-			//// DEBUG
-			//lampboard.turn_on_lamp(keyboard.get_p_pressed_key()->get_label());
-			TraceLog(LOG_INFO, "Pressed key: %c", keyboard.get_p_pressed_key()->get_label());
-			rotor.turn_rotor();
-			TraceLog(LOG_INFO, "Rotor position : %d", rotor.get_position_index());
+			//// DEBUG old stuff 
+			// lampboard.turn_on_lamp(keyboard.get_p_pressed_key()->get_label());
+			// TraceLog(LOG_INFO, "Pressed key: %c", keyboard.get_p_pressed_key()->get_label());
+			// TraceLog(LOG_INFO, "Rotor position : %d", rotor.get_position_index()); // method deleted
 			
 
 		}
