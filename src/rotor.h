@@ -54,12 +54,12 @@ namespace enigma
 		/**
 		 * @brief Increment the position index of the rotor, wrapping around to 0 after 25.
 		 */
-		void add_position_index();
+		void turn_rotor();
 
 		/**
 		 * @brief Decrement the position index of the rotor, wrapping around to 25 after 0.
 		 */
-		void substract_position_index();
+		void turn_back_rotor();
 
 		/**
 		 * @brief Get the wiring of the rotor.

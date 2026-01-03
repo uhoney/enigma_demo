@@ -34,7 +34,7 @@ std::vector<enigma::Key>& enigma::KeyBoard::get_keys()
 	return this->keys;
 }
 
-void enigma::KeyBoard::isKeyPressed(Vector2& mouse_position, bool is_mouse_pressed)
+bool enigma::KeyBoard::isKeyPressed(Vector2& mouse_position, bool is_mouse_pressed)
 {
 	if (is_mouse_pressed && this->p_key_pressed == nullptr)
 	{
@@ -45,19 +45,22 @@ void enigma::KeyBoard::isKeyPressed(Vector2& mouse_position, bool is_mouse_press
 				// DEBUG: TraceLog(LOG_INFO, "Key %c pressed!", key.get_label());
 				this->p_key_pressed = &key;
 				this->p_key_pressed->set_size_multiplier(0.8f);
-				break;
+				return true;
 			}
 		}
 	}
+	return false;
 }
 
-void enigma::KeyBoard::isKeyReleased(bool is_mouse_released)
+bool enigma::KeyBoard::isKeyReleased(bool is_mouse_released)
 {
 	if (is_mouse_released && this->p_key_pressed != nullptr)
 	{
 		this->p_key_pressed->set_size_multiplier(1.0f);
 		this->p_key_pressed = nullptr;
+		return true;
 	}
+	return false;
 }
 
 enigma::Key* enigma::KeyBoard::get_p_pressed_key()

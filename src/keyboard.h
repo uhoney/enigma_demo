@@ -32,13 +32,13 @@ namespace enigma
 		* @brief Checks if a key is pressed and sets the pointer to the pressed key.
 		* Boolean added for easier unit testing, mouse input can be simulated.
 		*/
-		void isKeyPressed(Vector2&, bool);
+		bool isKeyPressed(Vector2&, bool);
 
 		/**
 		* @brief Checks if a key is released and resets the pointer to nullptr.
 		* Boolean added for easier unit testing, mouse input can be simulated.
 		*/
-		void isKeyReleased(bool);
+		bool isKeyReleased(bool);
 
 		/**
 		* @brief Returns pointer to the currently pressed key. nullptr if no key is pressed.

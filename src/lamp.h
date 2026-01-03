@@ -9,30 +9,21 @@ namespace enigma
     class Lamp
     {
     private:
-        bool is_on{ false };					///< Lamp state
-        Vector2 position{};					///< Lamp position on screen
+		char character[2]{};
+        bool is_lit{ false };
+        Vector2 position{};
 
     public:
-        Lamp(const Vector2& pos, float r, const Color& col_on, const Color& col_off);
+        Lamp(char, const Vector2);
+		~Lamp();
 
-        /**
-         * @brief Turns the lamp on
-         */
-        void turn_on();
+        
+        char get_label() const;
+		const char* get_text();     // for raylib DrawTextEx()
+		void draw_lamp(Font, Vector2);
 
-        /**
-         * @brief Turns the lamp off
-         */
-        void turn_off();
+		bool get_is_lit() const;
+        void toggle_lamp();
 
-        /**
-         * @brief Draws the lamp on screen
-         */
-        void draw() const;
-
-        /**
-         * @brief Returns whether the lamp is on
-         */
-        bool is_lit() const;
     };
 }

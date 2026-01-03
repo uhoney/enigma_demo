@@ -33,7 +33,7 @@ void enigma::Rotor::set_position_index(int new_index)
 	this->position_index = new_index;
 }
 
-void enigma::Rotor::add_position_index()
+void enigma::Rotor::turn_rotor()
 {
 	if (this->position_index < 25)
 	{
@@ -45,7 +45,7 @@ void enigma::Rotor::add_position_index()
 	}
 }
 
-void enigma::Rotor::substract_position_index()
+void enigma::Rotor::turn_back_rotor()
 {
 	if (this->position_index > 0)
 	{
