@@ -1,3 +1,4 @@
+#include "raylib.h"
 #include "rotor.h"
 #include <iostream>
 
@@ -39,6 +40,7 @@ void enigma::Rotor::set_position_index(int new_index)
 
 void enigma::Rotor::turn_rotor()
 {
+	//TraceLog(LOG_INFO, "rotor index is %d", this->rotor_index);
 	if (this->rotor_index < 25)
 	{
 		++this->rotor_index;
@@ -47,6 +49,7 @@ void enigma::Rotor::turn_rotor()
 	{
 		this->rotor_index = 0;
 	}
+	//TraceLog(LOG_INFO, "rotor index turned to %d", this->rotor_index);
 }
 
 void enigma::Rotor::turn_back_rotor()

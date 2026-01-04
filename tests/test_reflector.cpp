@@ -9,8 +9,11 @@ TEST_CASE("Reflector test", "[reflector]")
 	enigma::Reflector reflector{};
 
 	// Default UKW_A
+	REQUIRE(reflector.swap_character(reflector.swap_character('A')) == 'A');
+	REQUIRE(reflector.swap_character(reflector.swap_character('M')) == 'M');
+	REQUIRE(reflector.swap_character(reflector.swap_character('Z')) == 'Z');
 	REQUIRE(reflector.swap_character('A') == 'E');
-	REQUIRE(reflector.swap_character('L') == 'F');
+	REQUIRE(reflector.swap_character('M') == 'C');
 	REQUIRE(reflector.swap_character('Z') == 'D');
 
 	reflector.initialize_UKW(enigma::UKW_B_WIRING);
@@ -24,3 +27,11 @@ TEST_CASE("Reflector test", "[reflector]")
 	REQUIRE(reflector.swap_character('Z') == 'L');
 	
 }
+
+/*
+*	fixed 1:1 substitute => A->E and E->A
+* 
+*	index	01234567890123456789012345
+*	alpha	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+*	refl	EJMZALYXVBWFCRQUONTSPIKHGD	// UKW_A wiring
+*/

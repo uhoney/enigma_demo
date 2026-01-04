@@ -13,29 +13,43 @@ TEST_CASE("Rotor test", "[rotor]")
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'Z') == 25);
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'c') == -1);	// user can not input chars, but just in case
 
-	//REQUIRE(rotor.pass_through('A') == 'K');
-	//rotor.set_position_index(0);
-	//REQUIRE(rotor.pass_through('Z') == 'E');
-	//REQUIRE(rotor.pass_through('A') == 'M');
+	rotor.turn_rotor();		// count from 0, now index = 1
+	REQUIRE(rotor.pass_through('A') != 'A');
+	REQUIRE(rotor.pass_through('Z') != 'Z');
+	REQUIRE(rotor.pass_through('A') == 'K');			// (char_alpha + rotor) = 0 + 1 mod 26 = 1, wiring_index[1] = K
+	REQUIRE(rotor.pass_through('M') == 'W');
+	REQUIRE(rotor.pass_through('Z') == 'E');
+	REQUIRE(rotor.reverse_pass_through('E') == 'Z');	// (char_wiring - rotor +26) = 0-1+26 mod 26 = 25, alpha_index[25] = Z
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('M')) == 'M');
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('Z')) == 'Z');
 
-	/*rotor.turn_rotor();
-	std::cout << "r_index: " << rotor.get_rotor_index() << ", pass: 'A', out: " << rotor.pass_through('A') << "\n";
-	std::cout << "r_index: " << rotor.get_rotor_index() << ", rev:  'W', out: " << rotor.reverse_pass_through('W') << "\n";*/
-	
+	rotor.turn_rotor();		// rotor_index = 2
+	REQUIRE(rotor.pass_through('A') != 'A');
+	REQUIRE(rotor.pass_through('Z') != 'Z');
+	REQUIRE(rotor.pass_through('A') == 'M');
+	REQUIRE(rotor.pass_through('M') == 'Y');			// (char_alpha + rotor) = 12 + 2 mod 26 = 14, wiring_index[14] = Y
+	REQUIRE(rotor.pass_through('Z') == 'K');
+	REQUIRE(rotor.reverse_pass_through('Y') == 'M');	// (char_wiring - rotor +26) = 14-2+26 mod26 =12 , alpha_index[12] = M
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('M')) == 'M');
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('Z')) == 'Z');
+
+	rotor.set_position_index(25);
+	REQUIRE(rotor.pass_through('A') != 'A');
+	REQUIRE(rotor.pass_through('Z') != 'Z');
+	REQUIRE(rotor.pass_through('A') == 'J');
+	REQUIRE(rotor.pass_through('M') == 'T');
+	REQUIRE(rotor.pass_through('Z') == 'C');			// (char_alpha + rotor) = 25 + 25 mod 26 = 24, wiring_index[24] = C
+	REQUIRE(rotor.reverse_pass_through('J') == 'A');	// (char_wiring - rotor +26 = 25-25+26 mod26 = 0, alpha_index[0] = A
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
+	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
 
 }
 
 /*
-	ABCDEFGHIJKLMNOPQRSTUVWXYZ
-	EKMFLGDQVZNTOWYHXUSPAIBRCJ
-
-	rotor 0, A -> K	(0+1)	mod 26 = 1
-	rotor 2, U -> R	(20+3)	mod 26 = 23
-	rotor 0, Z -> E	(25+1)	mod 26 = 0
-
-	reverse
-	rotor 0, W -> M (13-1)  mod 26 = 12		// empä ole ihan varma.. tarkista meneekö oikein
-
-
-
+*	index	01234567890123456789012345
+*	alpha	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+*	wiring	EKMFLGDQVZNTOWYHXUSPAIBRCJ  // ROTOR_I_WIRING
 */
