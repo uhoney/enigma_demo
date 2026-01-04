@@ -30,7 +30,7 @@ namespace enigma
 
 		/**
 		* @brief Checks if a key is pressed and sets the pointer to the pressed key.
-		* Boolean added for easier unit testing, mouse input can be simulated.
+		* Boolean added for easier unit testing (mouse input simulated)
 		*/
 		bool isKeyPressed(Vector2&, bool);
 

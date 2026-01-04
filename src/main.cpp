@@ -12,23 +12,24 @@
 int main(void)
 {
 	// INITIALIZAZTION ----------------------------------------------------------------------
-	const int screenWidth = 1080;
-	const int screenHeight = 800;
+	const int screenWidth = enigma::SCREEN_WIDTH;
+	const int screenHeight = enigma::SCREEN_HEIGHT;
 
-	InitWindow(screenWidth, screenHeight, "Testauksia...");
+	InitWindow(screenWidth, screenHeight, "Enigma demo");
 
 	SetTargetFPS(30);
-
+	
 	Font font = LoadFontEx("assets/fonts/UbuntuMono-R.ttf", 80, NULL, 0);
 	Vector2 font_offset = { 10.0f, 20.0f };
 
 	enigma::KeyBoard keyboard{};
-	enigma::Lampboard lampboard{};
-
-	//DEBUG: Testing rotor and reflector 
 	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
+	enigma::Rotor rotor_2{ enigma::ROTOR_II_WIRING , enigma::ROTOR_II_TURNOVER };
+	
 	enigma::Reflector reflector{};
-
+	enigma::Lampboard lampboard{};
+	
+	
 
 	// END INITIALIZATION -------------------------------------------------------------------
 
@@ -68,8 +69,8 @@ int main(void)
 		ClearBackground(RAYWHITE);
 
 		// BACKGROUND
-		DrawRectangle(150, 25, 800, 650, BEIGE);
-		DrawRectangle(175, 50, 750, 600, DARKGRAY);
+		// TODO: Abstract case drawing to helpers
+		
 
 		// LAMPBOARD
 		for (auto& lamp : lampboard.get_lamps())

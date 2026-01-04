@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['outer_5fring_0',['outer_ring',['../classM__button.html#a34b1e74b3ffab861c186d2e047a7673e',1,'M_button']]]
+  ['lamp_0',['Lamp',['../classenigma_1_1_lamp.html',1,'enigma']]],
+  ['lampboard_1',['Lampboard',['../classenigma_1_1_lampboard.html',1,'enigma']]]
 ];

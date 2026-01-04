@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['reflector_0',['reflector',['../classReflector.html',1,'Reflector'],['../classReflector.html#a9d3afcf6a5caa2ab764131092121a12a',1,'Reflector::Reflector()']]],
-  ['reflector_5farray_1',['reflector_array',['../classReflector.html#aa9d5bdf2eec49fc1dbe3b0e803db9d72',1,'Reflector']]]
+  ['reflector_0',['Reflector',['../classenigma_1_1_reflector.html',1,'enigma::Reflector'],['../classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557',1,'enigma::Reflector::Reflector()']]],
+  ['reverse_5fpass_5fthrough_1',['reverse_pass_through',['../classenigma_1_1_rotor.html#afd9f129c520d9aae71281bbd9973ec20',1,'enigma::Rotor']]],
+  ['rotor_2',['Rotor',['../classenigma_1_1_rotor.html',1,'enigma']]],
+  ['rotor_5findex_3',['rotor_index',['../classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d',1,'enigma::Rotor']]],
+  ['rotor_5fwiring_4',['rotor_wiring',['../classenigma_1_1_rotor.html#a5aea0c791e24ceefb911c45214925158',1,'enigma::Rotor']]]
 ];

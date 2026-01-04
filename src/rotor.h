@@ -6,6 +6,7 @@
 namespace enigma
 {
 	/**
+	* @brief Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.
 	* @class Rotor
 	* Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.
 	*
@@ -31,6 +32,9 @@ namespace enigma
 		int rotor_index{ 0 };
 
 	public:
+		/**
+		* @brief Construct a new Rotor object with specified wiring and turnover character.
+		*/
 		Rotor(std::string_view, char);
 		~Rotor();
 

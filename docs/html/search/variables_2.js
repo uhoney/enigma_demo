@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['outer_5fring_0',['outer_ring',['../classM__button.html#a34b1e74b3ffab861c186d2e047a7673e',1,'M_button']]]
+  ['rotor_5findex_0',['rotor_index',['../classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d',1,'enigma::Rotor']]],
+  ['rotor_5fwiring_1',['rotor_wiring',['../classenigma_1_1_rotor.html#a5aea0c791e24ceefb911c45214925158',1,'enigma::Rotor']]]
 ];

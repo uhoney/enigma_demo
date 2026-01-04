@@ -1,8 +1,16 @@
 #pragma once
 #include <string_view>
+#include "raylib.h"
 
 namespace enigma
 {
+	static constexpr int SCREEN_WIDTH = 1080;
+	static constexpr int SCREEN_HEIGHT = 800;
+
+	// TODO: SPLIT THIS ENTIRE THING INTO SENSIBLE FILES (UI.H, CORE.H, ETC)
+	static constexpr Vector4 MACHINE_BG_OUTLINE{ 150, 25, 800, 650 }; // BEIGE
+	static constexpr Vector4 MACHINE_BG_INSIDE{ 175, 50, 750, 600 };	// DARKGRAY
+
 	static constexpr std::string_view ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	static constexpr std::string_view ENIGMA_KEYBOARD_CHARACTERS{ "QWERTZUIOASDFGHJKPYXCVBNML" };

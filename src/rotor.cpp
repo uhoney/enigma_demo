@@ -48,7 +48,6 @@ void enigma::Rotor::turn_rotor()
 	{
 		this->rotor_index = 0;
 	}
-	TraceLog(LOG_INFO, "rotor index turned to %d", this->rotor_index);
 }
 
 void enigma::Rotor::turn_back_rotor()
