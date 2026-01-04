@@ -41,34 +41,19 @@ int main(void)
 		// CHECK IF KEY IS PRESSED => key pointer is set
 		if (keyboard.isKeyPressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 		{
-			//// DEBUG old stuff 
-			// lampboard.turn_on_lamp(keyboard.get_p_pressed_key()->get_label());
-			// TraceLog(LOG_INFO, "Pressed key: %c", keyboard.get_p_pressed_key()->get_label());
-			// TraceLog(LOG_INFO, "Rotor position : %d", rotor.get_position_index()); // method deleted
-			
-			/*rotor.turn_rotor();
-			TraceLog(LOG_INFO, "Rotor turned to position : %d", rotor.get_rotor_index());
+
 			char unnamed_char = keyboard.get_p_pressed_key()->get_label();
 			TraceLog(LOG_INFO, "Pressed key: %c", unnamed_char);
+			rotor.turn_rotor();
 			unnamed_char = rotor.pass_through(unnamed_char);
 			TraceLog(LOG_INFO, "Rotor output: %c", unnamed_char);
 			unnamed_char = reflector.swap_character(unnamed_char);
 			TraceLog(LOG_INFO, "Reflector output: %c", unnamed_char);
 			unnamed_char = rotor.reverse_pass_through(unnamed_char);
 			TraceLog(LOG_INFO, "Rotor reverse output: %c", unnamed_char);
-			lampboard.turn_on_lamp(unnamed_char);*/
+			lampboard.turn_on_lamp(unnamed_char);
 
 		}
-
-
-
-
-
-
-
-
-
-
 
 		// FINALLY CHECK IF KEY IS RELEASED => key is nullptr again
 		if (keyboard.isKeyReleased(IsMouseButtonReleased(MOUSE_LEFT_BUTTON)))
