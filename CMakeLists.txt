@@ -43,12 +43,14 @@ FetchContent_MakeAvailable(catch2)
 
 # Enigma-kirjasto (jaettu p��ohjelman ja testien kanssa)
 add_library(enigma_libs STATIC
-    src/reflector.cpp
-    src/key.cpp
-    src/keyboard.cpp
-    src/rotor.cpp
-    src/lampboard.cpp
-    src/lamp.cpp
+    "src/core/reflector.cpp"
+    "src/core/key.cpp"
+    "src/core/keyboard.cpp"
+    "src/core/rotor.cpp"
+    "src/core/lampboard.cpp"
+    "src/core/lamp.cpp"
+    "src/ui/fonts.cpp"
+    "src/ui/layout.cpp"
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)

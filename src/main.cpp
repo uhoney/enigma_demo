@@ -1,36 +1,32 @@
 #include "raylib.h"
 #include <iostream>
-#include "reflector.h"
-#include "key.h"
-#include "rotor.h"
-#include "keyboard.h"
+#include "core/reflector.h"
+#include "core/key.h"
+#include "core/rotor.h"
+#include "core/keyboard.h"
 #include "constants.h"
-#include "lampboard.h"
+#include "core/lampboard.h"
+#include "ui/fonts.h"
+#include "ui/layout.h"
 #include <vector>
 #include <memory>
 
 int main(void)
 {
 	// INITIALIZAZTION ----------------------------------------------------------------------
-	const int screenWidth = enigma::SCREEN_WIDTH;
-	const int screenHeight = enigma::SCREEN_HEIGHT;
-
-	InitWindow(screenWidth, screenHeight, "Enigma demo");
+	InitWindow(ui::SCREEN_WIDTH, ui::SCREEN_HEIGHT, "Enigma demo");
 
 	SetTargetFPS(30);
-	
-	Font font = LoadFontEx("assets/fonts/UbuntuMono-R.ttf", 80, NULL, 0);
-	Vector2 font_offset = { 10.0f, 20.0f };
+
+	Font font{ ui::load_font() };
 
 	enigma::KeyBoard keyboard{};
 	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
 	enigma::Rotor rotor_2{ enigma::ROTOR_II_WIRING , enigma::ROTOR_II_TURNOVER };
-	
+	enigma::Rotor rotor_3{ enigma::ROTOR_III_WIRING , enigma::ROTOR_III_TURNOVER };
 	enigma::Reflector reflector{};
 	enigma::Lampboard lampboard{};
 	
-	
-
 	// END INITIALIZATION -------------------------------------------------------------------
 
 	//	Main game loop
@@ -69,19 +65,18 @@ int main(void)
 		ClearBackground(RAYWHITE);
 
 		// BACKGROUND
-		// TODO: Abstract case drawing to helpers
+		ui::draw_background();
 		
-
 		// LAMPBOARD
 		for (auto& lamp : lampboard.get_lamps())
 		{
-			lamp.draw_lamp(font, font_offset);
+			lamp.draw_lamp(font, ui::FONT_OFFSET);
 		}
 
 		//	DRAW KEYBOARD
 		for (auto& key : keyboard.get_keys())
 		{
-			key.draw_key(font, font_offset);
+			key.draw_key(font, ui::FONT_OFFSET);
 		}
 		EndDrawing();
 		// END DRAW ------------------------------------------------------------------------

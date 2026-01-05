@@ -1,10 +1,22 @@
 #pragma once
 #include <string_view>
 #include <array>
-#include "constants.h"
+#include "../constants.h"
 
 namespace enigma
 {
+	/**
+	 * @name Rotor wiring configurations and corresponding turnover notches
+	 * @{
+	 */
+	inline constexpr std::string_view ROTOR_I_WIRING = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
+	inline constexpr char ROTOR_I_TURNOVER = 'Q';
+	inline constexpr std::string_view ROTOR_II_WIRING = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
+	inline constexpr char ROTOR_II_TURNOVER = 'E';
+	inline constexpr std::string_view ROTOR_III_WIRING = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
+	inline constexpr char ROTOR_III_TURNOVER = 'V';
+	/** @} */
+
 	/**
 	* @brief Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.
 	* @class Rotor

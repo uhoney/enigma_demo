@@ -1,11 +1,20 @@
 #pragma once
 #include "raylib.h"
-#include "constants.h"
+#include "../constants.h"
 #include <vector>
 #include <string_view>
 
 namespace enigma
 {
+	/**
+	 * @name Key constants
+	 *@{
+	 */
+	inline constexpr float KEY_OUTER_RING{ 30.0f };       ///< Outer ring radius
+	inline constexpr float KEY_INNER_RING{ 25.0f };       ///< Inner ring radius
+	inline constexpr float KEY_PADDING{ 75.0f };          ///< Distance between button centers
+	/**@}*/
+
 	/**
 	 * @class Key
 	 * Represents a key in the Enigma machine.

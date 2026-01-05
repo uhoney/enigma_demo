@@ -2,10 +2,19 @@
 #include <array>
 #include <string_view>
 #include <algorithm>
-#include "constants.h"
+#include "../constants.h"
 
 namespace enigma
 {
+	/**
+	 * @name Reflector wiring configurations
+	 * @{
+	 */
+	inline constexpr std::string_view UKW_A_WIRING = "EJMZALYXVBWFCRQUONTSPIKHGD";
+	inline constexpr std::string_view UKW_B_WIRING = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
+	inline constexpr std::string_view UKW_C_WIRING = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
+	/** @} */
+
 	/**
 	 * @class Reflector
 	 * Represents a reflector component used in an Enigma machine cipher system, which swaps input characters according to a configured wiring pattern.

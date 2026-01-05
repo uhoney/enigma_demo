@@ -1,10 +1,18 @@
 #include "raylib.h"
 #include "lamp.h"
 #include <vector>
-#include "constants.h"
+#include "../constants.h"
 
 namespace enigma
 {
+	/**
+	 * @name Lampboard position constants
+	 *@{
+	 */
+	inline constexpr float LAMPBOARD_POSITION_X{ 250.0f }; ///< Starting x position
+	inline constexpr float LAMPBOARD_POSITION_Y{ 100.0f }; ///< Starting y position
+	/**@}*/
+
 	/**
 	 * @class Lampboard
 	 * Represents the lampboard of the Enigma machine.

@@ -3,10 +3,18 @@
 #include "key.h"
 #include <vector>
 #include <string_view>
-#include "constants.h"
+#include "../constants.h"
 
 namespace enigma
 {
+	/**
+	* @name Keyboard constants
+	*@{
+	*/
+	inline constexpr float KEYBOARD_POSITION_X{ 250.0f };			///< Starting x position
+	inline constexpr float KEYBOARD_POSITION_Y{ 400.0f };			///< Starting y position
+	/**@}*/
+
 	class KeyBoard
 	{
 	private:
