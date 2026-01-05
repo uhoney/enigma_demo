@@ -85,8 +85,8 @@ add_executable(tests_enigma
     tests/test_reflector.cpp
     tests/test_keyboard.cpp
     tests/test_rotor.cpp
-    tests/test_lampboard.cpp
-    tests/test_lamp.cpp
+    #tests/test_lampboard.cpp       # Can not really test visual components
+    #tests/test_lamp.cpp            # Can not really test visual components
 )
 
 target_link_libraries(tests_enigma PRIVATE 

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['initialize_5fukw_0',['initialize_UKW',['../classenigma_1_1_reflector.html#ac75f1180d139e7efc27e89b87e599be0',1,'enigma::Reflector']]],
-  ['iskeypressed_1',['isKeyPressed',['../classenigma_1_1_key_board.html#a7c0626ff4da282f4d83e41b0458ec1a9',1,'enigma::KeyBoard']]],
-  ['iskeyreleased_2',['isKeyReleased',['../classenigma_1_1_key_board.html#a8c76be864cad7841faad84b5c53d1be5',1,'enigma::KeyBoard']]]
+  ['key_0',['Key',['../classenigma_1_1_key.html',1,'enigma::Key'],['../classenigma_1_1_key.html#a7fe1c48265fa9cfa8e79148b30691b5e',1,'enigma::Key::Key()']]],
+  ['keyboard_1',['KeyBoard',['../classenigma_1_1_key_board.html',1,'enigma::KeyBoard'],['../classenigma_1_1_key_board.html#a942735fff30d13aace0e26d4c85a246c',1,'enigma::KeyBoard::KeyBoard()']]]
 ];

@@ -1,3 +1,4 @@
+#pragma once
 #include "raylib.h"
 #include "lamp.h"
 #include <vector>
@@ -20,13 +21,13 @@ namespace enigma
 	class Lampboard
 	{
 	private:
-		std::vector<enigma::Lamp> lamps{};
+		std::vector<Lamp> lamps{};
 
 	public:
 		Lampboard();
 		~Lampboard();
 
-		std::vector<enigma::Lamp>& get_lamps();
+		std::vector<Lamp>& get_lamps();
 		
 		void turn_on_lamp(char);
 		void reset_lamps();

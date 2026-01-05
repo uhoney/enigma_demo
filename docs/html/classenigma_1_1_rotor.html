@@ -82,11 +82,15 @@ $(function() {
   <div class="headertitle"><div class="title">enigma::Rotor Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abd058667054a8005d0769c087be7df47" id="r_abd058667054a8005d0769c087be7df47"><td class="memItemLeft" align="right" valign="top"><a id="abd058667054a8005d0769c087be7df47" name="abd058667054a8005d0769c087be7df47"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Rotor</b> (std::string_view, char)</td></tr>
+<tr class="memdesc:abd058667054a8005d0769c087be7df47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classenigma_1_1_rotor.html" title="Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring ...">Rotor</a> object with specified wiring and turnover character. <br /></td></tr>
 <tr class="memitem:a22c7c7592613504e647ea4a43bd73caf" id="r_a22c7c7592613504e647ea4a43bd73caf"><td class="memItemLeft" align="right" valign="top"><a id="a22c7c7592613504e647ea4a43bd73caf" name="a22c7c7592613504e647ea4a43bd73caf"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>pass_through</b> (char) const</td></tr>
 <tr class="memdesc:a22c7c7592613504e647ea4a43bd73caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substitute the character at the current position index using the rotor wiring. <br /></td></tr>
@@ -126,11 +130,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>rotor_index</b> { 0 }<
 <tr class="memdesc:a012fdbdc15e65cdd2ef04153a235cb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current position index of the rotor (0-25). Used for GUI display and substitution calculations. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.</p>
-<p>Notes: the actual rotor did not have an index[0], computers do. <a class="el" href="classenigma_1_1_rotor.html">Rotor</a> always spins first, so rotor_index will always be index[n+1] before any actions. You take your character (i.e 'Z') which is on alphabet_index[25] and add rotor_index to it and take mod 26. so you get (with rotor_index 0, char 'Z') 1+25 = 26 mod 26 = 0. This is the index of char to output, which is 'E'. </p>
+<div class="textblock"><p>Notes: the actual rotor did not have an index[0], computers do. <a class="el" href="classenigma_1_1_rotor.html" title="Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring ...">Rotor</a> always spins first, so rotor_index will always be index[n+1] before any actions. You take your character (i.e 'Z') which is on alphabet_index[25] and add rotor_index to it and take mod 26. so you get (with rotor_index 0, char 'Z') 1+25 = 26 mod 26 = 0. This is the index of char to output, which is 'E'. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="rotor_8h_source.html">rotor.h</a></li>
-<li>src/<b>rotor.cpp</b></li>
+<li>src/core/<a class="el" href="rotor_8h_source.html">rotor.h</a></li>
+<li>src/core/<b>rotor.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

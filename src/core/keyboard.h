@@ -21,8 +21,8 @@ namespace enigma
 		/**
 		* @brief Vector of all keys in the keyboard
 		*/
-		enigma::Key* p_key_pressed{ nullptr };						///< curlybrace initialization is on stack
-		std::vector<enigma::Key> keys{};
+		Key* p_key_pressed{ nullptr };						///< curlybrace initialization is on stack
+		std::vector<Key> keys{};
 
 	public:
 		/**
@@ -34,7 +34,7 @@ namespace enigma
 		/**
 		 * @brief Returns the vector of all keys
 		 */
-		std::vector<enigma::Key>& get_keys();
+		std::vector<Key>& get_keys();
 
 		/**
 		* @brief Checks if a key is pressed and sets the pointer to the pressed key.
@@ -51,6 +51,6 @@ namespace enigma
 		/**
 		* @brief Returns pointer to the currently pressed key. nullptr if no key is pressed.
 		*/
-		enigma::Key* get_p_pressed_key();
+		Key* get_p_pressed_key();
 	};
 }

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Enigma demo: src/reflector.h Source File</title>
+<title>Enigma demo: src/core/reflector.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li>  </ul>
+<li class="navelem"><b>src</b></li><li class="navelem"><b>core</b></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -82,30 +82,34 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;constants.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../constants.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>enigma</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classenigma_1_1_reflector.html">   13</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">Reflector</a></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::string_view reflector_wiring{};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_function" href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">Reflector</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_function" href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">~Reflector</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_reflector.html#ac75f1180d139e7efc27e89b87e599be0">initialize_UKW</a>(std::string_view);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classenigma_1_1_reflector.html#a7b8b1bdfe2b23311190d0db208c098da">get_index_from_char</a>(<span class="keywordtype">char</span>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_reflector.html#a60c5907abccf3ead2083d302666aee7b">swap_character</a>(<span class="keywordtype">char</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view UKW_A_WIRING = <span class="stringliteral">&quot;EJMZALYXVBWFCRQUONTSPIKHGD&quot;</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view UKW_B_WIRING = <span class="stringliteral">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view UKW_C_WIRING = <span class="stringliteral">&quot;FVPJIAOYEDRZXWGCTKUQSBNMHL&quot;</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classenigma_1_1_reflector.html">   22</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">Reflector</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::string_view reflector_wiring{};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_function" href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">Reflector</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_function" href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">~Reflector</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_reflector.html#ac75f1180d139e7efc27e89b87e599be0">initialize_UKW</a>(std::string_view);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classenigma_1_1_reflector.html#a7b8b1bdfe2b23311190d0db208c098da">get_index_from_char</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_reflector.html#a60c5907abccf3ead2083d302666aee7b">swap_character</a>(<span class="keywordtype">char</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    };</div>
 </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>} <span class="comment">// namespace enigma</span></div>
-<div class="ttc" id="aclassenigma_1_1_reflector_html_a60c5907abccf3ead2083d302666aee7b"><div class="ttname"><a href="classenigma_1_1_reflector.html#a60c5907abccf3ead2083d302666aee7b">enigma::Reflector::swap_character</a></div><div class="ttdeci">char swap_character(char)</div><div class="ttdoc">Swaps the input character according to the reflector wiring.</div><div class="ttdef"><b>Definition</b> reflector.cpp:31</div></div>
-<div class="ttc" id="aclassenigma_1_1_reflector_html_a619a0d601af38849be64983cfffb0557"><div class="ttname"><a href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">enigma::Reflector::Reflector</a></div><div class="ttdeci">Reflector()</div><div class="ttdoc">Constructor initialization uses UKW_A_WIRING by default.</div><div class="ttdef"><b>Definition</b> reflector.cpp:4</div></div>
-<div class="ttc" id="aclassenigma_1_1_reflector_html_a7b8b1bdfe2b23311190d0db208c098da"><div class="ttname"><a href="classenigma_1_1_reflector.html#a7b8b1bdfe2b23311190d0db208c098da">enigma::Reflector::get_index_from_char</a></div><div class="ttdeci">int get_index_from_char(char)</div><div class="ttdoc">Gets the index of a character in the alphabet.</div><div class="ttdef"><b>Definition</b> reflector.cpp:17</div></div>
-<div class="ttc" id="aclassenigma_1_1_reflector_html_ac75f1180d139e7efc27e89b87e599be0"><div class="ttname"><a href="classenigma_1_1_reflector.html#ac75f1180d139e7efc27e89b87e599be0">enigma::Reflector::initialize_UKW</a></div><div class="ttdeci">void initialize_UKW(std::string_view)</div><div class="ttdoc">Initializes the reflector with specific wiring. Possible wirings; UKW_A, UKW_B, UKW_C.</div><div class="ttdef"><b>Definition</b> reflector.cpp:12</div></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>} <span class="comment">// namespace enigma</span></div>
+<div class="ttc" id="aclassenigma_1_1_reflector_html_a60c5907abccf3ead2083d302666aee7b"><div class="ttname"><a href="classenigma_1_1_reflector.html#a60c5907abccf3ead2083d302666aee7b">enigma::Reflector::swap_character</a></div><div class="ttdeci">char swap_character(char)</div><div class="ttdoc">Swaps the input character according to the reflector wiring.</div><div class="ttdef"><b>Definition</b> reflector.cpp:33</div></div>
+<div class="ttc" id="aclassenigma_1_1_reflector_html_a619a0d601af38849be64983cfffb0557"><div class="ttname"><a href="classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557">enigma::Reflector::Reflector</a></div><div class="ttdeci">Reflector()</div><div class="ttdoc">Constructor initialization uses UKW_A_WIRING by default.</div><div class="ttdef"><b>Definition</b> reflector.cpp:6</div></div>
+<div class="ttc" id="aclassenigma_1_1_reflector_html_a7b8b1bdfe2b23311190d0db208c098da"><div class="ttname"><a href="classenigma_1_1_reflector.html#a7b8b1bdfe2b23311190d0db208c098da">enigma::Reflector::get_index_from_char</a></div><div class="ttdeci">int get_index_from_char(char)</div><div class="ttdoc">Gets the index of a character in the alphabet.</div><div class="ttdef"><b>Definition</b> reflector.cpp:19</div></div>
+<div class="ttc" id="aclassenigma_1_1_reflector_html_ac75f1180d139e7efc27e89b87e599be0"><div class="ttname"><a href="classenigma_1_1_reflector.html#ac75f1180d139e7efc27e89b87e599be0">enigma::Reflector::initialize_UKW</a></div><div class="ttdeci">void initialize_UKW(std::string_view)</div><div class="ttdoc">Initializes the reflector with specific wiring. Possible wirings; UKW_A, UKW_B, UKW_C.</div><div class="ttdef"><b>Definition</b> reflector.cpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

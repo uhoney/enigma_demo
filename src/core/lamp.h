@@ -14,27 +14,41 @@ namespace enigma
 	inline constexpr float LAMP_PADDING{ 75.0f };         ///< Distance between lamp centers
 	/**@}*/
 
-    class Lamp
-    {
-    private:
+	class Lamp
+	{
+	private:
 		char character[2]{};
-        bool is_lit{ false };
-        Vector2 position{};
+		bool is_lit{ false };
+		Vector2 position{};
 
-    public:
-        Lamp(char, const Vector2);
+	public:
+		Lamp(char, const Vector2);
 		~Lamp();
 
-        
-        char get_label() const;
+		/**
+		* @brief Get the label character of the lamp.
+		*/
+		char get_label() const;
+		
+		/**
+		* @brief Get the text representation of the lamp's character.
+		*/
 		const char* get_text();     // for raylib DrawTextEx()
-        /**
-		* @brief Draw the lamp at its position using the provided font.
-        */
-		void draw_lamp(Font, Vector2);
 
+		/**
+		* @brief Check if the lamp is currently lit.
+		*/
 		bool get_is_lit() const;
-        void toggle_lamp();
+		
+		/**
+		* @brief Get the position of the lamp.
+		*/
+		Vector2 get_position() const;
+
+		/**
+		* @brief Toggle the lamp's lit state.
+		*/
+		void toggle_lamp();
 
     };
 }

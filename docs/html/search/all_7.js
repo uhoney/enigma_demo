@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['reflector_0',['Reflector',['../classenigma_1_1_reflector.html',1,'enigma::Reflector'],['../classenigma_1_1_reflector.html#a619a0d601af38849be64983cfffb0557',1,'enigma::Reflector::Reflector()']]],
-  ['reverse_5fpass_5fthrough_1',['reverse_pass_through',['../classenigma_1_1_rotor.html#afd9f129c520d9aae71281bbd9973ec20',1,'enigma::Rotor']]],
-  ['rotor_2',['Rotor',['../classenigma_1_1_rotor.html',1,'enigma']]],
-  ['rotor_5findex_3',['rotor_index',['../classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d',1,'enigma::Rotor']]],
-  ['rotor_5fwiring_4',['rotor_wiring',['../classenigma_1_1_rotor.html#a5aea0c791e24ceefb911c45214925158',1,'enigma::Rotor']]]
+  ['set_5fsize_5fmultiplier_0',['set_size_multiplier',['../classenigma_1_1_key.html#ac27c6c2f99e05e090ac340b3cacdfa9d',1,'enigma::Key']]],
+  ['size_5fmultiplier_1',['size_multiplier',['../classenigma_1_1_key.html#ac07125afcc94dc966972e7782d007f5a',1,'enigma::Key']]],
+  ['swap_5fcharacter_2',['swap_character',['../classenigma_1_1_reflector.html#a60c5907abccf3ead2083d302666aee7b',1,'enigma::Reflector']]]
 ];

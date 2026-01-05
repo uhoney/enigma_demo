@@ -21,15 +21,15 @@ int main(void)
 	Font font{ ui::load_font() };
 
 	enigma::KeyBoard keyboard{};
+	enigma::Lampboard lampboard{};
+	enigma::Reflector reflector{};
 	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
 	enigma::Rotor rotor_2{ enigma::ROTOR_II_WIRING , enigma::ROTOR_II_TURNOVER };
 	enigma::Rotor rotor_3{ enigma::ROTOR_III_WIRING , enigma::ROTOR_III_TURNOVER };
-	enigma::Reflector reflector{};
-	enigma::Lampboard lampboard{};
-	
+		
 	// END INITIALIZATION -------------------------------------------------------------------
 
-	//	Main game loop
+	//	Main program loop
 	while (!WindowShouldClose()) // Detect window close button or ESC key
 	{
 		// UPDATE --------------------------------------------------------------------------
@@ -64,20 +64,11 @@ int main(void)
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
 
-		// BACKGROUND
+		// Draw my own stuff
 		ui::draw_background();
-		
-		// LAMPBOARD
-		for (auto& lamp : lampboard.get_lamps())
-		{
-			lamp.draw_lamp(font, ui::FONT_OFFSET);
-		}
+		ui::draw_keyboard(font, ui::FONT_OFFSET, keyboard);
+		ui::draw_lampboard(font, ui::FONT_OFFSET, lampboard);
 
-		//	DRAW KEYBOARD
-		for (auto& key : keyboard.get_keys())
-		{
-			key.draw_key(font, ui::FONT_OFFSET);
-		}
 		EndDrawing();
 		// END DRAW ------------------------------------------------------------------------
 	}
@@ -85,6 +76,7 @@ int main(void)
 	//--------------------------------------------------------------------------------------
 	// Unload, delete, derefeence my own stuff
 	UnloadFont(font);
+	// NOTE: 'pressed_key' pointer in keyboard class is curlybrace init (on stack)
 	CloseWindow(); // Close window and OpenGL context
 	//--------------------------------------------------------------------------------------
 

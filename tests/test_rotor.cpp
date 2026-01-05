@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 
-#include "../src/rotor.h"
+#include "../src/core/rotor.h"
 #include <iostream>
 #include <string_view>
 
