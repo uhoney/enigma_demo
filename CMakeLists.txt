@@ -49,8 +49,11 @@ add_library(enigma_libs STATIC
     "src/core/rotor.cpp"
     "src/core/lampboard.cpp"
     "src/core/lamp.cpp"
+    "src/core/controller.cpp"
+    "src/core/rotorwheel.cpp"
     "src/ui/fonts.cpp"
     "src/ui/layout.cpp"
+    
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)
@@ -82,11 +85,12 @@ set_target_properties(enigma_demo PROPERTIES
 
 # Testit
 add_executable(tests_enigma
-    tests/test_reflector.cpp
-    tests/test_keyboard.cpp
-    tests/test_rotor.cpp
     #tests/test_lampboard.cpp       # Can not really test visual components
-    #tests/test_lamp.cpp            # Can not really test visual components
+    #tests/test_lamp.cpp            # Can not really test visual components    
+    #tests/test_reflector.cpp
+    #tests/test_keyboard.cpp
+    #tests/test_rotor.cpp
+    tests/test_rotorwheel.cpp
 )
 
 target_link_libraries(tests_enigma PRIVATE 

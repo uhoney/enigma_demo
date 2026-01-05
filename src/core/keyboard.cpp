@@ -43,7 +43,7 @@ namespace enigma
 			{
 				if (CheckCollisionPointCircle(mouse_position, key.get_position(), KEY_OUTER_RING))
 				{
-					// DEBUG: TraceLog(LOG_INFO, "Key %c pressed!", key.get_label());
+					TraceLog(LOG_DEBUG, "Key %c pressed!", key.get_label());
 					this->p_key_pressed = &key;
 					this->p_key_pressed->set_size_multiplier(0.8f);
 					return true;

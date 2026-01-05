@@ -14,8 +14,10 @@ namespace enigma
 
 	char Rotor::pass_through(char input_character) const
 	{
+		TraceLog(LOG_DEBUG, "Rotor pass through called with input character: %c", input_character);
 		int index_of_input = this->get_index_of_char(ALPHABETS, input_character);
 		int index_of_output = (index_of_input + this->rotor_index) % 26;
+		TraceLog(LOG_DEBUG, "Rotor output: %c", this->rotor_wiring[index_of_output]);
 
 		return this->rotor_wiring[index_of_output];
 	}
