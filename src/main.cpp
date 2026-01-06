@@ -6,7 +6,7 @@
 #include "constants.h"
 #include <memory>
 
-// NOTE: Plan is to keep main as clean.
+// NOTE: Plan is to keep main "clean"
 
 int main(void)
 {

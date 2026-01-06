@@ -50,10 +50,9 @@ add_library(enigma_libs STATIC
     "src/core/lampboard.cpp"
     "src/core/lamp.cpp"
     "src/core/controller.cpp"
-    "src/core/rotorwheel.cpp"
+    "src/core/log.cpp"
     "src/ui/fonts.cpp"
     "src/ui/layout.cpp"
-    
 )
 
 target_link_libraries(enigma_libs PUBLIC raylib)
@@ -90,7 +89,7 @@ add_executable(tests_enigma
     #tests/test_reflector.cpp
     #tests/test_keyboard.cpp
     #tests/test_rotor.cpp
-    tests/test_rotorwheel.cpp
+    tests/test_controller.cpp
 )
 
 target_link_libraries(tests_enigma PRIVATE 

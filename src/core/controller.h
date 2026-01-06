@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include "log.h"
 #include "keyboard.h"
 #include "key.h"
 #include "rotor.h"
@@ -13,14 +14,16 @@ class Controller
 public:
 	enigma::KeyBoard keyboard{};
 	enigma::Lampboard lampboard{};
-	//std::vector<enigma::Rotor> rotors{};
+	std::vector<enigma::Rotor> rotors{};
 	enigma::Reflector reflector{};
-	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING, enigma::ROTOR_I_TURNOVER };
 
 	Controller();
 	~Controller();
 
 	void handle_key_press();
-	
+
+	void check_rotor_turnovers();
+
+	void pass_through_rotors();
 
 };

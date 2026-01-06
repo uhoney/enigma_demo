@@ -14,20 +14,20 @@ namespace enigma
 
 	char Rotor::pass_through(char input_character) const
 	{
-		TraceLog(LOG_DEBUG, "Rotor pass through called with input character: %c", input_character);
+		enigma::Log::debug("Rotor pass through called with input character: %c", input_character);
 		int index_of_input = this->get_index_of_char(ALPHABETS, input_character);
 		int index_of_output = (index_of_input + this->rotor_index) % 26;
-		TraceLog(LOG_DEBUG, "Rotor output: %c", this->rotor_wiring[index_of_output]);
+		enigma::Log::debug("Rotor output: %c", this->rotor_wiring[index_of_output]);
 
 		return this->rotor_wiring[index_of_output];
 	}
 
 	char Rotor::reverse_pass_through(char input_character) const
 	{
-		TraceLog(LOG_DEBUG, "Rotor reverse pass through called with input character: %c", input_character);
+		enigma::Log::debug("Rotor reverse pass through called with input character: %c", input_character);
 		int index_of_input = this->get_index_of_char(this->get_wiring(), input_character);
 		int index_of_output = (index_of_input - this->rotor_index + 26) % 26;
-		TraceLog(LOG_DEBUG, "Rotor reverse output: %c", enigma::ALPHABETS[index_of_output]);
+		enigma::Log::debug("Rotor reverse output: %c", enigma::ALPHABETS[index_of_output]);
 
 		return enigma::ALPHABETS[index_of_output];
 	}
@@ -37,7 +37,7 @@ namespace enigma
 		if (new_index < 0 || new_index > 25)
 		{
 			// FIXME: Proper error handling missing
-			std::cerr << "Error: Rotor index out of bounds. Must be between 0 and 25.\n";
+			enigma::Log::error("Error: Rotor index out of bounds. Must be between 0 and 25.");
 			this->rotor_index = 0;
 			return;
 		}
@@ -55,7 +55,7 @@ namespace enigma
 		{
 			this->rotor_index = 0;
 		}
-		TraceLog(LOG_DEBUG, "Rotor turned, now index is: %d", this->rotor_index);
+		enigma::Log::debug("Rotor turned, now index is: %d", this->rotor_index);
 	}
 
 	void Rotor::turn_back_rotor()
@@ -68,7 +68,7 @@ namespace enigma
 		{
 			this->rotor_index = 25;
 		}
-		TraceLog(LOG_DEBUG, "Rotor turned back, now index is: %d", this->rotor_index);
+		enigma::Log::debug("Rotor turned back, now index is: %d", this->rotor_index);
 	}
 
 	int Rotor::get_rotor_index() const

@@ -51,6 +51,6 @@ namespace enigma
 		/**
 		* @brief Returns pointer to the currently pressed key. nullptr if no key is pressed.
 		*/
-		Key* get_p_pressed_key();
+		Key* get_pressed_key();
 	};
 }

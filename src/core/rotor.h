@@ -1,5 +1,6 @@
 #pragma once
 #include <string_view>
+#include "log.h"
 #include <array>
 #include "../constants.h"
 

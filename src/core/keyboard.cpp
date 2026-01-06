@@ -64,7 +64,7 @@ namespace enigma
 		return false;
 	}
 
-	Key* KeyBoard::get_p_pressed_key()
+	Key* KeyBoard::get_pressed_key()
 	{
 		return this->p_key_pressed;
 	}
