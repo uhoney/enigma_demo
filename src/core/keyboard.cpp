@@ -11,13 +11,13 @@ namespace enigma
 		{
 			if (character == 'A')
 			{
-				temp_x = KEYBOARD_POSITION_X + 25.0f;
-				temp_y = KEYBOARD_POSITION_Y + 75.0f;
+				temp_x = KEYBOARD_POSITION_X + ROW_OFFSET_H;
+				temp_y = KEYBOARD_POSITION_Y + ROW_OFFSET_V;
 			}
 			else if (character == 'P')
 			{
 				temp_x = KEYBOARD_POSITION_X;
-				temp_y += 75.0f;
+				temp_y += ROW_OFFSET_V;
 			}
 
 			this->keys.emplace_back(character, Vector2{ temp_x, temp_y });

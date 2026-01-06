@@ -8,36 +8,36 @@ namespace ui
 		DrawRectangleRec({ CASE_INSIDE.x, CASE_INSIDE.y, CASE_INSIDE.z, CASE_INSIDE.w }, DARKGRAY);
 	}
 
-	void draw_keyboard(Font font, Vector2 font_offset, enigma::KeyBoard keyboard)
+	void draw_keyboard(Font font, enigma::KeyBoard keyboard)
 	{
 		for (auto& key : keyboard.get_keys())
 		{
-			draw_key(font, font_offset, key);
+			draw_key(font, key);
 		}
 	}
 
-	void draw_key(Font font, Vector2 font_offset, enigma::Key key)
+	void draw_key(Font font, enigma::Key key)
 	{
 		DrawCircleV(key.get_position(), enigma::KEY_OUTER_RING, LIGHTGRAY);
 		DrawCircleV(key.get_position(), enigma::KEY_INNER_RING, BLACK);
 		DrawTextEx(
 			font,
 			key.get_text(),
-			{ key.get_position().x - (font_offset.x), key.get_position().y - (font_offset.y) },
-			40.0f,
+			{ key.get_position().x - enigma::KEY_FONT_OFFSET.x, key.get_position().y - enigma::KEY_FONT_OFFSET.y },
+			enigma::KEY_FONT_SIZE,
 			0.0f,
 			RAYWHITE);
 	}
 
-	void draw_lampboard(Font font, Vector2 font_offset, enigma::Lampboard lampboard)
+	void draw_lampboard(Font font, enigma::Lampboard lampboard)
 	{
 		for (auto& lamp : lampboard.get_lamps())
 		{
-			draw_lamp(font, font_offset, lamp);
+			draw_lamp(font, lamp);
 		}
 	}
 
-	void draw_lamp(Font font, Vector2 font_offset, enigma::Lamp lamp)
+	void draw_lamp(Font font, enigma::Lamp lamp)
 	{
 		if (lamp.get_is_lit())
 		{
@@ -45,8 +45,8 @@ namespace ui
 			DrawTextEx(
 				font,
 				lamp.get_text(),
-				{ lamp.get_position().x - font_offset.x, lamp.get_position().y - font_offset.y },
-				40.0f,
+				{ lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },
+				enigma::LAMP_FONT_SIZE,
 				0.0f,
 				BLACK);
 
@@ -57,8 +57,8 @@ namespace ui
 			DrawTextEx(
 				font,
 				lamp.get_text(),
-				{ lamp.get_position().x - font_offset.x, lamp.get_position().y - font_offset.y },
-				40.0f,
+				{ lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },
+				enigma::LAMP_FONT_SIZE,
 				0.0f,
 				GRAY);
 		}

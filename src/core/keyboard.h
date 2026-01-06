@@ -11,7 +11,7 @@ namespace enigma
 	* @name Keyboard constants
 	*@{
 	*/
-	inline constexpr float KEYBOARD_POSITION_X{ 250.0f };			///< Starting x position
+	inline constexpr float KEYBOARD_POSITION_X{ 300.0f };			///< Starting x position
 	inline constexpr float KEYBOARD_POSITION_Y{ 400.0f };			///< Starting y position
 	/**@}*/
 

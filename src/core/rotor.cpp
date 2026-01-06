@@ -24,8 +24,10 @@ namespace enigma
 
 	char Rotor::reverse_pass_through(char input_character) const
 	{
+		TraceLog(LOG_DEBUG, "Rotor reverse pass through called with input character: %c", input_character);
 		int index_of_input = this->get_index_of_char(this->get_wiring(), input_character);
 		int index_of_output = (index_of_input - this->rotor_index + 26) % 26;
+		TraceLog(LOG_DEBUG, "Rotor reverse output: %c", enigma::ALPHABETS[index_of_output]);
 
 		return enigma::ALPHABETS[index_of_output];
 	}
@@ -53,6 +55,7 @@ namespace enigma
 		{
 			this->rotor_index = 0;
 		}
+		TraceLog(LOG_DEBUG, "Rotor turned, now index is: %d", this->rotor_index);
 	}
 
 	void Rotor::turn_back_rotor()
@@ -65,6 +68,7 @@ namespace enigma
 		{
 			this->rotor_index = 25;
 		}
+		TraceLog(LOG_DEBUG, "Rotor turned back, now index is: %d", this->rotor_index);
 	}
 
 	int Rotor::get_rotor_index() const

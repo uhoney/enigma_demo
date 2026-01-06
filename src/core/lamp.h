@@ -12,6 +12,8 @@ namespace enigma
 	 */
 	inline constexpr float LAMP_RADIUS{ 30.0f };          ///< Lamp radius
 	inline constexpr float LAMP_PADDING{ 75.0f };         ///< Distance between lamp centers
+	inline constexpr float LAMP_FONT_SIZE{ 40.0f };               ///< Font size for lamp labels
+	inline constexpr Vector2 LAMP_FONT_OFFSET{ 10.0f, 20.0f };   ///< Font offset to center text in lamp
 	/**@}*/
 
 	class Lamp

@@ -32,6 +32,8 @@ namespace enigma
 
 	char Reflector::swap_character(char character)
 	{
+		TraceLog(LOG_DEBUG, "Reflector input character: %c", character);
+		TraceLog(LOG_DEBUG, "Reflector output character: %c", this->reflector_wiring[get_index_from_char(character)]);
 		return this->reflector_wiring[get_index_from_char(character)];
 	}
 }

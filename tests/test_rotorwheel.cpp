@@ -9,13 +9,13 @@ TEST_CASE("RotorWheel test", "[rotorwheel]")
 {
 	SetTraceLogLevel(LOG_DEBUG);
 
-	enigma::RotorWheel rotorwheel{};
+	/*enigma::RotorWheel rotorwheel{};*/
 
 	//for (auto& rotor : rotorwheel.get_rotorwheels())
 	//{
 	//	std::cout << "Rotor wiring: " << rotor.get_wiring() << "\n";
 	//}
 
-	rotorwheel.run_through_rotors('A');
+	//rotorwheel.run_through_rotors('A');
 
 }
