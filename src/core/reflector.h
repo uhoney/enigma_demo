@@ -1,4 +1,5 @@
 #pragma once
+#include "log.h"
 #include <array>
 #include <string_view>
 #include <algorithm>
@@ -22,7 +23,7 @@ namespace enigma
 	class Reflector
 	{
 	private:
-		std::string_view reflector_wiring{};
+		std::string wiring{};
 
 	public:
 		/**
@@ -41,11 +42,13 @@ namespace enigma
 		/**
 		 * @brief Gets the index of a character in the alphabet.
 		 */
-		int get_index_from_char(char);
+		int get_index_from_char(char) const;
 		/**
 		 * @brief Swaps the input character according to the reflector wiring.
 		 * @param character The input character to be swapped.
 		 */
 		char swap_character(char);
+
+		std::string get_wiring();
 	};
 } // namespace enigma

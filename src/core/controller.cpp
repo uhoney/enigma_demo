@@ -12,22 +12,43 @@ Controller::~Controller()
 {
 }
 
-void Controller::handle_key_press()
+void Controller::handle_key_press_event()
 {
 	Vector2 mouse_position = GetMousePosition();
 
 	// CHECK IF KEY IS PRESSED => key pointer is set
 	if (this->keyboard.isKeyPressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 	{
-		char temp_char = this->keyboard.get_pressed_key()->get_label();
-		
-		this->check_rotor_turnovers();
+		//// Get the pressed key character
+		//char temp_char{ this->keyboard.get_pressed_key()->get_label()};
 
-		//unnamed_char = rotor.pass_through(unnamed_char);
-		//unnamed_char = reflector.swap_character(unnamed_char);
-		//unnamed_char = rotor.reverse_pass_through(unnamed_char);
+		//// First rotor always turns on key press
+		//this->rotors.at(0).turn_rotor();
 
-		lampboard.turn_on_lamp(temp_char);
+		//// check & turn rest of rotors if needed
+		//this->check_rotor_turnovers();
+
+		//// run through rotors 1,2,3
+		//for (auto& rotor : this->rotors)
+		//{
+		//	temp_char = rotor.pass_through(temp_char);
+		//}
+
+		//// swap and change direction
+		//temp_char = this->reflector.swap_character(temp_char);
+
+		//// run through rotors in reverse
+		//for (auto& rotor = this->rotors.rbegin(); rotor != this->rotors.rend(); ++rotor)
+		//{
+		//	temp_char = rotor->reverse_pass_through(temp_char);
+		//}
+
+		//enigma::Log::debug("output: %c", temp_char);
+
+		//// turn on lamp for output char
+		//this->lampboard.turn_on_lamp(temp_char);
+
+
 	}
 
 	if (this->keyboard.isKeyReleased(IsMouseButtonReleased(MOUSE_LEFT_BUTTON)))
@@ -36,36 +57,68 @@ void Controller::handle_key_press()
 	}
 }
 
-void Controller::check_rotor_turnovers()
+char Controller::debug_handle_key_press_event(char& input_char)
 {
-	this->rotors.at(0).turn_rotor();		// First one _always_ turns
+	char temp_char{ input_char };
 
+	// DEBUG -------------------------------------------
+	enigma::Log::debug("Before checks:");
+	enigma::Log::debug("reflector: %s", this->reflector.get_wiring().c_str());
+	for (auto& i : this->rotors)
+	{
+		enigma::Log::debug("Rotor wire: %s, rotor index: %d, rotor turnover: %d", i.get_wiring().c_str(), i.get_rotor_index(), i.get_turnover_index());
+	}
+	// -------------------------------------------------
+
+
+	// check & turn rest of rotors if needed
+	this->handle_rotor_turnovers();
+
+	// DEBUG -------------------------------------------
+	enigma::Log::debug("After checks and ALL rolls");
+	for (auto& i : this->rotors)
+	{
+		enigma::Log::debug("Rotor wire: %s, rotor index: %d, rotor turnover: %d", i.get_wiring().c_str(), i.get_rotor_index(), i.get_turnover_index());
+	}
+	// -------------------------------------------------
+
+
+	// run through rotors 1,2,3
 	for (auto& rotor : this->rotors)
 	{
-		// Check if rotor is at turnover position
-		enigma::Log::debug("Checking rotor %d for turnover. Current char: %c, Turnover char: %c",
-			&rotor - &this->rotors.at(0)+1,
-			rotor.get_wiring().at(rotor.get_rotor_index()),
-			rotor.get_turnover());
-		if (rotor.get_wiring().at(rotor.get_rotor_index()) == rotor.get_turnover())
-		{
-			enigma::Log::debug("Rotor %d is at turnover position. Turning next rotor.",
-				&rotor - &this->rotors.at(0)+1);
-			// &rotor is just a memory address, its pointer arithmetic
-			int next_rotor_index = &rotor - &this->rotors.at(0)+1;
-			
-			if (next_rotor_index < this->rotors.size())
-			{
-				this->rotors.at(next_rotor_index).turn_rotor();
-				enigma::Log::debug("Rotor %d turned to index %d.",
-					next_rotor_index + 1,
-					this->rotors.at(next_rotor_index).get_rotor_index());
-			}
-		}
+		temp_char = rotor.pass_through(temp_char);
+	}
+
+	// swap and change direction
+	temp_char = this->reflector.swap_character(temp_char);
+
+	// run through rotors in reverse
+	for (auto& rotor = this->rotors.rbegin(); rotor != this->rotors.rend(); ++rotor)
+	{
+		temp_char = rotor->reverse_pass_through(temp_char);
+	}
+
+	enigma::Log::debug("output: %c", temp_char);
+
+	return temp_char;
+}
+
+void Controller::handle_rotor_turnovers()
+{
+	int temp0 = this->rotors.at(0).get_rotor_index();
+	int temp1 = this->rotors.at(1).get_rotor_index();
+
+	// First rotor ALWAYS turns
+	this->rotors.at(0).turn_rotor();
+
+	if (this->rotors.at(0).get_turnover_index() == temp0)
+	{
+		this->rotors.at(1).turn_rotor();
+	}
+	
+	if (this->rotors.at(1).get_turnover_index() == temp1 &&
+		(this->rotors.at(0).get_turnover_index() == temp0))
+	{
+		this->rotors.at(2).turn_rotor();
 	}
 }
-
-void Controller::pass_through_rotors()
-{
-}
-

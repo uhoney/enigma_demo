@@ -1,10 +1,11 @@
-#include "raylib.h"
 #include "rotor.h"
+#include "raylib.h"
 #include <iostream>
 
 namespace enigma
 {
-	Rotor::Rotor(std::string_view wiring, char turnover) : turnover{ turnover }, rotor_wiring{ wiring }
+	Rotor::Rotor(std::string_view wiring, char turnover) :
+		wiring{ wiring }, turnover{ turnover }
 	{
 	}
 
@@ -15,11 +16,11 @@ namespace enigma
 	char Rotor::pass_through(char input_character) const
 	{
 		enigma::Log::debug("Rotor pass through called with input character: %c", input_character);
-		int index_of_input = this->get_index_of_char(ALPHABETS, input_character);
+		int index_of_input = this->get_index_of_char(enigma::ALPHABETS, input_character);
 		int index_of_output = (index_of_input + this->rotor_index) % 26;
-		enigma::Log::debug("Rotor output: %c", this->rotor_wiring[index_of_output]);
+		enigma::Log::debug("Rotor output: %c", this->wiring[index_of_output]);
 
-		return this->rotor_wiring[index_of_output];
+		return this->wiring[index_of_output];
 	}
 
 	char Rotor::reverse_pass_through(char input_character) const
@@ -32,7 +33,7 @@ namespace enigma
 		return enigma::ALPHABETS[index_of_output];
 	}
 
-	void Rotor::set_position_index(int new_index)
+	void Rotor::set_rotor_index(int new_index)
 	{
 		if (new_index < 0 || new_index > 25)
 		{
@@ -55,7 +56,6 @@ namespace enigma
 		{
 			this->rotor_index = 0;
 		}
-		enigma::Log::debug("Rotor turned, now index is: %d", this->rotor_index);
 	}
 
 	void Rotor::turn_back_rotor()
@@ -68,7 +68,6 @@ namespace enigma
 		{
 			this->rotor_index = 25;
 		}
-		enigma::Log::debug("Rotor turned back, now index is: %d", this->rotor_index);
 	}
 
 	int Rotor::get_rotor_index() const
@@ -79,7 +78,7 @@ namespace enigma
 	int Rotor::get_index_of_char(std::string_view stringview, char character) const
 	{
 		int character_position = stringview.find(character);
-		if (character_position != std::string_view::npos)
+		if (character_position != std::string::npos)
 		{
 			return character_position;
 		}
@@ -90,13 +89,18 @@ namespace enigma
 
 	}
 
-	char Rotor::get_turnover() const
+	char Rotor::get_turnover_char() const
 	{
 		return this->turnover;
 	}
 
-	std::string_view Rotor::get_wiring() const
+	int Rotor::get_turnover_index() const
 	{
-		return this->rotor_wiring;
+		return this->get_index_of_char(this->wiring, this->turnover);
+	}
+
+	std::string Rotor::get_wiring() const
+	{
+		return this->wiring;
 	}
 }

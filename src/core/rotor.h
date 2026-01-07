@@ -1,5 +1,6 @@
 #pragma once
 #include <string_view>
+#include <string>
 #include "log.h"
 #include <array>
 #include "../constants.h"
@@ -34,11 +35,11 @@ namespace enigma
 		/**
 		 * @brief The wiring configuration of the rotor as a string view.
 		 */
-		std::string_view rotor_wiring{};
+		std::string wiring{};
 		/**
 		 * @brief The turnover character that indicates when the next rotor unlocks for rotation.
-		 */
-		char turnover{};
+		*/
+		char turnover{ };
 		/**
 		 * @brief The current position index of the rotor (0-25). Used for GUI display and substitution calculations.
 		 */
@@ -61,8 +62,8 @@ namespace enigma
 		 */
 		char reverse_pass_through(char) const;
 
-		void set_position_index(int); // TODO: DEBUG ONLY, delete later
-				
+		void set_rotor_index(int); // TODO: DEBUG ONLY, delete later
+
 		/**
 		 * @brief Increment the position index of the rotor, wrapping around to 0 after 25.
 		 * Keeps this specifically separate. You do not want to change index when passing through.
@@ -74,7 +75,11 @@ namespace enigma
 		 */
 		void turn_back_rotor();
 
+		/**
+		* £@brief Get the current position index of the rotor.
+		*/
 		int get_rotor_index() const;
+
 		/**
 		 * @brief Get position of char in selected std::string_view
 		 * Basically either ALPHABETS or ROTOR_X_WIRING
@@ -84,11 +89,16 @@ namespace enigma
 		/**
 		 * @brief Get the turnover character of the rotor.
 		 */
-		char get_turnover() const;
+		char get_turnover_char() const;
+
+		/**
+		/* @brief Get the position index of the turnover character.
+		*/
+		int get_turnover_index() const;
 
 		/**
 		 * @brief Get the wiring of the rotor.
 		 */
-		std::string_view get_wiring() const;
+		std::string get_wiring() const;
 	};
 }

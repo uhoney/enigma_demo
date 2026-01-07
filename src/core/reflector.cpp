@@ -1,9 +1,10 @@
 #include "reflector.h"
+#include "reflector.h"
 #include <array>
 
 namespace enigma
 {
-	Reflector::Reflector() : reflector_wiring{ UKW_A_WIRING }
+	Reflector::Reflector() : wiring{ UKW_A_WIRING }
 	{
 	}
 
@@ -13,27 +14,31 @@ namespace enigma
 
 	void Reflector::initialize_UKW(std::string_view wiring)
 	{
-		this->reflector_wiring = wiring;
+		this->wiring = wiring;
 	}
 
-	int Reflector::get_index_from_char(char character_input)
+	int Reflector::get_index_from_char(char character_input) const
 	{
-		auto index = std::find(ALPHABETS.begin(), ALPHABETS.end(), character_input);
+		int character_position = enigma::ALPHABETS.find(character_input);
+		if (character_position != std::string::npos)
+		{
+			return character_position;
+		}
 
-		if (index != ALPHABETS.end())
-		{
-			return static_cast<int>(std::distance(ALPHABETS.begin(), index));
-		}
-		else
-		{
-			return 0;	// default to 0 to shut up compiler warning
-		}
+		// TODO: Figure out error handling later, now shut up compiler. 
+		// User can not input chars anyway, but just in case.
+		return -1;
 	}
 
 	char Reflector::swap_character(char character)
 	{
-		TraceLog(LOG_DEBUG, "Reflector input character: %c", character);
-		TraceLog(LOG_DEBUG, "Reflector output character: %c", this->reflector_wiring[get_index_from_char(character)]);
-		return this->reflector_wiring[get_index_from_char(character)];
+		enigma::Log::debug("Reflector called with input character: %c", character);
+		enigma::Log::debug("Reflector output: %c", this->wiring[get_index_from_char(character)]);
+		return this->wiring[get_index_from_char(character)];
+	}
+
+	std::string Reflector::get_wiring()
+	{
+		return this->wiring;
 	}
 }

@@ -20,10 +20,21 @@ public:
 	Controller();
 	~Controller();
 
-	void handle_key_press();
+	/**
+	* @brief Handles a key press event; runs the pressed key character through rotators 1-2-3, reflector, and back through rotors 3-2-1, turning rotors as needed.
+	* Unit tests are done separately for this function. Mouse simulation is painful and not worth the effort to change methods JUST for unit tests.
+	* This method is just a copy of the debug version with mouse input handling and void type.
+	*/
+	void handle_key_press_event();
 
-	void check_rotor_turnovers();
+	/**
+	* @brief DEBUG: @brief Handles a key press event; runs the pressed key character through rotators 1-2-3, reflector, and back through rotors 3-2-1, turning rotors as needed.
+	*/
+	char debug_handle_key_press_event(char&);
 
-	void pass_through_rotors();
-
+	/**
+	* @brief Checks the rotor positions for turnovers and turs them rotors if needed.
+	* Also handles turning first rotor on every key press.
+	*/
+	void handle_rotor_turnovers();
 };
