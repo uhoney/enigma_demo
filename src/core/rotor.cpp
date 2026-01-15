@@ -83,8 +83,7 @@ namespace enigma
 			return character_position;
 		}
 
-		// TODO: Figure out error handling later, now shut up compiler. 
-		// User can not input chars anyway, but just in case.
+		// TODO: Figure out error handling later, now shut up compiler.  User can not input chars anyway, but just in case.
 		return -1;
 
 	}

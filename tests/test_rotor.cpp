@@ -7,7 +7,7 @@
 TEST_CASE("Rotor test", "[rotor]")
 {
 	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
-	REQUIRE(rotor.get_turnover() == 'Q');
+	REQUIRE(rotor.get_turnover_char() == 'Q');
 
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'A') == 0);
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'Z') == 25);
@@ -35,7 +35,7 @@ TEST_CASE("Rotor test", "[rotor]")
 	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('M')) == 'M');
 	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('Z')) == 'Z');
 
-	rotor.set_position_index(25);
+	rotor.set_rotor_index(25);
 	REQUIRE(rotor.pass_through('A') != 'A');
 	REQUIRE(rotor.pass_through('Z') != 'Z');
 	REQUIRE(rotor.pass_through('A') == 'J');

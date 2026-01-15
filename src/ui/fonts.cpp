@@ -4,7 +4,7 @@ namespace ui
 {
 	Font load_font()
 	{
-		Font font{ LoadFontEx(ui::FONT_PATH, ui::FONT_SIZE, NULL, ui::FONT_CODEPOINTS_COUNT) };
+		Font font{ LoadFontEx(ui::FONT_PATH, ui::FONT_SIZE, nullptr, ui::FONT_CODEPOINTS_COUNT) };
 		
 		if (!IsFontValid(font))
 		{

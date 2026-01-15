@@ -27,7 +27,7 @@ int main(void)
 		// UPDATE --------------------------------------------------------------------------
 		
 		// Check if key is pressed/released and handle accordingly
-		controller.handle_key_press();
+		controller.handle_key_press_event();
 
 
 		// END UPDATE-----------------------------------------------------------------------
