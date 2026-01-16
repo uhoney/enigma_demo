@@ -8,7 +8,7 @@ namespace ui
 		DrawRectangleRec({ CASE_INSIDE.x, CASE_INSIDE.y, CASE_INSIDE.z, CASE_INSIDE.w }, DARKGRAY);
 	}
 
-	void draw_keyboard(Font font, enigma::KeyBoard keyboard)
+	void draw_keyboard(Font font, enigma::Keyboard keyboard)
 	{
 		for (auto& key : keyboard.get_keys())
 		{

@@ -9,10 +9,15 @@
 #include "../ui/layout.h"
 #include <vector>
 
+/**
+* @brief Controller manages the interaction between the keyboard, rotors, reflector, and lampboard.
+* @class Controller
+* Creates default keyboard, lampboard, 3 rotors, and reflector.
+*/
 class Controller
 {
 public:
-	enigma::KeyBoard keyboard{};
+	enigma::Keyboard keyboard{};
 	enigma::Lampboard lampboard{};
 	std::vector<enigma::Rotor> rotors{};
 	enigma::Reflector reflector{};

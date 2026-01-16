@@ -1,5 +1,4 @@
 #include "reflector.h"
-#include "reflector.h"
 #include <array>
 
 namespace enigma

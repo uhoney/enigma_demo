@@ -8,6 +8,8 @@ The Enigma machine was an analog electro-mechanical device used for the encrypti
 Basically you press a key on the keyboard, and a light bulb turns on. The letter on the light bulb is the encrypted version of the letter you pressed.
 You decipher the message by typing the encrypted letters on the keyboard, and the machine lights up the original letters.
 
+Again, this was an analog machine. You literally had to cipher letters one by one. With a lot of patience. Sure, simulators _could_ keep track of cipher letters automatically for you, but the original machine did not have that capability.
+
 ## Rough overview how the machine works
 A simplified explanation of the machine would be like this:
 You press a key on the keyboard, a rotor spins and the current starts flowing.

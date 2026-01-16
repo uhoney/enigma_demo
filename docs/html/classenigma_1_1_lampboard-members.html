@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classenigma_1_1_lampboard.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,12 +87,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>enigma</b></li><li class="navelem"><a href="classenigma_1_1_lampboard.html">Lampboard</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">enigma::Lampboard Member List</div></div>
 </div><!--header-->
@@ -81,17 +94,20 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>get_lamps</b>() (defined in <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Lampboard</b>() (defined in <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>lamps</b> (defined in <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>reset_lamps</b>() (defined in <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>turn_on_lamp</b>(char) (defined in <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Lampboard</b>() (defined in <a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html#a6afaf7687ea290db8e7ddca273011f1c">get_lamps</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html#a10d80ef4b5d14ada9e24daecb22a9140">Lampboard</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html#a5d9d613a795dfbbc7f775bacf9a81302">lamps</a></td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html#a98202a51b8c03aefa41a60e204eeaee6">reset_lamps</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html#a734dedcd3e9658392c6e0751de722ee7">turn_on_lamp</a>(char)</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html#ac79476d210035dcc2a76fa028699dfee">~Lampboard</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

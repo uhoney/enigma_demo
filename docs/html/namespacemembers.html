@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,12 +45,26 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('namespacemembers.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -71,15 +88,94 @@ $(function() {
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all namespace members with links to the namespace documentation for each member:</div><ul>
-<li>create_reflector_map()&#160;:&#160;<a class="el" href="namespacehf.html#a23ed17833f5f061e35219e24331af4ab">hf</a></li>
-<li>reflector()&#160;:&#160;<a class="el" href="namespacehf.html#a23b8687cf7e45372c8ce847323d2dd6c">hf</a></li>
+<div class="textblock">Here is a list of all namespace members with links to the namespace documentation for each member:</div>
+
+<h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
+<li>ALPHABETS&#160;:&#160;<a class="el" href="namespaceenigma.html#a39c2c0108c63400770efd1ea9aa2f0c2">enigma</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>CASE_INSIDE&#160;:&#160;<a class="el" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">ui</a></li>
+<li>CASE_OUTLINE&#160;:&#160;<a class="el" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">ui</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>draw_background()&#160;:&#160;<a class="el" href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">ui</a></li>
+<li>draw_key()&#160;:&#160;<a class="el" href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">ui</a></li>
+<li>draw_keyboard()&#160;:&#160;<a class="el" href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">ui</a></li>
+<li>draw_lamp()&#160;:&#160;<a class="el" href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">ui</a></li>
+<li>draw_lampboard()&#160;:&#160;<a class="el" href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">ui</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>ENIGMA_KEYBOARD_CHARACTERS&#160;:&#160;<a class="el" href="namespaceenigma.html#a75d3f21a58d3053983ec2423e65879b9">enigma</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>FONT_CODEPOINTS_COUNT&#160;:&#160;<a class="el" href="namespaceui.html#aafa20fc0c9c7525ab148a20a59dbed5f">ui</a></li>
+<li>FONT_PATH&#160;:&#160;<a class="el" href="namespaceui.html#a6d4c5f98d96cbd331a3687da05345530">ui</a></li>
+<li>FONT_SIZE&#160;:&#160;<a class="el" href="namespaceui.html#a5bcaccf1755551f6edb9e0686a8c78e6">ui</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_k" name="index_k"></a>- k -</h3><ul>
+<li>KEY_FONT_OFFSET&#160;:&#160;<a class="el" href="namespaceenigma.html#a05bc9996348d480e30feabe223e05956">enigma</a></li>
+<li>KEY_FONT_SIZE&#160;:&#160;<a class="el" href="namespaceenigma.html#af89682fe04a359a235eb5b72b29285aa">enigma</a></li>
+<li>KEY_INNER_RING&#160;:&#160;<a class="el" href="namespaceenigma.html#a8f78fe2fdad9fc8e1124b583cbeb7fc2">enigma</a></li>
+<li>KEY_OUTER_RING&#160;:&#160;<a class="el" href="namespaceenigma.html#a7f04519141856309cb66749e70df281d">enigma</a></li>
+<li>KEY_PADDING&#160;:&#160;<a class="el" href="namespaceenigma.html#ab6a87037b1d09128d6989925b3b772fc">enigma</a></li>
+<li>KEYBOARD_POSITION_X&#160;:&#160;<a class="el" href="namespaceenigma.html#a761a113186278cf5d7219c40a95b9bfc">enigma</a></li>
+<li>KEYBOARD_POSITION_Y&#160;:&#160;<a class="el" href="namespaceenigma.html#a18be7b9bb1d40836ba3e8c76799fc04e">enigma</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>LAMP_FONT_OFFSET&#160;:&#160;<a class="el" href="namespaceenigma.html#a619f0417b34f1d18205d75327a634287">enigma</a></li>
+<li>LAMP_FONT_SIZE&#160;:&#160;<a class="el" href="namespaceenigma.html#abd3a16a042c233d3b15f598e93ff3913">enigma</a></li>
+<li>LAMP_PADDING&#160;:&#160;<a class="el" href="namespaceenigma.html#a2b9f6ef4510c495dee4b9e8f87bfeb89">enigma</a></li>
+<li>LAMP_RADIUS&#160;:&#160;<a class="el" href="namespaceenigma.html#a2246709289d058e6bfd0cd5f88b33a72">enigma</a></li>
+<li>LAMPBOARD_POSITION_X&#160;:&#160;<a class="el" href="namespaceenigma.html#a5931c46026acbca73f6dbe39ad9e3a1e">enigma</a></li>
+<li>LAMPBOARD_POSITION_Y&#160;:&#160;<a class="el" href="namespaceenigma.html#ae8376d65809484cde1ca9093c1d5e15e">enigma</a></li>
+<li>load_font()&#160;:&#160;<a class="el" href="namespaceui.html#adf514a88daf97ac51837df372066f9d4">ui</a></li>
+<li>LogLevel&#160;:&#160;<a class="el" href="namespaceenigma.html#ad18b7c8b0aebc80fa662dddb232fa0aa">enigma</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>ROTOR_I_TURNOVER&#160;:&#160;<a class="el" href="namespaceenigma.html#a4d548c5ac6ada9ad86af555ea2dd8685">enigma</a></li>
+<li>ROTOR_I_WIRING&#160;:&#160;<a class="el" href="namespaceenigma.html#a9d4b22946a63b5205fab838f742e14e9">enigma</a></li>
+<li>ROTOR_II_TURNOVER&#160;:&#160;<a class="el" href="namespaceenigma.html#ad16ebc79dcc46ea907aba998ab0e3b4b">enigma</a></li>
+<li>ROTOR_II_WIRING&#160;:&#160;<a class="el" href="namespaceenigma.html#ae87cfbbb76d56462e2bf778202f516a6">enigma</a></li>
+<li>ROTOR_III_TURNOVER&#160;:&#160;<a class="el" href="namespaceenigma.html#a7b425753a289ccc9269e112d2f0e9d44">enigma</a></li>
+<li>ROTOR_III_WIRING&#160;:&#160;<a class="el" href="namespaceenigma.html#a7a963e6283b5710a957eb8eb7127e5c3">enigma</a></li>
+<li>ROW_OFFSET_H&#160;:&#160;<a class="el" href="namespaceenigma.html#af193a06d6066f3cb23f2ec7ac28c28da">enigma</a></li>
+<li>ROW_OFFSET_V&#160;:&#160;<a class="el" href="namespaceenigma.html#af61515c5f053ba13ccae174778dc2429">enigma</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>SCREEN_HEIGHT&#160;:&#160;<a class="el" href="namespaceui.html#a88a3d8e8954b5a7a87b52f8b13c6a8ad">ui</a></li>
+<li>SCREEN_WIDTH&#160;:&#160;<a class="el" href="namespaceui.html#a8bfa960f11c57d91ce3de34f89434fb4">ui</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_u" name="index_u"></a>- u -</h3><ul>
+<li>UKW_A_WIRING&#160;:&#160;<a class="el" href="namespaceenigma.html#a1546548d30dec94e4275ce7ca33daeae">enigma</a></li>
+<li>UKW_B_WIRING&#160;:&#160;<a class="el" href="namespaceenigma.html#ac97c20afb2c957c4986bfa78f11dd99c">enigma</a></li>
+<li>UKW_C_WIRING&#160;:&#160;<a class="el" href="namespaceenigma.html#aa15eb64dee08080cefc595e793dc939f">enigma</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

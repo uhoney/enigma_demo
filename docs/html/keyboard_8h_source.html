@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('keyboard_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,61 +87,68 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>core</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">keyboard.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="keyboard_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;key.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="key_8h.html">key.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../constants.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">../constants.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>enigma</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceenigma.html">enigma</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> KEYBOARD_POSITION_X{ 250.0f };           </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> KEYBOARD_POSITION_Y{ 400.0f };           </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classenigma_1_1_key_board.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_key_board.html#a942735fff30d13aace0e26d4c85a246c">KeyBoard</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classenigma_1_1_key_board.html#a564b2b481b45b4397934adc1561a3797">   24</a></span>        <a class="code hl_class" href="classenigma_1_1_key.html">Key</a>* <a class="code hl_variable" href="classenigma_1_1_key_board.html#a564b2b481b45b4397934adc1561a3797">p_key_pressed</a>{ <span class="keyword">nullptr</span> };                      </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::vector&lt;Key&gt; keys{};</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_function" href="classenigma_1_1_key_board.html#a942735fff30d13aace0e26d4c85a246c">KeyBoard</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        ~KeyBoard();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::vector&lt;Key&gt;&amp; <a class="code hl_function" href="classenigma_1_1_key_board.html#a4fff87fde3e819a8526021fe8e617838">get_keys</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classenigma_1_1_key_board.html#a7c0626ff4da282f4d83e41b0458ec1a9">isKeyPressed</a>(Vector2&amp;, <span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classenigma_1_1_key_board.html#a8c76be864cad7841faad84b5c53d1be5">isKeyReleased</a>(<span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Key* <a class="code hl_function" href="classenigma_1_1_key_board.html#ac8345de345123dc7363ee3ca8d103907">get_p_pressed_key</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a761a113186278cf5d7219c40a95b9bfc">   14</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespaceenigma.html#a761a113186278cf5d7219c40a95b9bfc">KEYBOARD_POSITION_X</a>{ 300.0f };           </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a18be7b9bb1d40836ba3e8c76799fc04e">   15</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespaceenigma.html#a18be7b9bb1d40836ba3e8c76799fc04e">KEYBOARD_POSITION_Y</a>{ 400.0f };           </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classenigma_1_1_keyboard.html">   23</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_keyboard.html#a450dd4fcc21e134fc282aba16cd0a0f4">Keyboard</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classenigma_1_1_keyboard.html#a5d2dcbd7df5919cadd7f9459fe6f66ee">   29</a></span>        std::vector&lt;Key&gt; <a class="code hl_variable" href="classenigma_1_1_keyboard.html#a5d2dcbd7df5919cadd7f9459fe6f66ee">keys</a>{};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classenigma_1_1_keyboard.html#a558cae3c216b77047ee494687c3add84">   34</a></span>        <a class="code hl_class" href="classenigma_1_1_key.html">Key</a>* <a class="code hl_variable" href="classenigma_1_1_keyboard.html#a558cae3c216b77047ee494687c3add84">p_key_pressed</a>{ <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <a class="code hl_function" href="classenigma_1_1_keyboard.html#a450dd4fcc21e134fc282aba16cd0a0f4">Keyboard</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="classenigma_1_1_keyboard.html#a45486493357bf6610018c6dada44c761">~Keyboard</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="comment">// TODO: decide on naming: snake_case or camelCase on methods. looks stupid with 2 styles</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        std::vector&lt;Key&gt;&amp; <a class="code hl_function" href="classenigma_1_1_keyboard.html#a22d83c20ac0bd99f2e9087c9a5698333">get_keys</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classenigma_1_1_keyboard.html#a68dde29db1d4451f38e32a6b734e14f5">isKeyPressed</a>(Vector2&amp;, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classenigma_1_1_keyboard.html#a12c807f5cf4ff56f0bae59f4ac35ea1a">isKeyReleased</a>(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_class" href="classenigma_1_1_key.html">Key</a>* <a class="code hl_function" href="classenigma_1_1_keyboard.html#a1de4217b8ef61799dfbcc6aa38cee846">get_pressed_key</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    };</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aclassenigma_1_1_key_board_html_a4fff87fde3e819a8526021fe8e617838"><div class="ttname"><a href="classenigma_1_1_key_board.html#a4fff87fde3e819a8526021fe8e617838">enigma::KeyBoard::get_keys</a></div><div class="ttdeci">std::vector&lt; Key &gt; &amp; get_keys()</div><div class="ttdoc">Returns the vector of all keys.</div><div class="ttdef"><b>Definition</b> keyboard.cpp:33</div></div>
-<div class="ttc" id="aclassenigma_1_1_key_board_html_a564b2b481b45b4397934adc1561a3797"><div class="ttname"><a href="classenigma_1_1_key_board.html#a564b2b481b45b4397934adc1561a3797">enigma::KeyBoard::p_key_pressed</a></div><div class="ttdeci">Key * p_key_pressed</div><div class="ttdoc">Vector of all keys in the keyboard.</div><div class="ttdef"><b>Definition</b> keyboard.h:24</div></div>
-<div class="ttc" id="aclassenigma_1_1_key_board_html_a7c0626ff4da282f4d83e41b0458ec1a9"><div class="ttname"><a href="classenigma_1_1_key_board.html#a7c0626ff4da282f4d83e41b0458ec1a9">enigma::KeyBoard::isKeyPressed</a></div><div class="ttdeci">bool isKeyPressed(Vector2 &amp;, bool)</div><div class="ttdoc">Checks if a key is pressed and sets the pointer to the pressed key. Boolean added for easier unit tes...</div><div class="ttdef"><b>Definition</b> keyboard.cpp:38</div></div>
-<div class="ttc" id="aclassenigma_1_1_key_board_html_a8c76be864cad7841faad84b5c53d1be5"><div class="ttname"><a href="classenigma_1_1_key_board.html#a8c76be864cad7841faad84b5c53d1be5">enigma::KeyBoard::isKeyReleased</a></div><div class="ttdeci">bool isKeyReleased(bool)</div><div class="ttdoc">Checks if a key is released and resets the pointer to nullptr. Boolean added for easier unit testing,...</div><div class="ttdef"><b>Definition</b> keyboard.cpp:56</div></div>
-<div class="ttc" id="aclassenigma_1_1_key_board_html_a942735fff30d13aace0e26d4c85a246c"><div class="ttname"><a href="classenigma_1_1_key_board.html#a942735fff30d13aace0e26d4c85a246c">enigma::KeyBoard::KeyBoard</a></div><div class="ttdeci">KeyBoard()</div><div class="ttdoc">Creates a fixed layout on screen.</div><div class="ttdef"><b>Definition</b> keyboard.cpp:5</div></div>
-<div class="ttc" id="aclassenigma_1_1_key_board_html_ac8345de345123dc7363ee3ca8d103907"><div class="ttname"><a href="classenigma_1_1_key_board.html#ac8345de345123dc7363ee3ca8d103907">enigma::KeyBoard::get_p_pressed_key</a></div><div class="ttdeci">Key * get_p_pressed_key()</div><div class="ttdoc">Returns pointer to the currently pressed key. nullptr if no key is pressed.</div><div class="ttdef"><b>Definition</b> keyboard.cpp:67</div></div>
-<div class="ttc" id="aclassenigma_1_1_key_html"><div class="ttname"><a href="classenigma_1_1_key.html">enigma::Key</a></div><div class="ttdef"><b>Definition</b> key.h:23</div></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="ttc" id="aclassenigma_1_1_key_html"><div class="ttname"><a href="classenigma_1_1_key.html">enigma::Key</a></div><div class="ttdoc">A key on the Enigma machine keyboard.Represents a key in the Enigma machine.</div><div class="ttdef"><b>Definition</b> <a href="key_8h_source.html#l00027">key.h:28</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a12c807f5cf4ff56f0bae59f4ac35ea1a"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a12c807f5cf4ff56f0bae59f4ac35ea1a">enigma::Keyboard::isKeyReleased</a></div><div class="ttdeci">bool isKeyReleased(bool)</div><div class="ttdoc">Checks if a key is released and resets the pointer to nullptr. Boolean added for easier unit testing,...</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00055">keyboard.cpp:55</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a1de4217b8ef61799dfbcc6aa38cee846"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a1de4217b8ef61799dfbcc6aa38cee846">enigma::Keyboard::get_pressed_key</a></div><div class="ttdeci">Key * get_pressed_key()</div><div class="ttdoc">Returns pointer to the currently pressed key. nullptr if no key is pressed.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00066">keyboard.cpp:66</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a22d83c20ac0bd99f2e9087c9a5698333"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a22d83c20ac0bd99f2e9087c9a5698333">enigma::Keyboard::get_keys</a></div><div class="ttdeci">std::vector&lt; Key &gt; &amp; get_keys()</div><div class="ttdoc">Returns the vector of all keys.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00033">keyboard.cpp:33</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a450dd4fcc21e134fc282aba16cd0a0f4"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a450dd4fcc21e134fc282aba16cd0a0f4">enigma::Keyboard::Keyboard</a></div><div class="ttdeci">Keyboard()</div><div class="ttdoc">Creates a fixed layout on screen.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00005">keyboard.cpp:5</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a45486493357bf6610018c6dada44c761"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a45486493357bf6610018c6dada44c761">enigma::Keyboard::~Keyboard</a></div><div class="ttdeci">~Keyboard()</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00028">keyboard.cpp:28</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a558cae3c216b77047ee494687c3add84"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a558cae3c216b77047ee494687c3add84">enigma::Keyboard::p_key_pressed</a></div><div class="ttdeci">Key * p_key_pressed</div><div class="ttdoc">Pointer to the currently pressed key. Should be nullptr if no key is beeing pressed.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">keyboard.h:34</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a5d2dcbd7df5919cadd7f9459fe6f66ee"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a5d2dcbd7df5919cadd7f9459fe6f66ee">enigma::Keyboard::keys</a></div><div class="ttdeci">std::vector&lt; Key &gt; keys</div><div class="ttdoc">Vector of all keys in the keyboard.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">keyboard.h:29</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html_a68dde29db1d4451f38e32a6b734e14f5"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a68dde29db1d4451f38e32a6b734e14f5">enigma::Keyboard::isKeyPressed</a></div><div class="ttdeci">bool isKeyPressed(Vector2 &amp;, bool)</div><div class="ttdoc">Checks if a key is pressed and sets the pointer to the pressed key. Boolean added for easier unit tes...</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00038">keyboard.cpp:38</a></div></div>
+<div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
+<div class="ttc" id="akey_8h_html"><div class="ttname"><a href="key_8h.html">key.h</a></div></div>
+<div class="ttc" id="anamespaceenigma_html"><div class="ttname"><a href="namespaceenigma.html">enigma</a></div><div class="ttdef"><b>Definition</b> <a href="constants_8h_source.html#l00005">constants.h:6</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a18be7b9bb1d40836ba3e8c76799fc04e"><div class="ttname"><a href="namespaceenigma.html#a18be7b9bb1d40836ba3e8c76799fc04e">enigma::KEYBOARD_POSITION_Y</a></div><div class="ttdeci">constexpr float KEYBOARD_POSITION_Y</div><div class="ttdoc">Starting y position.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">keyboard.h:15</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a761a113186278cf5d7219c40a95b9bfc"><div class="ttname"><a href="namespaceenigma.html#a761a113186278cf5d7219c40a95b9bfc">enigma::KEYBOARD_POSITION_X</a></div><div class="ttdeci">constexpr float KEYBOARD_POSITION_X</div><div class="ttdoc">Starting x position.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">keyboard.h:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a href="keyboard_8h.html">keyboard.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

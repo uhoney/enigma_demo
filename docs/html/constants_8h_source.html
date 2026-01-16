@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('constants_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,30 +87,33 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">constants.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="constants_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span>enigma</div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespaceenigma.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceenigma.html">enigma</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view ALPHABETS = <span class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view ENIGMA_KEYBOARD_CHARACTERS{ <span class="stringliteral">&quot;QWERTZUIOASDFGHJKPYXCVBNML&quot;</span> };</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a39c2c0108c63400770efd1ea9aa2f0c2">    7</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="namespaceenigma.html#a39c2c0108c63400770efd1ea9aa2f0c2">ALPHABETS</a> = <span class="stringliteral">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a75d3f21a58d3053983ec2423e65879b9">    8</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="namespaceenigma.html#a75d3f21a58d3053983ec2423e65879b9">ENIGMA_KEYBOARD_CHARACTERS</a>{ <span class="stringliteral">&quot;QWERTZUIOASDFGHJKPYXCVBNML&quot;</span> };</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+</div>
+<div class="ttc" id="anamespaceenigma_html"><div class="ttname"><a href="namespaceenigma.html">enigma</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">constants.h:6</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a39c2c0108c63400770efd1ea9aa2f0c2"><div class="ttname"><a href="namespaceenigma.html#a39c2c0108c63400770efd1ea9aa2f0c2">enigma::ALPHABETS</a></div><div class="ttdeci">constexpr std::string_view ALPHABETS</div><div class="ttdef"><b>Definition</b> <a href="#l00007">constants.h:7</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a75d3f21a58d3053983ec2423e65879b9"><div class="ttname"><a href="namespaceenigma.html#a75d3f21a58d3053983ec2423e65879b9">enigma::ENIGMA_KEYBOARD_CHARACTERS</a></div><div class="ttdeci">constexpr std::string_view ENIGMA_KEYBOARD_CHARACTERS</div><div class="ttdef"><b>Definition</b> <a href="#l00008">constants.h:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="constants_8h.html">constants.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -13,7 +13,7 @@ TEST_CASE("Keyboard test", "[keyboard]")
     Vector2 virtual_mouse_S{400.0f, 470.0f};    // 'S' key position
     Vector2 virtual_mouse_X{430.0f, 530.0f};    // 'X' key position
 
-    enigma::KeyBoard keyboard{};
+    enigma::Keyboard keyboard{};
     REQUIRE(keyboard.get_keys().size() == 26);
 
     keyboard.isKeyPressed(virtual_mouse_Q, true);

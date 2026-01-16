@@ -15,9 +15,10 @@ namespace enigma
 	/**@}*/
 
 	/**
-	 * @class Lampboard
-	 * Represents the lampboard of the Enigma machine.
-	 */
+	* @brief Represents the lampboard of the Enigma machine.
+	* @class Lampboard
+	* Visual component. Contains multiple Lamp objects arranged in a specific layout.
+	*/
 	class Lampboard
 	{
 	private:
@@ -27,9 +28,19 @@ namespace enigma
 		Lampboard();
 		~Lampboard();
 
+		/**
+		* @brief Get the vector of lamps on the lampboard.
+		*/
 		std::vector<Lamp>& get_lamps();
-		
+
+		/**
+		* @brief Turn on the lamp corresponding to the given character.
+		*/
 		void turn_on_lamp(char);
+		
+		/**
+		* @brief Reset all lamps to the unlit state.
+		*/
 		void reset_lamps();
 
 

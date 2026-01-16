@@ -22,7 +22,7 @@ namespace ui
 	/**
 	* @brief Draws the entire keyboard with given font and offset
 	*/
-	void draw_keyboard(Font, enigma::KeyBoard);
+	void draw_keyboard(Font, enigma::Keyboard);
 
 	/**
 	* @brief Draws a single key at its position with given font and offset

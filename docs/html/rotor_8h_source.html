@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('rotor_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,78 +87,98 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>core</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">rotor.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../constants.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>enigma</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view ROTOR_I_WIRING = <span class="stringliteral">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> ROTOR_I_TURNOVER = <span class="charliteral">&#39;Q&#39;</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view ROTOR_II_WIRING = <span class="stringliteral">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> ROTOR_II_TURNOVER = <span class="charliteral">&#39;E&#39;</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view ROTOR_III_WIRING = <span class="stringliteral">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> ROTOR_III_TURNOVER = <span class="charliteral">&#39;V&#39;</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html">   30</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_rotor.html#abd058667054a8005d0769c087be7df47">Rotor</a></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html#a5aea0c791e24ceefb911c45214925158">   36</a></span>        std::string_view <a class="code hl_variable" href="classenigma_1_1_rotor.html#a5aea0c791e24ceefb911c45214925158">rotor_wiring</a>{};</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html#adf6711307d8089a3f17ce11dc1487d58">   40</a></span>        <span class="keywordtype">char</span> <a class="code hl_variable" href="classenigma_1_1_rotor.html#adf6711307d8089a3f17ce11dc1487d58">turnover</a>{};</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d">   44</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d">rotor_index</a>{ 0 };</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_function" href="classenigma_1_1_rotor.html#abd058667054a8005d0769c087be7df47">Rotor</a>(std::string_view, <span class="keywordtype">char</span>);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_class" href="classenigma_1_1_rotor.html">~Rotor</a>();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#a22c7c7592613504e647ea4a43bd73caf">pass_through</a>(<span class="keywordtype">char</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#afd9f129c520d9aae71281bbd9973ec20">reverse_pass_through</a>(<span class="keywordtype">char</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">void</span> set_position_index(<span class="keywordtype">int</span>); <span class="comment">// TODO: DEBUG ONLY, delete later</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#adbe5d2a7916d15ad60e282644caae870">turn_rotor</a>();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#a50331867f92ddfd86c9899d56a7694b6">turn_back_rotor</a>();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordtype">int</span> get_rotor_index() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#ab5eaf0834cc1f9d3a204d30687bf9284">get_index_of_char</a>(std::string_view, <span class="keywordtype">char</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#aeccc53e231f1fb2801b90c1f978c33dd">get_turnover</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        std::string_view <a class="code hl_function" href="classenigma_1_1_rotor.html#a99d1992c470d5592eaaab4f9366be1df">get_wiring</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    };</div>
+<a href="rotor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">log.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">../constants.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceenigma.html">enigma</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a9d4b22946a63b5205fab838f742e14e9">   17</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="namespaceenigma.html#a9d4b22946a63b5205fab838f742e14e9">ROTOR_I_WIRING</a> = <span class="stringliteral">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a4d548c5ac6ada9ad86af555ea2dd8685">   18</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="namespaceenigma.html#a4d548c5ac6ada9ad86af555ea2dd8685">ROTOR_I_TURNOVER</a> = <span class="charliteral">&#39;Q&#39;</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceenigma.html#ae87cfbbb76d56462e2bf778202f516a6">   19</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="namespaceenigma.html#ae87cfbbb76d56462e2bf778202f516a6">ROTOR_II_WIRING</a> = <span class="stringliteral">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceenigma.html#ad16ebc79dcc46ea907aba998ab0e3b4b">   20</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="namespaceenigma.html#ad16ebc79dcc46ea907aba998ab0e3b4b">ROTOR_II_TURNOVER</a> = <span class="charliteral">&#39;E&#39;</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a7a963e6283b5710a957eb8eb7127e5c3">   21</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="namespaceenigma.html#a7a963e6283b5710a957eb8eb7127e5c3">ROTOR_III_WIRING</a> = <span class="stringliteral">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a7b425753a289ccc9269e112d2f0e9d44">   22</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="namespaceenigma.html#a7b425753a289ccc9269e112d2f0e9d44">ROTOR_III_TURNOVER</a> = <span class="charliteral">&#39;V&#39;</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html">   34</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_rotor.html#abd058667054a8005d0769c087be7df47">Rotor</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html#ae5975189d6df011040b765e983e927c9">   40</a></span>        std::string <a class="code hl_variable" href="classenigma_1_1_rotor.html#ae5975189d6df011040b765e983e927c9">wiring</a>{};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html#adf6711307d8089a3f17ce11dc1487d58">   45</a></span>        <span class="keywordtype">char</span> <a class="code hl_variable" href="classenigma_1_1_rotor.html#adf6711307d8089a3f17ce11dc1487d58">turnover</a>{ };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d">   50</a></span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d">rotor_index</a>{ 0 };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_function" href="classenigma_1_1_rotor.html#abd058667054a8005d0769c087be7df47">Rotor</a>(std::string_view, <span class="keywordtype">char</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_function" href="classenigma_1_1_rotor.html#a322e7c4402a6a54f5e7d106bb0ac6983">~Rotor</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#a22c7c7592613504e647ea4a43bd73caf">pass_through</a>(<span class="keywordtype">char</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#afd9f129c520d9aae71281bbd9973ec20">reverse_pass_through</a>(<span class="keywordtype">char</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#ae001e2af2eb1e6ef5a784265146b20b1">set_rotor_index</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#adbe5d2a7916d15ad60e282644caae870">turn_rotor</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#a50331867f92ddfd86c9899d56a7694b6">turn_back_rotor</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#ac2a5e825af5ef8faf7b187a148217811">get_rotor_index</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#ab5eaf0834cc1f9d3a204d30687bf9284">get_index_of_char</a>(std::string_view, <span class="keywordtype">char</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordtype">char</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#a881487b933c191a738846f1fb91b65c3">get_turnover_char</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordtype">int</span> <a class="code hl_function" href="classenigma_1_1_rotor.html#aa09dab27c3dc5f4276f2e6dfafde5f72">get_turnover_index</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        std::string <a class="code hl_function" href="classenigma_1_1_rotor.html#ac71dd8140f6cc816092cafc4eeb3862b">get_wiring</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    };</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html"><div class="ttname"><a href="classenigma_1_1_rotor.html">enigma::Rotor</a></div><div class="ttdoc">Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring ...</div><div class="ttdef"><b>Definition</b> rotor.h:31</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_a012fdbdc15e65cdd2ef04153a235cb8d"><div class="ttname"><a href="classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d">enigma::Rotor::rotor_index</a></div><div class="ttdeci">int rotor_index</div><div class="ttdoc">The current position index of the rotor (0-25). Used for GUI display and substitution calculations.</div><div class="ttdef"><b>Definition</b> rotor.h:44</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_a22c7c7592613504e647ea4a43bd73caf"><div class="ttname"><a href="classenigma_1_1_rotor.html#a22c7c7592613504e647ea4a43bd73caf">enigma::Rotor::pass_through</a></div><div class="ttdeci">char pass_through(char) const</div><div class="ttdoc">Substitute the character at the current position index using the rotor wiring.</div><div class="ttdef"><b>Definition</b> rotor.cpp:15</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_a50331867f92ddfd86c9899d56a7694b6"><div class="ttname"><a href="classenigma_1_1_rotor.html#a50331867f92ddfd86c9899d56a7694b6">enigma::Rotor::turn_back_rotor</a></div><div class="ttdeci">void turn_back_rotor()</div><div class="ttdoc">Decrement the position index of the rotor, wrapping around to 25 after 0.</div><div class="ttdef"><b>Definition</b> rotor.cpp:56</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_a5aea0c791e24ceefb911c45214925158"><div class="ttname"><a href="classenigma_1_1_rotor.html#a5aea0c791e24ceefb911c45214925158">enigma::Rotor::rotor_wiring</a></div><div class="ttdeci">std::string_view rotor_wiring</div><div class="ttdoc">The wiring configuration of the rotor as a string view.</div><div class="ttdef"><b>Definition</b> rotor.h:36</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_a99d1992c470d5592eaaab4f9366be1df"><div class="ttname"><a href="classenigma_1_1_rotor.html#a99d1992c470d5592eaaab4f9366be1df">enigma::Rotor::get_wiring</a></div><div class="ttdeci">std::string_view get_wiring() const</div><div class="ttdoc">Get the wiring of the rotor.</div><div class="ttdef"><b>Definition</b> rotor.cpp:92</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_ab5eaf0834cc1f9d3a204d30687bf9284"><div class="ttname"><a href="classenigma_1_1_rotor.html#ab5eaf0834cc1f9d3a204d30687bf9284">enigma::Rotor::get_index_of_char</a></div><div class="ttdeci">int get_index_of_char(std::string_view, char) const</div><div class="ttdoc">Get position of char in selected std::string_view Basically either ALPHABETS or ROTOR_X_WIRING.</div><div class="ttdef"><b>Definition</b> rotor.cpp:73</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_abd058667054a8005d0769c087be7df47"><div class="ttname"><a href="classenigma_1_1_rotor.html#abd058667054a8005d0769c087be7df47">enigma::Rotor::Rotor</a></div><div class="ttdeci">Rotor(std::string_view, char)</div><div class="ttdoc">Construct a new Rotor object with specified wiring and turnover character.</div><div class="ttdef"><b>Definition</b> rotor.cpp:7</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_adbe5d2a7916d15ad60e282644caae870"><div class="ttname"><a href="classenigma_1_1_rotor.html#adbe5d2a7916d15ad60e282644caae870">enigma::Rotor::turn_rotor</a></div><div class="ttdeci">void turn_rotor()</div><div class="ttdoc">Increment the position index of the rotor, wrapping around to 0 after 25. Keeps this specifically sep...</div><div class="ttdef"><b>Definition</b> rotor.cpp:44</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_adf6711307d8089a3f17ce11dc1487d58"><div class="ttname"><a href="classenigma_1_1_rotor.html#adf6711307d8089a3f17ce11dc1487d58">enigma::Rotor::turnover</a></div><div class="ttdeci">char turnover</div><div class="ttdoc">The turnover character that indicates when the next rotor unlocks for rotation.</div><div class="ttdef"><b>Definition</b> rotor.h:40</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_aeccc53e231f1fb2801b90c1f978c33dd"><div class="ttname"><a href="classenigma_1_1_rotor.html#aeccc53e231f1fb2801b90c1f978c33dd">enigma::Rotor::get_turnover</a></div><div class="ttdeci">char get_turnover() const</div><div class="ttdoc">Get the turnover character of the rotor.</div><div class="ttdef"><b>Definition</b> rotor.cpp:87</div></div>
-<div class="ttc" id="aclassenigma_1_1_rotor_html_afd9f129c520d9aae71281bbd9973ec20"><div class="ttname"><a href="classenigma_1_1_rotor.html#afd9f129c520d9aae71281bbd9973ec20">enigma::Rotor::reverse_pass_through</a></div><div class="ttdeci">char reverse_pass_through(char) const</div><div class="ttdoc">Reverse substitute the character at the current position index using the alphabets.</div><div class="ttdef"><b>Definition</b> rotor.cpp:23</div></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_a012fdbdc15e65cdd2ef04153a235cb8d"><div class="ttname"><a href="classenigma_1_1_rotor.html#a012fdbdc15e65cdd2ef04153a235cb8d">enigma::Rotor::rotor_index</a></div><div class="ttdeci">int rotor_index</div><div class="ttdoc">The current position index of the rotor (0-25). Used for GUI display and substitution calculations.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">rotor.h:50</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_a22c7c7592613504e647ea4a43bd73caf"><div class="ttname"><a href="classenigma_1_1_rotor.html#a22c7c7592613504e647ea4a43bd73caf">enigma::Rotor::pass_through</a></div><div class="ttdeci">char pass_through(char) const</div><div class="ttdoc">Substitute the character at the current position index using the rotor wiring.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00014">rotor.cpp:14</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_a322e7c4402a6a54f5e7d106bb0ac6983"><div class="ttname"><a href="classenigma_1_1_rotor.html#a322e7c4402a6a54f5e7d106bb0ac6983">enigma::Rotor::~Rotor</a></div><div class="ttdeci">~Rotor()</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00010">rotor.cpp:10</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_a50331867f92ddfd86c9899d56a7694b6"><div class="ttname"><a href="classenigma_1_1_rotor.html#a50331867f92ddfd86c9899d56a7694b6">enigma::Rotor::turn_back_rotor</a></div><div class="ttdeci">void turn_back_rotor()</div><div class="ttdoc">Decrement the position index of the rotor, wrapping around to 25 after 0.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00058">rotor.cpp:58</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_a881487b933c191a738846f1fb91b65c3"><div class="ttname"><a href="classenigma_1_1_rotor.html#a881487b933c191a738846f1fb91b65c3">enigma::Rotor::get_turnover_char</a></div><div class="ttdeci">char get_turnover_char() const</div><div class="ttdoc">Get the turnover character of the rotor.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00089">rotor.cpp:89</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_aa09dab27c3dc5f4276f2e6dfafde5f72"><div class="ttname"><a href="classenigma_1_1_rotor.html#aa09dab27c3dc5f4276f2e6dfafde5f72">enigma::Rotor::get_turnover_index</a></div><div class="ttdeci">int get_turnover_index() const</div><div class="ttdoc">Get the position index of the turnover character.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00094">rotor.cpp:94</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_ab5eaf0834cc1f9d3a204d30687bf9284"><div class="ttname"><a href="classenigma_1_1_rotor.html#ab5eaf0834cc1f9d3a204d30687bf9284">enigma::Rotor::get_index_of_char</a></div><div class="ttdeci">int get_index_of_char(std::string_view, char) const</div><div class="ttdoc">Get position of char in selected std::string_view Basically either ALPHABETS or ROTOR_X_WIRING.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00075">rotor.cpp:75</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_abd058667054a8005d0769c087be7df47"><div class="ttname"><a href="classenigma_1_1_rotor.html#abd058667054a8005d0769c087be7df47">enigma::Rotor::Rotor</a></div><div class="ttdeci">Rotor(std::string_view, char)</div><div class="ttdoc">Construct a new Rotor object with specified wiring and turnover character.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00005">rotor.cpp:5</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_ac2a5e825af5ef8faf7b187a148217811"><div class="ttname"><a href="classenigma_1_1_rotor.html#ac2a5e825af5ef8faf7b187a148217811">enigma::Rotor::get_rotor_index</a></div><div class="ttdeci">int get_rotor_index() const</div><div class="ttdoc">Get the current position index of the rotor.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00070">rotor.cpp:70</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_ac71dd8140f6cc816092cafc4eeb3862b"><div class="ttname"><a href="classenigma_1_1_rotor.html#ac71dd8140f6cc816092cafc4eeb3862b">enigma::Rotor::get_wiring</a></div><div class="ttdeci">std::string get_wiring() const</div><div class="ttdoc">Get the wiring of the rotor.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00099">rotor.cpp:99</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_adbe5d2a7916d15ad60e282644caae870"><div class="ttname"><a href="classenigma_1_1_rotor.html#adbe5d2a7916d15ad60e282644caae870">enigma::Rotor::turn_rotor</a></div><div class="ttdeci">void turn_rotor()</div><div class="ttdoc">Increment the position index of the rotor, wrapping around to 0 after 25. Keeps this specifically sep...</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00046">rotor.cpp:46</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_adf6711307d8089a3f17ce11dc1487d58"><div class="ttname"><a href="classenigma_1_1_rotor.html#adf6711307d8089a3f17ce11dc1487d58">enigma::Rotor::turnover</a></div><div class="ttdeci">char turnover</div><div class="ttdoc">The turnover character that indicates when the next rotor unlocks for rotation.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">rotor.h:45</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_ae001e2af2eb1e6ef5a784265146b20b1"><div class="ttname"><a href="classenigma_1_1_rotor.html#ae001e2af2eb1e6ef5a784265146b20b1">enigma::Rotor::set_rotor_index</a></div><div class="ttdeci">void set_rotor_index(int)</div><div class="ttdoc">DEBUG USE ONLY. Set the current position index of the rotor.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00034">rotor.cpp:34</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_ae5975189d6df011040b765e983e927c9"><div class="ttname"><a href="classenigma_1_1_rotor.html#ae5975189d6df011040b765e983e927c9">enigma::Rotor::wiring</a></div><div class="ttdeci">std::string wiring</div><div class="ttdoc">The wiring configuration of the rotor as a string.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">rotor.h:40</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_afd9f129c520d9aae71281bbd9973ec20"><div class="ttname"><a href="classenigma_1_1_rotor.html#afd9f129c520d9aae71281bbd9973ec20">enigma::Rotor::reverse_pass_through</a></div><div class="ttdeci">char reverse_pass_through(char) const</div><div class="ttdoc">Reverse substitute the character at the current position index using the alphabets.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00024">rotor.cpp:24</a></div></div>
+<div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="anamespaceenigma_html"><div class="ttname"><a href="namespaceenigma.html">enigma</a></div><div class="ttdef"><b>Definition</b> <a href="constants_8h_source.html#l00005">constants.h:6</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a4d548c5ac6ada9ad86af555ea2dd8685"><div class="ttname"><a href="namespaceenigma.html#a4d548c5ac6ada9ad86af555ea2dd8685">enigma::ROTOR_I_TURNOVER</a></div><div class="ttdeci">constexpr char ROTOR_I_TURNOVER</div><div class="ttdef"><b>Definition</b> <a href="#l00018">rotor.h:18</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a7a963e6283b5710a957eb8eb7127e5c3"><div class="ttname"><a href="namespaceenigma.html#a7a963e6283b5710a957eb8eb7127e5c3">enigma::ROTOR_III_WIRING</a></div><div class="ttdeci">constexpr std::string_view ROTOR_III_WIRING</div><div class="ttdef"><b>Definition</b> <a href="#l00021">rotor.h:21</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a7b425753a289ccc9269e112d2f0e9d44"><div class="ttname"><a href="namespaceenigma.html#a7b425753a289ccc9269e112d2f0e9d44">enigma::ROTOR_III_TURNOVER</a></div><div class="ttdeci">constexpr char ROTOR_III_TURNOVER</div><div class="ttdef"><b>Definition</b> <a href="#l00022">rotor.h:22</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_a9d4b22946a63b5205fab838f742e14e9"><div class="ttname"><a href="namespaceenigma.html#a9d4b22946a63b5205fab838f742e14e9">enigma::ROTOR_I_WIRING</a></div><div class="ttdeci">constexpr std::string_view ROTOR_I_WIRING</div><div class="ttdef"><b>Definition</b> <a href="#l00017">rotor.h:17</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_ad16ebc79dcc46ea907aba998ab0e3b4b"><div class="ttname"><a href="namespaceenigma.html#ad16ebc79dcc46ea907aba998ab0e3b4b">enigma::ROTOR_II_TURNOVER</a></div><div class="ttdeci">constexpr char ROTOR_II_TURNOVER</div><div class="ttdef"><b>Definition</b> <a href="#l00020">rotor.h:20</a></div></div>
+<div class="ttc" id="anamespaceenigma_html_ae87cfbbb76d56462e2bf778202f516a6"><div class="ttname"><a href="namespaceenigma.html#ae87cfbbb76d56462e2bf778202f516a6">enigma::ROTOR_II_WIRING</a></div><div class="ttdeci">constexpr std::string_view ROTOR_II_WIRING</div><div class="ttdef"><b>Definition</b> <a href="#l00019">rotor.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a href="rotor_8h.html">rotor.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

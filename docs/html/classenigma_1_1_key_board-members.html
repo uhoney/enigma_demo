@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classenigma_1_1_key_board.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,12 +87,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>enigma</b></li><li class="navelem"><a href="classenigma_1_1_key_board.html">KeyBoard</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">enigma::KeyBoard Member List</div></div>
 </div><!--header-->
@@ -82,18 +95,21 @@ $(function() {
 <p>This is the complete list of members for <a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a4fff87fde3e819a8526021fe8e617838">get_keys</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#ac8345de345123dc7363ee3ca8d103907">get_p_pressed_key</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a54ea0c8bab0b6a3be74ab301b186d72d">get_pressed_key</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a7c0626ff4da282f4d83e41b0458ec1a9">isKeyPressed</a>(Vector2 &amp;, bool)</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a8c76be864cad7841faad84b5c53d1be5">isKeyReleased</a>(bool)</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a942735fff30d13aace0e26d4c85a246c">KeyBoard</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>keys</b> (defined in <a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a3414968f047d92a81b3e3dd6ea8be67b">keys</a></td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a564b2b481b45b4397934adc1561a3797">p_key_pressed</a></td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~KeyBoard</b>() (defined in <a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_key_board.html#a1a0239166cf7dbcd7948fc57754d2ebd">~KeyBoard</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_key_board.html">enigma::KeyBoard</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

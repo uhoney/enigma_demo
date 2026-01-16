@@ -1,24 +1,36 @@
 var indexSectionsWithContent =
 {
-  0: "cgiklprst",
-  1: "klr",
-  2: "gikprst",
-  3: "cprst"
+  0: "acdefghiklmprstuw~",
+  1: "cklr",
+  2: "eu",
+  3: "cfklmr",
+  4: "cdeghiklmprstw~",
+  5: "acefiklprstuw",
+  6: "l",
+  7: "deiw"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "variables"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables",
+  6: "enums",
+  7: "enumvalues"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Functions",
-  3: "Variables"
+  2: "Namespaces",
+  3: "Files",
+  4: "Functions",
+  5: "Variables",
+  6: "Enumerations",
+  7: "Enumerator"
 };
 

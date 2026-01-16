@@ -15,21 +15,30 @@ namespace enigma
 	inline constexpr float KEYBOARD_POSITION_Y{ 400.0f };			///< Starting y position
 	/**@}*/
 
-	class KeyBoard
+	/**
+	* @brief Represents an on-screen keyboard with keys that can be pressed and released.
+	* @class Keyboard
+	* The Keyboard class manages a collection of Key objects, allowing for interaction through mouse input.
+	*/
+	class Keyboard
 	{
 	private:
 		/**
 		* @brief Vector of all keys in the keyboard
 		*/
-		Key* p_key_pressed{ nullptr };						///< curlybrace initialization is on stack
 		std::vector<Key> keys{};
+
+		/**
+		* @brief Pointer to the currently pressed key. Should be nullptr if no key is beeing pressed.
+		*/
+		Key* p_key_pressed{ nullptr };
 
 	public:
 		/**
 		 * @brief Creates a fixed layout on screen
 		 */
-		KeyBoard();
-		~KeyBoard();
+		Keyboard();
+		~Keyboard();
 
 		/**
 		 * @brief Returns the vector of all keys

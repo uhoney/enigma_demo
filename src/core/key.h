@@ -20,9 +20,10 @@ namespace enigma
 	/**@}*/
 
 	/**
-	 * @class Key
-	 * Represents a key in the Enigma machine.
-	 */
+	* @brief A key on the Enigma machine keyboard.
+	* @class Key
+	* Represents a key in the Enigma machine.
+	*/
 	class Key
 	{
 	private:

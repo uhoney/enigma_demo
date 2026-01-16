@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classenigma_1_1_key_board.html','','classenigma_1_1_key_board-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,47 +87,180 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>enigma</b></li><li class="navelem"><a href="classenigma_1_1_key_board.html">KeyBoard</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="classenigma_1_1_key_board-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">enigma::KeyBoard Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a942735fff30d13aace0e26d4c85a246c" id="r_a942735fff30d13aace0e26d4c85a246c"><td class="memItemLeft" align="right" valign="top"><a id="a942735fff30d13aace0e26d4c85a246c" name="a942735fff30d13aace0e26d4c85a246c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>KeyBoard</b> ()</td></tr>
-<tr class="memdesc:a942735fff30d13aace0e26d4c85a246c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a fixed layout on screen. <br /></td></tr>
-<tr class="memitem:a4fff87fde3e819a8526021fe8e617838" id="r_a4fff87fde3e819a8526021fe8e617838"><td class="memItemLeft" align="right" valign="top"><a id="a4fff87fde3e819a8526021fe8e617838" name="a4fff87fde3e819a8526021fe8e617838"></a>
-std::vector&lt; <a class="el" href="classenigma_1_1_key.html">Key</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_keys</b> ()</td></tr>
-<tr class="memdesc:a4fff87fde3e819a8526021fe8e617838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of all keys. <br /></td></tr>
-<tr class="memitem:a7c0626ff4da282f4d83e41b0458ec1a9" id="r_a7c0626ff4da282f4d83e41b0458ec1a9"><td class="memItemLeft" align="right" valign="top"><a id="a7c0626ff4da282f4d83e41b0458ec1a9" name="a7c0626ff4da282f4d83e41b0458ec1a9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isKeyPressed</b> (Vector2 &amp;, bool)</td></tr>
-<tr class="memdesc:a7c0626ff4da282f4d83e41b0458ec1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a key is pressed and sets the pointer to the pressed key. Boolean added for easier unit testing (mouse input simulated). <br /></td></tr>
-<tr class="memitem:a8c76be864cad7841faad84b5c53d1be5" id="r_a8c76be864cad7841faad84b5c53d1be5"><td class="memItemLeft" align="right" valign="top"><a id="a8c76be864cad7841faad84b5c53d1be5" name="a8c76be864cad7841faad84b5c53d1be5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isKeyReleased</b> (bool)</td></tr>
-<tr class="memdesc:a8c76be864cad7841faad84b5c53d1be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a key is released and resets the pointer to nullptr. Boolean added for easier unit testing, mouse input can be simulated. <br /></td></tr>
-<tr class="memitem:ac8345de345123dc7363ee3ca8d103907" id="r_ac8345de345123dc7363ee3ca8d103907"><td class="memItemLeft" align="right" valign="top"><a id="ac8345de345123dc7363ee3ca8d103907" name="ac8345de345123dc7363ee3ca8d103907"></a>
-<a class="el" href="classenigma_1_1_key.html">Key</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_p_pressed_key</b> ()</td></tr>
-<tr class="memdesc:ac8345de345123dc7363ee3ca8d103907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the currently pressed key. nullptr if no key is pressed. <br /></td></tr>
+<tr class="memitem:a942735fff30d13aace0e26d4c85a246c" id="r_a942735fff30d13aace0e26d4c85a246c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a942735fff30d13aace0e26d4c85a246c">KeyBoard</a> ()</td></tr>
+<tr class="memdesc:a942735fff30d13aace0e26d4c85a246c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a fixed layout on screen.  <br /></td></tr>
+<tr class="memitem:a1a0239166cf7dbcd7948fc57754d2ebd" id="r_a1a0239166cf7dbcd7948fc57754d2ebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a0239166cf7dbcd7948fc57754d2ebd">~KeyBoard</a> ()</td></tr>
+<tr class="memitem:a4fff87fde3e819a8526021fe8e617838" id="r_a4fff87fde3e819a8526021fe8e617838"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classenigma_1_1_key.html">Key</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fff87fde3e819a8526021fe8e617838">get_keys</a> ()</td></tr>
+<tr class="memdesc:a4fff87fde3e819a8526021fe8e617838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of all keys.  <br /></td></tr>
+<tr class="memitem:a7c0626ff4da282f4d83e41b0458ec1a9" id="r_a7c0626ff4da282f4d83e41b0458ec1a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c0626ff4da282f4d83e41b0458ec1a9">isKeyPressed</a> (Vector2 &amp;, bool)</td></tr>
+<tr class="memdesc:a7c0626ff4da282f4d83e41b0458ec1a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a key is pressed and sets the pointer to the pressed key. Boolean added for easier unit testing (mouse input simulated).  <br /></td></tr>
+<tr class="memitem:a8c76be864cad7841faad84b5c53d1be5" id="r_a8c76be864cad7841faad84b5c53d1be5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c76be864cad7841faad84b5c53d1be5">isKeyReleased</a> (bool)</td></tr>
+<tr class="memdesc:a8c76be864cad7841faad84b5c53d1be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a key is released and resets the pointer to nullptr. Boolean added for easier unit testing, mouse input can be simulated.  <br /></td></tr>
+<tr class="memitem:a54ea0c8bab0b6a3be74ab301b186d72d" id="r_a54ea0c8bab0b6a3be74ab301b186d72d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classenigma_1_1_key.html">Key</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54ea0c8bab0b6a3be74ab301b186d72d">get_pressed_key</a> ()</td></tr>
+<tr class="memdesc:a54ea0c8bab0b6a3be74ab301b186d72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the currently pressed key. nullptr if no key is pressed.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a3414968f047d92a81b3e3dd6ea8be67b" id="r_a3414968f047d92a81b3e3dd6ea8be67b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classenigma_1_1_key.html">Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3414968f047d92a81b3e3dd6ea8be67b">keys</a> {}</td></tr>
+<tr class="memdesc:a3414968f047d92a81b3e3dd6ea8be67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of all keys in the keyboard.  <br /></td></tr>
 <tr class="memitem:a564b2b481b45b4397934adc1561a3797" id="r_a564b2b481b45b4397934adc1561a3797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classenigma_1_1_key.html">Key</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a564b2b481b45b4397934adc1561a3797">p_key_pressed</a> { nullptr }</td></tr>
-<tr class="memdesc:a564b2b481b45b4397934adc1561a3797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of all keys in the keyboard.  <br /></td></tr>
-<tr class="memitem:a3414968f047d92a81b3e3dd6ea8be67b" id="r_a3414968f047d92a81b3e3dd6ea8be67b"><td class="memItemLeft" align="right" valign="top"><a id="a3414968f047d92a81b3e3dd6ea8be67b" name="a3414968f047d92a81b3e3dd6ea8be67b"></a>
-std::vector&lt; <a class="el" href="classenigma_1_1_key.html">Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>keys</b> {}</td></tr>
+<tr class="memdesc:a564b2b481b45b4397934adc1561a3797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the currently pressed key. Should be nullptr if no key is beeing pressed.  <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="keyboard_8h_source.html#l00018">18</a> of file <a class="el" href="keyboard_8h_source.html">keyboard.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a942735fff30d13aace0e26d4c85a246c" name="a942735fff30d13aace0e26d4c85a246c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942735fff30d13aace0e26d4c85a246c">&#9670;&#160;</a></span>KeyBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enigma::KeyBoard::KeyBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8cpp_source.html#l00005">5</a> of file <a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1a0239166cf7dbcd7948fc57754d2ebd" name="a1a0239166cf7dbcd7948fc57754d2ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a0239166cf7dbcd7948fc57754d2ebd">&#9670;&#160;</a></span>~KeyBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enigma::KeyBoard::~KeyBoard </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8cpp_source.html#l00028">28</a> of file <a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a4fff87fde3e819a8526021fe8e617838" name="a4fff87fde3e819a8526021fe8e617838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fff87fde3e819a8526021fe8e617838">&#9670;&#160;</a></span>get_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classenigma_1_1_key.html">Key</a> &gt; &amp; enigma::KeyBoard::get_keys </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8cpp_source.html#l00033">33</a> of file <a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a54ea0c8bab0b6a3be74ab301b186d72d" name="a54ea0c8bab0b6a3be74ab301b186d72d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54ea0c8bab0b6a3be74ab301b186d72d">&#9670;&#160;</a></span>get_pressed_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classenigma_1_1_key.html">Key</a> * enigma::KeyBoard::get_pressed_key </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8cpp_source.html#l00066">66</a> of file <a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7c0626ff4da282f4d83e41b0458ec1a9" name="a7c0626ff4da282f4d83e41b0458ec1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c0626ff4da282f4d83e41b0458ec1a9">&#9670;&#160;</a></span>isKeyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool enigma::KeyBoard::isKeyPressed </td>
+          <td>(</td>
+          <td class="paramtype">Vector2 &amp;</td>          <td class="paramname"><span class="paramname"><em>mouse_position</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>is_mouse_pressed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8cpp_source.html#l00038">38</a> of file <a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8c76be864cad7841faad84b5c53d1be5" name="a8c76be864cad7841faad84b5c53d1be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c76be864cad7841faad84b5c53d1be5">&#9670;&#160;</a></span>isKeyReleased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool enigma::KeyBoard::isKeyReleased </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>is_mouse_released</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8cpp_source.html#l00055">55</a> of file <a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a>.</p>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a3414968f047d92a81b3e3dd6ea8be67b" name="a3414968f047d92a81b3e3dd6ea8be67b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3414968f047d92a81b3e3dd6ea8be67b">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classenigma_1_1_key.html">Key</a>&gt; enigma::KeyBoard::keys {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8h_source.html#l00024">24</a> of file <a class="el" href="keyboard_8h_source.html">keyboard.h</a>.</p>
+
+</div>
+</div>
 <a id="a564b2b481b45b4397934adc1561a3797" name="a564b2b481b45b4397934adc1561a3797"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a564b2b481b45b4397934adc1561a3797">&#9670;&#160;</a></span>p_key_pressed</h2>
 
@@ -128,19 +280,31 @@ std::vector&lt; <a class="el" href="classenigma_1_1_key.html">Key</a> &gt;&#160;
   </tr>
 </table>
 </div><div class="memdoc">
-<p>curlybrace initialization is on stack </p>
+
+<p class="definition">Definition at line <a class="el" href="keyboard_8h_source.html#l00029">29</a> of file <a class="el" href="keyboard_8h_source.html">keyboard.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/core/<a class="el" href="keyboard_8h_source.html">keyboard.h</a></li>
-<li>src/core/<b>keyboard.cpp</b></li>
+<li>src/core/<a class="el" href="keyboard_8cpp_source.html">keyboard.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespaceenigma.html">enigma</a></li><li class="navelem"><a href="classenigma_1_1_key_board.html">KeyBoard</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

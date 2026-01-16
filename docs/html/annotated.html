@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,12 +45,26 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('annotated.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -76,20 +93,25 @@ $(function() {
 <div class="contents">
 <div class="textblock">Here are the classes, structs, unions and interfaces with brief descriptions:</div><div class="directory">
 <div class="levels">[detail level <span onclick="javascript:dynsection.toggleLevel(1);">1</span><span onclick="javascript:dynsection.toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="dynsection.toggleFolder('0_')"><span class="arrowhead opened"></span></span><span class="icona"><span class="icon">N</span></span><b>enigma</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_key.html" target="_self">Key</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_key_board.html" target="_self">KeyBoard</a></td><td class="desc"></td></tr>
-<tr id="row_0_2_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_lamp.html" target="_self">Lamp</a></td><td class="desc"></td></tr>
-<tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_lampboard.html" target="_self">Lampboard</a></td><td class="desc"></td></tr>
-<tr id="row_0_4_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_reflector.html" target="_self">Reflector</a></td><td class="desc"></td></tr>
-<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_rotor.html" target="_self">Rotor</a></td><td class="desc">Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position.Represents a rotor in the Enigma machine, responsible for character substitution based on its wiring and position </td></tr>
+<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="dynsection.toggleFolder('0_')"><span class="arrowhead opened"></span></span><span class="icona"><span class="icon">N</span></span><a class="el" href="namespaceenigma.html" target="_self">enigma</a></td><td class="desc"></td></tr>
+<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_key.html" target="_self">Key</a></td><td class="desc">A key on the Enigma machine keyboard.Represents a key in the Enigma machine </td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_keyboard.html" target="_self">Keyboard</a></td><td class="desc">Represents an on-screen keyboard with keys that can be pressed and released.The <a class="el" href="classenigma_1_1_keyboard.html" title="Represents an on-screen keyboard with keys that can be pressed and released.The Keyboard class manage...">Keyboard</a> class manages a collection of <a class="el" href="classenigma_1_1_key.html" title="A key on the Enigma machine keyboard.Represents a key in the Enigma machine.">Key</a> objects, allowing for interaction through mouse input </td></tr>
+<tr id="row_0_2_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_lamp.html" target="_self">Lamp</a></td><td class="desc">A lamp that lights up to indicate a cipher/decipher character.Each lamp corresponds to a character in the alphabet and lights up when that character is the output of the Enigma machine </td></tr>
+<tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_lampboard.html" target="_self">Lampboard</a></td><td class="desc">Represents the lampboard of the Enigma machine.Visual component. Contains multiple <a class="el" href="classenigma_1_1_lamp.html" title="A lamp that lights up to indicate a cipher/decipher character.Each lamp corresponds to a character in...">Lamp</a> objects arranged in a specific layout </td></tr>
+<tr id="row_0_4_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_log.html" target="_self">Log</a></td><td class="desc"></td></tr>
+<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_reflector.html" target="_self">Reflector</a></td><td class="desc">A reflector component in an Enigma machine that swaps characters based on a wiring configuration.Swaps 1:1 characters based on wiring. i.e. A-&gt;E, E-&gt;A </td></tr>
+<tr id="row_0_6_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classenigma_1_1_rotor.html" target="_self">Rotor</a></td><td class="desc">A rotating disc that spins and substitutes characters based on its wiring and position.The actual rotor did not have an index[0], computers do. <a class="el" href="classenigma_1_1_rotor.html" title="A rotating disc that spins and substitutes characters based on its wiring and position....">Rotor</a> 1 (right side) always spins first, and when it hits its turnover notch, it causes the next rotor to the left to spin. So rotor_1 rotor_index will always be index[n+1] before any actions. You take your character (i.e 'Z') which is on alphabet_index[25] and add rotor_index to it and take mod 26. So you get (with rotor_index 0, char 'Z') =&gt; 1+25 = 26 mod 26 = 0. This is the index of char to output, which is 'E'. (on ROTOR_I_WIRING) </td></tr>
+<tr id="row_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_controller.html" target="_self">Controller</a></td><td class="desc"><a class="el" href="class_controller.html" title="Controller manages the interaction between the keyboard, rotors, reflector, and lampboard....">Controller</a> manages the interaction between the keyboard, rotors, reflector, and lampboard.Creates default keyboard, lampboard, 3 rotors, and reflector </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

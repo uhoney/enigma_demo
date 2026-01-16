@@ -16,6 +16,11 @@ namespace enigma
 	inline constexpr Vector2 LAMP_FONT_OFFSET{ 10.0f, 20.0f };   ///< Font offset to center text in lamp
 	/**@}*/
 
+	/**
+	* @brief A lamp that lights up to indicate a cipher/decipher character.
+	* @class Lamp
+	* Each lamp corresponds to a character in the alphabet and lights up when that character is the output of the Enigma machine.
+	*/
 	class Lamp
 	{
 	private:

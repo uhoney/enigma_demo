@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('layout_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,44 +87,58 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li><li class="navelem"><b>ui</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">layout.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="layout_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../core/keyboard.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../core/lampboard.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="keyboard_8h.html">../core/keyboard.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="lampboard_8h.html">../core/lampboard.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>ui</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceui.html">ui</a></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> SCREEN_WIDTH = 1080;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> SCREEN_HEIGHT = 800;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceui.html#a8bfa960f11c57d91ce3de34f89434fb4">    8</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceui.html#a8bfa960f11c57d91ce3de34f89434fb4">SCREEN_WIDTH</a> = 1080;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespaceui.html#a88a3d8e8954b5a7a87b52f8b13c6a8ad">    9</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceui.html#a88a3d8e8954b5a7a87b52f8b13c6a8ad">SCREEN_HEIGHT</a> = 800;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 CASE_OUTLINE{ 150, 25, 800, 650 };</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 CASE_INSIDE{ 175, 50, 750, 600 };</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">   14</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 <a class="code hl_variable" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">CASE_OUTLINE</a>{ 0, 0, <a class="code hl_variable" href="namespaceui.html#a8bfa960f11c57d91ce3de34f89434fb4">SCREEN_WIDTH</a>, <a class="code hl_variable" href="namespaceui.html#a88a3d8e8954b5a7a87b52f8b13c6a8ad">SCREEN_HEIGHT</a> };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">   15</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 <a class="code hl_variable" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">CASE_INSIDE</a>{ 25, 25, <a class="code hl_variable" href="namespaceui.html#a8bfa960f11c57d91ce3de34f89434fb4">SCREEN_WIDTH</a>-50, <a class="code hl_variable" href="namespaceui.html#a88a3d8e8954b5a7a87b52f8b13c6a8ad">SCREEN_HEIGHT</a>-50 };</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> draw_background();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">draw_background</a>();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> draw_keyboard(Font, Vector2, enigma::KeyBoard);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">draw_keyboard</a>(Font, <a class="code hl_class" href="classenigma_1_1_keyboard.html">enigma::Keyboard</a>);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> draw_key(Font, Vector2, enigma::Key);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">draw_key</a>(Font, <a class="code hl_class" href="classenigma_1_1_key.html">enigma::Key</a>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> draw_lampboard(Font, Vector2, enigma::Lampboard);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">draw_lampboard</a>(Font, <a class="code hl_class" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> draw_lamp(Font, Vector2, enigma::Lamp);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">draw_lamp</a>(Font, <a class="code hl_class" href="classenigma_1_1_lamp.html">enigma::Lamp</a>);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassenigma_1_1_key_html"><div class="ttname"><a href="classenigma_1_1_key.html">enigma::Key</a></div><div class="ttdoc">A key on the Enigma machine keyboard.Represents a key in the Enigma machine.</div><div class="ttdef"><b>Definition</b> <a href="key_8h_source.html#l00027">key.h:28</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html"><div class="ttname"><a href="classenigma_1_1_keyboard.html">enigma::Keyboard</a></div><div class="ttdoc">Represents an on-screen keyboard with keys that can be pressed and released.The Keyboard class manage...</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8h_source.html#l00023">keyboard.h:24</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_lamp_html"><div class="ttname"><a href="classenigma_1_1_lamp.html">enigma::Lamp</a></div><div class="ttdoc">A lamp that lights up to indicate a cipher/decipher character.Each lamp corresponds to a character in...</div><div class="ttdef"><b>Definition</b> <a href="lamp_8h_source.html#l00024">lamp.h:25</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_lampboard_html"><div class="ttname"><a href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></div><div class="ttdoc">Represents the lampboard of the Enigma machine.Visual component. Contains multiple Lamp objects arran...</div><div class="ttdef"><b>Definition</b> <a href="lampboard_8h_source.html#l00022">lampboard.h:23</a></div></div>
+<div class="ttc" id="akeyboard_8h_html"><div class="ttname"><a href="keyboard_8h.html">keyboard.h</a></div></div>
+<div class="ttc" id="alampboard_8h_html"><div class="ttname"><a href="lampboard_8h.html">lampboard.h</a></div></div>
+<div class="ttc" id="anamespaceui_html"><div class="ttname"><a href="namespaceui.html">ui</a></div><div class="ttdef"><b>Definition</b> <a href="fonts_8cpp_source.html#l00003">fonts.cpp:4</a></div></div>
+<div class="ttc" id="anamespaceui_html_a178cc60e0802576d346d32ac9c73ed4f"><div class="ttname"><a href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">ui::draw_lamp</a></div><div class="ttdeci">void draw_lamp(Font font, enigma::Lamp lamp)</div><div class="ttdoc">Draws a single lamp at its position with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="layout_8cpp_source.html#l00040">layout.cpp:40</a></div></div>
+<div class="ttc" id="anamespaceui_html_a54444491b94cc392a7e7ae44f59b5447"><div class="ttname"><a href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">ui::draw_keyboard</a></div><div class="ttdeci">void draw_keyboard(Font font, enigma::Keyboard keyboard)</div><div class="ttdoc">Draws the entire keyboard with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="layout_8cpp_source.html#l00011">layout.cpp:11</a></div></div>
+<div class="ttc" id="anamespaceui_html_a6bab672e1a497ebf353992fda50f39cd"><div class="ttname"><a href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">ui::CASE_OUTLINE</a></div><div class="ttdeci">constexpr Vector4 CASE_OUTLINE</div><div class="ttdoc">Defines the outline rectangle of the Enigma machine layout.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">layout.h:14</a></div></div>
+<div class="ttc" id="anamespaceui_html_a6c612a9549b88f6252fd8b4af2a206e9"><div class="ttname"><a href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">ui::draw_key</a></div><div class="ttdeci">void draw_key(Font font, enigma::Key key)</div><div class="ttdoc">Draws a single key at its position with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="layout_8cpp_source.html#l00019">layout.cpp:19</a></div></div>
+<div class="ttc" id="anamespaceui_html_a88a3d8e8954b5a7a87b52f8b13c6a8ad"><div class="ttname"><a href="namespaceui.html#a88a3d8e8954b5a7a87b52f8b13c6a8ad">ui::SCREEN_HEIGHT</a></div><div class="ttdeci">constexpr int SCREEN_HEIGHT</div><div class="ttdef"><b>Definition</b> <a href="#l00009">layout.h:9</a></div></div>
+<div class="ttc" id="anamespaceui_html_a8bfa960f11c57d91ce3de34f89434fb4"><div class="ttname"><a href="namespaceui.html#a8bfa960f11c57d91ce3de34f89434fb4">ui::SCREEN_WIDTH</a></div><div class="ttdeci">constexpr int SCREEN_WIDTH</div><div class="ttdef"><b>Definition</b> <a href="#l00008">layout.h:8</a></div></div>
+<div class="ttc" id="anamespaceui_html_a9821b8c3835309f0132d0ba7260f6c67"><div class="ttname"><a href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">ui::CASE_INSIDE</a></div><div class="ttdeci">constexpr Vector4 CASE_INSIDE</div><div class="ttdef"><b>Definition</b> <a href="#l00015">layout.h:15</a></div></div>
+<div class="ttc" id="anamespaceui_html_ac9514b2a0df0f54ad6bb6ecc005a8278"><div class="ttname"><a href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">ui::draw_lampboard</a></div><div class="ttdeci">void draw_lampboard(Font font, enigma::Lampboard lampboard)</div><div class="ttdoc">Draws the entire lampboard with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="layout_8cpp_source.html#l00032">layout.cpp:32</a></div></div>
+<div class="ttc" id="anamespaceui_html_af3affbc3dbe7f3a9f47d4f1587ed7890"><div class="ttname"><a href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">ui::draw_background</a></div><div class="ttdeci">void draw_background()</div><div class="ttdoc">Draws the background (Enigma machine case).</div><div class="ttdef"><b>Definition</b> <a href="layout_8cpp_source.html#l00005">layout.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_da5c6b39c0a2f54e57df6799511cd3ab.html">ui</a></li><li class="navelem"><a href="layout_8h.html">layout.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

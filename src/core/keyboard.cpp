@@ -2,7 +2,7 @@
 
 namespace enigma
 {
-	KeyBoard::KeyBoard()
+	Keyboard::Keyboard()
 	{
 		float temp_x{ KEYBOARD_POSITION_X };
 		float temp_y{ KEYBOARD_POSITION_Y };
@@ -25,17 +25,17 @@ namespace enigma
 		}
 	}
 
-	KeyBoard::~KeyBoard()
+	Keyboard::~Keyboard()
 	{
 		this->p_key_pressed = nullptr;
 	}
 
-	std::vector<Key>& KeyBoard::get_keys()
+	std::vector<Key>& Keyboard::get_keys()
 	{
 		return this->keys;
 	}
 
-	bool KeyBoard::isKeyPressed(Vector2& mouse_position, bool is_mouse_pressed)
+	bool Keyboard::isKeyPressed(Vector2& mouse_position, bool is_mouse_pressed)
 	{
 		if (is_mouse_pressed && this->p_key_pressed == nullptr)
 		{
@@ -52,7 +52,7 @@ namespace enigma
 		return false;
 	}
 
-	bool KeyBoard::isKeyReleased(bool is_mouse_released)
+	bool Keyboard::isKeyReleased(bool is_mouse_released)
 	{
 		if (is_mouse_released && this->p_key_pressed != nullptr)
 		{
@@ -63,7 +63,7 @@ namespace enigma
 		return false;
 	}
 
-	Key* KeyBoard::get_pressed_key()
+	Key* Keyboard::get_pressed_key()
 	{
 		return this->p_key_pressed;
 	}

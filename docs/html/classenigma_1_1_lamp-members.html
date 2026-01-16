@@ -10,6 +10,9 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -42,11 +45,27 @@ $(function() { codefold.init(); });
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
 $(function() {
-  initMenu('',true,false,'search.php','Search',false);
+  initMenu('',true,false,'search.php','Search',true);
   $(function() { init_search(); });
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('classenigma_1_1_lamp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,12 +87,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>enigma</b></li><li class="navelem"><a href="classenigma_1_1_lamp.html">Lamp</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">enigma::Lamp Member List</div></div>
 </div><!--header-->
@@ -81,21 +94,24 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>character</b> (defined in <a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#a57ed70a3eeb14d194824420c917fe55b">character</a></td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#a70f324219f03ab4dfdb2996faa472266">get_is_lit</a>() const</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#aad691300654e34b84e794dc036b5a7cd">get_label</a>() const</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#a2ace1e33bdbd0931852b1cef2e9982df">get_position</a>() const</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#aaca9f92e615c6c5e6e384790b11f7a4a">get_text</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>is_lit</b> (defined in <a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Lamp</b>(char, const Vector2) (defined in <a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>position</b> (defined in <a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#a78a07f697b7fb2c5b18436be361e02d4">is_lit</a></td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#ae5025af789dfc2757771659470dc9301">Lamp</a>(char, const Vector2)</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#a31be624f6aba31c5d76e7346c9477eca">position</a></td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#a91566a5fcf2d209257cc38eed87c2e88">toggle_lamp</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Lamp</b>() (defined in <a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a>)</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classenigma_1_1_lamp.html#aea6eb803f12c7911b5e297611676fa3d">~Lamp</a>()</td><td class="entry"><a class="el" href="classenigma_1_1_lamp.html">enigma::Lamp</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
 </body>
 </html>

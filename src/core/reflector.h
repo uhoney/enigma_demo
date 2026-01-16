@@ -17,8 +17,9 @@ namespace enigma
 	/** @} */
 
 	/**
+	* @brief A reflector component in an Enigma machine that swaps characters based on a wiring configuration.
 	 * @class Reflector
-	 * Represents a reflector component used in an Enigma machine cipher system, which swaps input characters according to a configured wiring pattern.
+	 * Swaps 1:1 characters based on wiring. i.e. A->E, E->A
 	 */
 	class Reflector
 	{
@@ -39,16 +40,21 @@ namespace enigma
 		 * @param wiring A string_view representing the wiring pattern for the reflector.
 		 */
 		void initialize_UKW(std::string_view);
+
 		/**
 		 * @brief Gets the index of a character in the alphabet.
 		 */
 		int get_index_from_char(char) const;
+
 		/**
 		 * @brief Swaps the input character according to the reflector wiring.
 		 * @param character The input character to be swapped.
 		 */
 		char swap_character(char);
 
+		/**
+		 * @brief Retrieves the current wiring configuration of the reflector.
+		 */
 		std::string get_wiring();
 	};
 } // namespace enigma
