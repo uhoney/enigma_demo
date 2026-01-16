@@ -28,9 +28,9 @@ public:
 	void handle_key_press_event();
 
 	/**
-	* @brief DEBUG: @brief Handles a key press event; runs the pressed key character through rotators 1-2-3, reflector, and back through rotors 3-2-1, turning rotors as needed.
+	* @brief DEBUG USE ONLY. Handles a key press event; runs the pressed key character through rotators 1-2-3, reflector, and back through rotors 3-2-1, turning rotors as needed.
 	*/
-	char debug_handle_key_press_event(char&);
+	char debug_handle_key_press_event(char);
 
 	/**
 	* @brief Checks the rotor positions for turnovers and turs them rotors if needed.

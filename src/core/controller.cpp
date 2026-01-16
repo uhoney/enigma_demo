@@ -51,29 +51,18 @@ void Controller::handle_key_press_event()
 	}
 }
 
-char Controller::debug_handle_key_press_event(char &input_char)
+char Controller::debug_handle_key_press_event(char input_char)
 {
+	enigma::Log::debug("-----debug_handle_key_press_event(input: %c)", input_char);
 	char temp_char{input_char};
-
-	// DEBUG -------------------------------------------
-	enigma::Log::debug("Before checks:");
-	enigma::Log::debug("reflector: %s", this->reflector.get_wiring().c_str());
-	for (auto &i : this->rotors)
-	{
-		enigma::Log::debug("Rotor wire: %s, rotor index: %d, rotor turnover: %d", i.get_wiring().c_str(), i.get_rotor_index(), i.get_turnover_index());
-	}
-	// -------------------------------------------------
 
 	// check & turn rest of rotors if needed
 	this->handle_rotor_turnovers();
-
-	// DEBUG -------------------------------------------
-	enigma::Log::debug("After checks and ALL rolls");
-	for (auto &i : this->rotors)
-	{
-		enigma::Log::debug("Rotor wire: %s, rotor index: %d, rotor turnover: %d", i.get_wiring().c_str(), i.get_rotor_index(), i.get_turnover_index());
-	}
-	// -------------------------------------------------
+	
+	enigma::Log::debug("Rotor positions after turnover handling: R1:%d R2:%d R3:%d",
+		this->rotors.at(0).get_rotor_index(),
+		this->rotors.at(1).get_rotor_index(),
+		this->rotors.at(2).get_rotor_index());
 
 	// run through rotors 1,2,3
 	for (auto &rotor : this->rotors)
@@ -100,7 +89,6 @@ void Controller::handle_rotor_turnovers()
 	int temp0 = this->rotors.at(0).get_rotor_index();
 	int temp1 = this->rotors.at(1).get_rotor_index();
 
-	// First rotor ALWAYS turns
 	this->rotors.at(0).turn_rotor();
 
 	if (this->rotors.at(0).get_turnover_index() == temp0)

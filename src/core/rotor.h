@@ -1,8 +1,11 @@
 #pragma once
+#include <iostream>
 #include <string_view>
 #include <string>
-#include "log.h"
+#include <assert.h>
 #include <array>
+#include "raylib.h"
+#include "log.h"
 #include "../constants.h"
 
 namespace enigma
@@ -62,7 +65,10 @@ namespace enigma
 		 */
 		char reverse_pass_through(char) const;
 
-		void set_rotor_index(int); // TODO: DEBUG ONLY, delete later
+		/**
+		* @brief DEBUG USE ONLY. Set the current position index of the rotor.
+		*/
+		void set_rotor_index(int);
 
 		/**
 		 * @brief Increment the position index of the rotor, wrapping around to 0 after 25.

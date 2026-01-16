@@ -1,6 +1,4 @@
 #include "rotor.h"
-#include "raylib.h"
-#include <iostream>
 
 namespace enigma
 {
@@ -37,7 +35,6 @@ namespace enigma
 	{
 		if (new_index < 0 || new_index > 25)
 		{
-			// FIXME: Proper error handling missing
 			enigma::Log::error("Error: Rotor index out of bounds. Must be between 0 and 25.");
 			this->rotor_index = 0;
 			return;
@@ -78,14 +75,15 @@ namespace enigma
 	int Rotor::get_index_of_char(std::string_view stringview, char character) const
 	{
 		int character_position = stringview.find(character);
+				
 		if (character_position != std::string::npos)
 		{
 			return character_position;
 		}
 
-		// TODO: Figure out error handling later, now shut up compiler.  User can not input chars anyway, but just in case.
-		return -1;
-
+		// Should be impossible to reach this point, since user can not insert chars.
+		enigma::Log::error("Invalid character lookup in Rotor::get_index_of_char");
+		assert(false && "Invalid character lookup in Rotor::get_index_of_char");
 	}
 
 	char Rotor::get_turnover_char() const

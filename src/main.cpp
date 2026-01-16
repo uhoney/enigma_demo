@@ -42,6 +42,14 @@ int main(void)
 		ui::draw_keyboard(font, controller.keyboard);
 		ui::draw_lampboard(font, controller.lampboard);
 
+		
+		// Draw mouse coordinates (for debugging)
+		Vector2 mouse_pos{ GetMouseX(), GetMouseY() };
+		DrawTextEx(font, TextFormat("Mouse: [%.0f, %.0f]", mouse_pos.x, mouse_pos.y), { 10.0f, 10.0f }, static_cast<float>(font.baseSize), 1.0f, RAYWHITE);
+		
+
+
+
 		EndDrawing();
 		// END DRAW ------------------------------------------------------------------------
 	}

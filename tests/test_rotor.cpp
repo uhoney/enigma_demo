@@ -41,7 +41,7 @@ TEST_CASE("Rotor test", "[rotor]")
 	REQUIRE(rotor.pass_through('A') == 'J');
 	REQUIRE(rotor.pass_through('M') == 'T');
 	REQUIRE(rotor.pass_through('Z') == 'C');			// (char_alpha + rotor) = 25 + 25 mod 26 = 24, wiring_index[24] = C
-	REQUIRE(rotor.reverse_pass_through('J') == 'A');	// (char_wiring - rotor +26 = 25-25+26 mod26 = 0, alpha_index[0] = A
+	REQUIRE(rotor.reverse_pass_through('J') == 'A');	// (char_wiring - rotor +26) = 25-25+26 mod26 = 0, alpha_index[0] = A
 	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
 	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');
 	REQUIRE(rotor.pass_through(rotor.reverse_pass_through('A')) == 'A');

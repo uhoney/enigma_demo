@@ -34,6 +34,7 @@ namespace enigma
 		/**
 		 * @brief Returns the vector of all keys
 		 */
+		// TODO: decide on naming: snake_case or camelCase on methods. looks stupid with 2 styles
 		std::vector<Key>& get_keys();
 
 		/**
