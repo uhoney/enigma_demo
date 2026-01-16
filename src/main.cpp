@@ -9,30 +9,13 @@ int main(void)
 {
 	// INITIALIZAZTION ----------------------------------------------------------------------
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Enigma demo");
+	InitAudioDevice();
 
 	SetTargetFPS(30);
 	SetTraceLogLevel(LOG_ERROR);
 
 	Font font{ ui::load_font() };
 	Controller controller{};
-
-	// TODO: not here, move to controller
-	//// TESTING SFX --------------------------------------------------------------------------
-	//Sound sfx_key_press_1{ LoadSound("assets/sfx/typewriter_1.wav") };
-	//Sound sfx_key_press_2{ LoadSound("assets/sfx/typewriter_2.wav") };
-	//Sound sfx_key_press_3{ LoadSound("assets/sfx/typewriter_3.wav") };
-	//Sound sfx_key_press_4{ LoadSound("assets/sfx/typewriter_4.wav") };
-
-	//if (sfx_key_press_1.frameCount == 0 || sfx_key_press_2.frameCount == 0 ||
-	//	sfx_key_press_3.frameCount == 0 || sfx_key_press_4.frameCount == 0)
-	//{
-	//	std::cerr << "Error loading sound effects!" << std::endl;
-	//	CloseAudioDevice();
-	//	CloseWindow();
-	//	return -1;
-	//}
-	//// END TESTING SFX----------------------------------------------------------------------
-
 
 	// END INITIALIZATION -------------------------------------------------------------------
 
@@ -65,6 +48,7 @@ int main(void)
 	//--------------------------------------------------------------------------------------
 	// Unload, delete, dereference my own stuff
 	UnloadFont(font);
+	CloseAudioDevice();
 	CloseWindow(); // Close window and OpenGL context
 	//--------------------------------------------------------------------------------------
 

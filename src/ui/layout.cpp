@@ -60,7 +60,7 @@ namespace ui
 				{ lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },
 				enigma::LAMP_FONT_SIZE,
 				0.0f,
-				GRAY);
+				DARKGRAY);
 		}
 	}
 }

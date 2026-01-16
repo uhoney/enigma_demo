@@ -6,6 +6,9 @@ Controller::Controller()
 	this->rotors.emplace_back(enigma::ROTOR_I_WIRING, enigma::ROTOR_I_TURNOVER);
 	this->rotors.emplace_back(enigma::ROTOR_II_WIRING, enigma::ROTOR_II_TURNOVER);
 	this->rotors.emplace_back(enigma::ROTOR_III_WIRING, enigma::ROTOR_III_TURNOVER);
+
+	this->sfx_key.reserve(4);
+	this->load_sfx();
 }
 
 Controller::~Controller()
@@ -19,6 +22,9 @@ void Controller::handle_key_press_event()
 	// CHECK IF KEY IS PRESSED => key pointer is set
 	if (this->keyboard.is_key_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 	{
+		// Play key press sound effect
+		this->play_random_key_sfx();
+
 		// Get the pressed key character
 		char temp_char{this->keyboard.get_pressed_key()->get_label()};
 
@@ -58,11 +64,11 @@ char Controller::debug_handle_key_press_event(char input_char)
 
 	// check & turn rest of rotors if needed
 	this->handle_rotor_turnovers();
-	
+
 	enigma::Log::debug("Rotor positions after turnover handling: R1:%d R2:%d R3:%d",
-		this->rotors.at(0).get_rotor_index(),
-		this->rotors.at(1).get_rotor_index(),
-		this->rotors.at(2).get_rotor_index());
+					   this->rotors.at(0).get_rotor_index(),
+					   this->rotors.at(1).get_rotor_index(),
+					   this->rotors.at(2).get_rotor_index());
 
 	// run through rotors 1,2,3
 	for (auto &rotor : this->rotors)
@@ -101,4 +107,32 @@ void Controller::handle_rotor_turnovers()
 	{
 		this->rotors.at(2).turn_rotor();
 	}
+}
+
+void Controller::load_sfx()
+{
+	Sound sfx_key_press_1{LoadSound("assets/sfx/typewriter_1.wav")};
+	Sound sfx_key_press_2{LoadSound("assets/sfx/typewriter_2.wav")};
+	Sound sfx_key_press_3{LoadSound("assets/sfx/typewriter_3.wav")};
+	Sound sfx_key_press_4{LoadSound("assets/sfx/typewriter_4.wav")};
+
+	if (sfx_key_press_1.frameCount == 0 || sfx_key_press_2.frameCount == 0 ||
+		sfx_key_press_3.frameCount == 0 || sfx_key_press_4.frameCount == 0)
+	{
+		std::cerr << "Error loading sound effects!" << std::endl;
+		CloseAudioDevice();
+		CloseWindow();
+		exit(1);
+	}
+
+	this->sfx_key.emplace_back(sfx_key_press_1);
+	this->sfx_key.emplace_back(sfx_key_press_2);
+	this->sfx_key.emplace_back(sfx_key_press_3);
+	this->sfx_key.emplace_back(sfx_key_press_4);
+}
+
+void Controller::play_random_key_sfx()
+{
+	int random_index = GetRandomValue(0, static_cast<int>(this->sfx_key.size()) - 1);
+	PlaySound(this->sfx_key.at(random_index));
 }
