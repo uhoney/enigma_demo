@@ -2,6 +2,9 @@
 #include <string_view>
 #include "raylib.h"
 
+inline constexpr int SCREEN_WIDTH{ 800 };
+inline constexpr int SCREEN_HEIGHT{ 800 };
+
 namespace enigma
 {
 	inline constexpr std::string_view ALPHABETS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

@@ -4,5 +4,5 @@
 
 TEST_CASE("Lamp test", "[lamp]")
 {
-    //
+    // Can not really test visual components
 }

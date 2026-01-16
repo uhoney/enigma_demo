@@ -15,8 +15,8 @@ namespace enigma
 	inline constexpr float KEY_PADDING{ 65.0f };			///< Distance between key centers
 	inline constexpr float ROW_OFFSET_H{ 30.0f };          ///< Horizontal padding
 	inline constexpr float ROW_OFFSET_V{ 65.0f };          ///< Vertical padding
-	inline constexpr float KEY_FONT_SIZE{ 35.0f };               ///< Font size for key labels
-	inline constexpr Vector2 KEY_FONT_OFFSET{ 12.0f, 20.0f };   ///< Font offset to center text in key
+	inline constexpr float KEY_FONT_SIZE{ 30.0f };               ///< Font size for key labels
+	inline constexpr Vector2 KEY_FONT_OFFSET{ 7.0f, 15.0f };   ///< Font offset to center text in key
 	/**@}*/
 
 	/**
@@ -67,7 +67,11 @@ namespace enigma
 		/**
 		 * @brief Returns the inner key size (inner ring radius)
 		 */
-
 		void set_size_multiplier(float);
+
+		/**
+		* @brief Returns the size multiplier
+		*/
+		float get_size_multiplier() const;
 	};
 } // namespace enigma

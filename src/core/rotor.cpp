@@ -82,7 +82,6 @@ namespace enigma
 		}
 
 		// Should be impossible to reach this point, since user can not insert chars.
-		enigma::Log::error("Invalid character lookup in Rotor::get_index_of_char");
 		assert(false && "Invalid character lookup in Rotor::get_index_of_char");
 	}
 

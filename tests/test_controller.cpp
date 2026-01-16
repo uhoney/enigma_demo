@@ -6,7 +6,7 @@
 
 TEST_CASE("Controller test", "[controller]")
 {
-	enigma::Log::set_level(enigma::LogLevel::DEBUG);
+	enigma::Log::set_level(enigma::LogLevel::ERROR);	// DEBUG level for prints
 	Controller controller{};
 
 	REQUIRE(controller.rotors.size() == 3);
@@ -16,7 +16,7 @@ TEST_CASE("Controller test", "[controller]")
 
 	// Original function does not take any parameters (mouse position, key pressed)
 	// This is a copypaste of the original function with mouse simulation
-	// Apparently this is not technically unit testing, but simulation. I don't care, I just want to test the logic.
+	// Apparently this is not technically unit testing, but simulation. I just want to test the logic.
 	
 	controller.rotors.at(0).set_rotor_index(0);
 	controller.rotors.at(1).set_rotor_index(0);

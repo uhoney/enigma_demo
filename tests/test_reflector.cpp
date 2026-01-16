@@ -16,12 +16,12 @@ TEST_CASE("Reflector test", "[reflector]")
 	REQUIRE(reflector.swap_character('M') == 'C');
 	REQUIRE(reflector.swap_character('Z') == 'D');
 
-	reflector.initialize_UKW(enigma::UKW_B_WIRING);
+	reflector.initialize_reflector(enigma::UKW_B_WIRING);
 	REQUIRE(reflector.swap_character('Y') == 'A');
 	REQUIRE(reflector.swap_character('L') == 'G');
 	REQUIRE(reflector.swap_character('Z') == 'T');
 
-	reflector.initialize_UKW(enigma::UKW_C_WIRING);
+	reflector.initialize_reflector(enigma::UKW_C_WIRING);
 	REQUIRE(reflector.swap_character('A') == 'F');
 	REQUIRE(reflector.swap_character('L') == 'Z');
 	REQUIRE(reflector.swap_character('Z') == 'L');

@@ -35,7 +35,7 @@ namespace enigma
 		return this->keys;
 	}
 
-	bool Keyboard::isKeyPressed(Vector2& mouse_position, bool is_mouse_pressed)
+	bool Keyboard::is_key_pressed(Vector2& mouse_position, bool is_mouse_pressed)
 	{
 		if (is_mouse_pressed && this->p_key_pressed == nullptr)
 		{
@@ -52,7 +52,7 @@ namespace enigma
 		return false;
 	}
 
-	bool Keyboard::isKeyReleased(bool is_mouse_released)
+	bool Keyboard::is_key_released(bool is_mouse_released)
 	{
 		if (is_mouse_released && this->p_key_pressed != nullptr)
 		{

@@ -1,18 +1,16 @@
 #pragma once
 #include "raylib.h"
+#include "../constants.h"
 #include "../core/keyboard.h"
 #include "../core/lampboard.h"
 
 namespace ui
 {
-	inline constexpr int SCREEN_WIDTH = 1080;
-	inline constexpr int SCREEN_HEIGHT = 800;
-
 	/**
 	* @brief Defines the outline rectangle of the Enigma machine layout
 	*/
 	inline constexpr Vector4 CASE_OUTLINE{ 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-	inline constexpr Vector4 CASE_INSIDE{ 25, 25, SCREEN_WIDTH-50, SCREEN_HEIGHT-50 };
+	inline constexpr Vector4 CASE_INSIDE{ 25, 25, SCREEN_WIDTH - 50, SCREEN_HEIGHT - 50 };
 
 	/**
 	* @brief Draws the background (Enigma machine case)

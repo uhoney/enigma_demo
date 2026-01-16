@@ -39,7 +39,7 @@ namespace enigma
 		 * Possible wirings; UKW_A, UKW_B, UKW_C
 		 * @param wiring A string_view representing the wiring pattern for the reflector.
 		 */
-		void initialize_UKW(std::string_view);
+		void initialize_reflector(std::string_view);
 
 		/**
 		 * @brief Gets the index of a character in the alphabet.

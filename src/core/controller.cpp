@@ -17,7 +17,7 @@ void Controller::handle_key_press_event()
 	Vector2 mouse_position = GetMousePosition();
 
 	// CHECK IF KEY IS PRESSED => key pointer is set
-	if (this->keyboard.isKeyPressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
+	if (this->keyboard.is_key_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 	{
 		// Get the pressed key character
 		char temp_char{this->keyboard.get_pressed_key()->get_label()};
@@ -45,7 +45,7 @@ void Controller::handle_key_press_event()
 	}
 
 	// Turn off lamps when key is released => key pointer is reset
-	if (this->keyboard.isKeyReleased(IsMouseButtonReleased(MOUSE_LEFT_BUTTON)))
+	if (this->keyboard.is_key_released(IsMouseButtonReleased(MOUSE_LEFT_BUTTON)))
 	{
 		this->lampboard.reset_lamps();
 	}

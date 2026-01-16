@@ -11,7 +11,7 @@ namespace enigma
 	{
 	}
 
-	void Reflector::initialize_UKW(std::string_view wiring)
+	void Reflector::initialize_reflector(std::string_view wiring)
 	{
 		this->wiring = wiring;
 	}

@@ -10,8 +10,8 @@ namespace enigma
 	 * @name Lampboard position constants
 	 *@{
 	 */
-	inline constexpr float LAMPBOARD_POSITION_X{ 250.0f }; ///< Starting x position
-	inline constexpr float LAMPBOARD_POSITION_Y{ 100.0f }; ///< Starting y position
+	inline constexpr float LAMPBOARD_POSITION_X{ 100.0f }; ///< Starting x position
+	inline constexpr float LAMPBOARD_POSITION_Y{ 350.0f }; ///< Starting y position
 	/**@}*/
 
 	/**

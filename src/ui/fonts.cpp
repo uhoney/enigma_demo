@@ -8,7 +8,7 @@ namespace ui
 		
 		if (!IsFontValid(font))
 		{
-			TraceLog(LOG_ERROR, "Failed to load font from path: %s", ui::FONT_PATH);
+			enigma::Log::error("Failed to load font from path: %s", ui::FONT_PATH);
 			return GetFontDefault();
 		}
 		return font;

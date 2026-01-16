@@ -11,8 +11,8 @@ namespace enigma
 	* @name Keyboard constants
 	*@{
 	*/
-	inline constexpr float KEYBOARD_POSITION_X{ 300.0f };			///< Starting x position
-	inline constexpr float KEYBOARD_POSITION_Y{ 400.0f };			///< Starting y position
+	inline constexpr float KEYBOARD_POSITION_X{ (SCREEN_WIDTH - (8 * KEY_PADDING)) / 2 };			///< Starting x position. 8keys + padding = width.
+	inline constexpr float KEYBOARD_POSITION_Y{ 600.0f };			///< Starting y position. Not yet decided
 	/**@}*/
 
 	/**
@@ -43,20 +43,20 @@ namespace enigma
 		/**
 		 * @brief Returns the vector of all keys
 		 */
-		// TODO: decide on naming: snake_case or camelCase on methods. looks stupid with 2 styles
+		 // TODO: decide on naming: snake_case or camelCase on methods. looks stupid with 2 styles
 		std::vector<Key>& get_keys();
 
 		/**
 		* @brief Checks if a key is pressed and sets the pointer to the pressed key.
 		* Boolean added for easier unit testing (mouse input simulated)
 		*/
-		bool isKeyPressed(Vector2&, bool);
+		bool is_key_pressed(Vector2&, bool);
 
 		/**
 		* @brief Checks if a key is released and resets the pointer to nullptr.
 		* Boolean added for easier unit testing, mouse input can be simulated.
 		*/
-		bool isKeyReleased(bool);
+		bool is_key_released(bool);
 
 		/**
 		* @brief Returns pointer to the currently pressed key. nullptr if no key is pressed.

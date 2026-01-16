@@ -11,7 +11,6 @@ TEST_CASE("Rotor test", "[rotor]")
 
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'A') == 0);
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'Z') == 25);
-	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'c') == -1);	// user can not input chars, but just in case
 
 	rotor.turn_rotor();		// count from 0, now index = 1
 	REQUIRE(rotor.pass_through('A') != 'A');

@@ -66,7 +66,7 @@ set_target_properties(enigma_libs PROPERTIES
 # MAIN EXECUTABLE
 # ==============================================================================
 
-# P��ohjelma
+# Pääohjelma
 add_executable(enigma_demo
     src/main.cpp
 )

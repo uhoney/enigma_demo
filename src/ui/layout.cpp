@@ -18,13 +18,13 @@ namespace ui
 
 	void draw_key(Font font, enigma::Key key)
 	{
-		DrawCircleV(key.get_position(), enigma::KEY_OUTER_RING, LIGHTGRAY);
-		DrawCircleV(key.get_position(), enigma::KEY_INNER_RING, BLACK);
+		DrawCircleV(key.get_position(), enigma::KEY_OUTER_RING * key.get_size_multiplier(), LIGHTGRAY);
+		DrawCircleV(key.get_position(), enigma::KEY_INNER_RING * key.get_size_multiplier(), BLACK);
 		DrawTextEx(
 			font,
 			key.get_text(),
-			{ key.get_position().x - enigma::KEY_FONT_OFFSET.x, key.get_position().y - enigma::KEY_FONT_OFFSET.y },
-			enigma::KEY_FONT_SIZE,
+			{ key.get_position().x - enigma::KEY_FONT_OFFSET.x * key.get_size_multiplier(), key.get_position().y - enigma::KEY_FONT_OFFSET.y * key.get_size_multiplier() },
+			enigma::KEY_FONT_SIZE * key.get_size_multiplier(),
 			0.0f,
 			RAYWHITE);
 	}

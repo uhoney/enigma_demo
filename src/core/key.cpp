@@ -1,5 +1,4 @@
 #include "key.h"
-#include "key.h"
 
 namespace enigma
 {
@@ -33,5 +32,10 @@ namespace enigma
 	void Key::set_size_multiplier(float new_size_multiplier)
 	{
 		this->size_multiplier = new_size_multiplier;
+	}
+
+	float Key::get_size_multiplier() const
+	{
+		return this->size_multiplier;
 	}
 }

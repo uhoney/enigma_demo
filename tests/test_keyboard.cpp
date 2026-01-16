@@ -16,21 +16,21 @@ TEST_CASE("Keyboard test", "[keyboard]")
     enigma::Keyboard keyboard{};
     REQUIRE(keyboard.get_keys().size() == 26);
 
-    keyboard.isKeyPressed(virtual_mouse_Q, true);
+    keyboard.is_key_pressed(virtual_mouse_Q, true);
     REQUIRE(keyboard.get_pressed_key() != nullptr);
     REQUIRE(keyboard.get_pressed_key()->get_label() == 'Q');
-    keyboard.isKeyReleased(true);
+    keyboard.is_key_released(true);
     REQUIRE(keyboard.get_pressed_key() == nullptr);
 
-    keyboard.isKeyPressed(virtual_mouse_S, true);
+    keyboard.is_key_pressed(virtual_mouse_S, true);
     REQUIRE(keyboard.get_pressed_key() != nullptr);
     REQUIRE(keyboard.get_pressed_key()->get_label() == 'S');
-    keyboard.isKeyReleased(true);
+    keyboard.is_key_released(true);
     REQUIRE(keyboard.get_pressed_key() == nullptr);
 
-    keyboard.isKeyPressed(virtual_mouse_X, true);
+    keyboard.is_key_pressed(virtual_mouse_X, true);
     REQUIRE(keyboard.get_pressed_key() != nullptr);
     REQUIRE(keyboard.get_pressed_key()->get_label() == 'X');
-    keyboard.isKeyReleased(true);
+    keyboard.is_key_released(true);
     REQUIRE(keyboard.get_pressed_key() == nullptr);
 }
