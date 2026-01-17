@@ -26,6 +26,10 @@ int main(void)
 
 		// Check if key is pressed/released and handle accordingly
 		controller.handle_key_press_event();
+
+		// Check if rotor buttons pressed and handle accordingly
+		//controller.handle_rotor_press_event();
+
 		// END UPDATE-----------------------------------------------------------------------
 
 		// DRAW ----------------------------------------------------------------------------
@@ -34,6 +38,8 @@ int main(void)
 
 		// Draw my own stuff
 		ui::draw_background();
+		ui::draw_rotor_ui(font, controller.rotors);
+
 		ui::draw_keyboard(font, controller.keyboard);
 		ui::draw_lampboard(font, controller.lampboard);
 

@@ -3,6 +3,8 @@
 #include "../constants.h"
 #include "../core/keyboard.h"
 #include "../core/lampboard.h"
+#include "../core/rotor.h"
+#include "../core/controller.h"
 
 namespace ui
 {
@@ -36,4 +38,19 @@ namespace ui
 	* @brief Draws a single lamp at its position with given font and offset
 	*/
 	void draw_lamp(Font, enigma::Lamp);
+
+	/**
+	* @brief Draws the rotor index rectangle and the rotor index character inside
+	*/
+	void draw_rotor_index(Font, Vector2, Vector2, enigma::Rotor);
+
+	/**
+	* @brief Draws the rotor buttons (step up/step down)
+	*/
+	void draw_rotor_buttons();
+
+	/**
+	* @brief Draws the rotor UI elements (rectangles, buttons, labels)
+	*/
+	void draw_rotor_ui(Font, std::vector<enigma::Rotor>&);	
 }

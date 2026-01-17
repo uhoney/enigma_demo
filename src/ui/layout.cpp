@@ -63,4 +63,37 @@ namespace ui
 				DARKGRAY);
 		}
 	}
+
+	void ui::draw_rotor_index(Font font, Vector2 rect_position, Vector2 rect_size, enigma::Rotor rotor)
+	{
+		// offset inside rectangle to create outline effect
+		DrawRectangleV(rect_position, rect_size, BLACK);
+		DrawRectangleV({ rect_position.x + 3.0f, rect_position.y + 3.0f }, { rect_size.x - 6.0f, rect_size.y - 6.0f }, RAYWHITE);
+
+		DrawTextEx(
+			font,
+			TextFormat("%d", rotor.get_rotor_index() + 1), // rotors count from 0, but display from 1
+			{ rect_position.x + 10.0f, rect_position.y + 8.0f },
+			40.0f,
+			0.0f,
+			BLACK);
+	}
+
+	void ui::draw_rotor_ui(Font font, std::vector<enigma::Rotor>& rotors)
+	{
+		for (size_t i = 0; i < rotors.size(); ++i)
+		{
+			draw_rotor_index(
+				font,
+				{ 
+					enigma::ROTOR_INDEX_RECT_OUTLINE_POS.x - (enigma::ROTOR_INDEX_RECT_PADDING * i),
+					enigma::ROTOR_INDEX_RECT_OUTLINE_POS.y
+				},
+				enigma::ROTOR_INDEX_RECT_OUTLINE_SIZE,
+				rotors[i]);
+		}
+
+		// TODO: draw buttons
+
+	}
 }

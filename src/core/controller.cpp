@@ -19,38 +19,29 @@ void Controller::handle_key_press_event()
 {
 	Vector2 mouse_position = GetMousePosition();
 
-	// CHECK IF KEY IS PRESSED => key pointer is set
 	if (this->keyboard.is_key_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 	{
-		// Play key press sound effect
 		this->play_random_key_sfx();
 
-		// Get the pressed key character
 		char temp_char{this->keyboard.get_pressed_key()->get_label()};
 
-		// Turn first rotor and check if others need to turn
 		this->handle_rotor_turnovers();
 
-		// run current (char) through rotors 1,2,3
 		for (auto &rotor : this->rotors)
 		{
 			temp_char = rotor.pass_through(temp_char);
 		}
 
-		// swap and change direction
 		temp_char = this->reflector.swap_character(temp_char);
 
-		// run char through rotors in reverse
 		for (auto rotor = this->rotors.rbegin(); rotor != this->rotors.rend(); ++rotor)
 		{
 			temp_char = rotor->reverse_pass_through(temp_char);
 		}
 
-		// turn on lamp for output char
 		this->lampboard.turn_on_lamp(temp_char);
 	}
 
-	// Turn off lamps when key is released => key pointer is reset
 	if (this->keyboard.is_key_released(IsMouseButtonReleased(MOUSE_LEFT_BUTTON)))
 	{
 		this->lampboard.reset_lamps();
@@ -136,3 +127,16 @@ void Controller::play_random_key_sfx()
 	int random_index = GetRandomValue(0, static_cast<int>(this->sfx_key.size()) - 1);
 	PlaySound(this->sfx_key.at(random_index));
 }
+
+//void Controller::handle_rotor_press_event()
+//{
+//	Vector2 mouse_position = GetMousePosition();
+//	auto& rotors_ui_positions = ui::get_rotor_ui_positions();
+//	for (size_t i = 0; i < this->rotors.size(); ++i)
+//	{
+//		if (enigma::ui::is_rotor_button_pressed(mouse_position, rotors_ui_positions.at(i)))
+//		{
+//			this->rotors.at(i).turn_rotor();
+//		}
+//	}
+//}

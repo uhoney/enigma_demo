@@ -22,6 +22,10 @@ namespace enigma
 	inline constexpr char ROTOR_III_TURNOVER = 'V';
 	/** @} */
 
+	inline constexpr Vector2 ROTOR_INDEX_RECT_OUTLINE_POS{ 520.0f, 150.0f };
+	inline constexpr Vector2 ROTOR_INDEX_RECT_OUTLINE_SIZE{ 60.0f, 60.0f };
+	inline constexpr float ROTOR_INDEX_RECT_PADDING{ 150.0f };
+
 	/**
 	* @brief A rotating disc that spins and substitutes characters based on its wiring and position.
 	* @class Rotor
@@ -48,6 +52,8 @@ namespace enigma
 		* @brief The current position index of the rotor (0-25). Used for GUI display and substitution calculations.
 		*/
 		int rotor_index{ 0 };
+
+		
 
 	public:
 		/**

@@ -11,7 +11,7 @@ namespace enigma
 	* @name Keyboard constants
 	*@{
 	*/
-	inline constexpr float KEYBOARD_POSITION_X{ (SCREEN_WIDTH - (8 * KEY_PADDING)) / 2 };			///< Starting x position. 8keys + padding = width.
+	inline constexpr float KEYBOARD_POSITION_X{ (SCREEN_WIDTH - (8 * KEY_PADDING)) / 2 };			///< Starting x position. 8 keys + keypadding = width.
 	inline constexpr float KEYBOARD_POSITION_Y{ 600.0f };			///< Starting y position. Not yet decided
 	/**@}*/
 

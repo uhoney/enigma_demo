@@ -53,4 +53,10 @@ public:
 	 * @brief Play a random sound effect for a key press.
 	 */
 	void play_random_key_sfx();
+
+	/**
+	* @brief Handles rotor button press events to manually turn rotors.
+	*/
+	//void handle_rotor_press_event();
+
 };
