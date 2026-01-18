@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "raylib.h"
 #include "log.h"
 #include "keyboard.h"
@@ -7,7 +8,6 @@
 #include "reflector.h"
 #include "lampboard.h"
 #include "../ui/layout.h"
-#include <vector>
 
 /**
  * @brief Controller manages the interaction between the keyboard, rotors, reflector, and lampboard.
@@ -22,7 +22,7 @@ public:
 	std::vector<enigma::Rotor> rotors{};
 	enigma::Reflector reflector{};
 	std::vector<Sound> sfx_key{};
-
+	
 	Controller();
 	~Controller();
 
@@ -58,5 +58,7 @@ public:
 	* @brief Handles rotor button press events to manually turn rotors.
 	*/
 	//void handle_rotor_press_event();
+
+	void assign_rotor_buttons();
 
 };

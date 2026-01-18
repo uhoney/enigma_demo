@@ -3,8 +3,17 @@
 namespace enigma
 {
 	Rotor::Rotor(std::string_view wiring, char turnover, Vector2 position) :
-		wiring{ wiring }, turnover{ turnover }, rotor_position{ position }
+		wiring{ wiring },
+		turnover{ turnover },
+		rotor_position{ position }
 	{
+		// Can't set button position in rotorbutton constructor, so do it here
+		this->button_down.set_button_position(
+			{ this->rotor_position.x,
+			  this->rotor_position.y + ROTOR_BUTTON_OFFSET_Y });
+		this->button_up.set_button_position(
+			{ this->rotor_position.x,
+			  this->rotor_position.y - ROTOR_BUTTON_OFFSET_Y });
 	}
 
 	Rotor::~Rotor()
@@ -75,7 +84,7 @@ namespace enigma
 	int Rotor::get_index_of_char(std::string_view stringview, char character) const
 	{
 		int character_position = stringview.find(character);
-				
+
 		if (character_position != std::string::npos)
 		{
 			return character_position;

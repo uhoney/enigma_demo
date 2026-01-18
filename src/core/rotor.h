@@ -6,6 +6,7 @@
 #include "raylib.h"
 #include "log.h"
 #include "../constants.h"
+#include "rotorbutton.h"
 
 namespace enigma
 {
@@ -21,16 +22,16 @@ namespace enigma
 	inline constexpr char ROTOR_III_TURNOVER = 'V';
 	/** @} */
 
-	
+
 	inline constexpr Vector2 ROTOR_UI_INDEX_RECT_SIZE{ 60.0f, 60.0f };
 
 	// FIXME: Quick testing layout values, adjust as needed
 	inline constexpr float ROTOR_POSITION_OFFSET_X{ 180.0f };
-	inline constexpr float ROTOR_POSITION_3{ ROTOR_POSITION_OFFSET_X};
+	inline constexpr float ROTOR_POSITION_3{ ROTOR_POSITION_OFFSET_X };
 	inline constexpr float ROTOR_POSITION_2{ ROTOR_POSITION_OFFSET_X + ROTOR_POSITION_3 };
 	inline constexpr float ROTOR_POSITION_1{ ROTOR_POSITION_OFFSET_X + ROTOR_POSITION_2 };
 	inline constexpr float ROTOR_POSITION_Y{ 150.0f };
-	
+
 
 	/**
 	* @brief A rotating disc that spins and substitutes characters based on its wiring and position.
@@ -63,7 +64,10 @@ namespace enigma
 		* @brief The position of the rotor in the UI. Also base position for other rotor UI elements.
 		*/
 		Vector2 rotor_position{ };
-		
+
+		RotorButton button_up{};
+		RotorButton button_down{};
+
 	public:
 		/**
 		* @brief Construct a new Rotor object with specified wiring and turnover character.

@@ -81,7 +81,16 @@ namespace ui
 
 	void ui::draw_rotor_buttons(Controller& controller)
 	{
-		// TODO
+		for (size_t i = 0; i < controller.rotors.size(); ++i)
+		{
+			Vector2 button_up_pos{ controller.rotors.at(i).get_rotor_position().x,
+								   controller.rotors.at(i).get_rotor_position().y - enigma::ROTOR_BUTTON_OFFSET_Y };
+			DrawRectangleV(button_up_pos, enigma::ROTOR_BUTTON_SIZE, DARKGREEN);
+			
+			Vector2 button_down_pos{ controller.rotors.at(i).get_rotor_position().x,
+									 controller.rotors.at(i).get_rotor_position().y + enigma::ROTOR_BUTTON_OFFSET_Y };
+			DrawRectangleV(button_down_pos, enigma::ROTOR_BUTTON_SIZE, RED);
+		}
 	}
 
 	void ui::draw_rotor_ui(Font font, Controller& controller)
@@ -94,7 +103,7 @@ namespace ui
 				enigma::ROTOR_UI_INDEX_RECT_SIZE,
 				controller.rotors.at(i)
 			);
-
+			draw_rotor_buttons(controller);
 		}
 	}
 }

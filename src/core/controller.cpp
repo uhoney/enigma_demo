@@ -3,13 +3,13 @@
 Controller::Controller()
 {
 	this->rotors.reserve(3);
+	this->sfx_key.reserve(4);
 
 	// Compiler can't figure out the type when curlybrace init, so give the type explicitly
 	this->rotors.emplace_back(enigma::ROTOR_I_WIRING, enigma::ROTOR_I_TURNOVER, Vector2{ enigma::ROTOR_POSITION_1, enigma::ROTOR_POSITION_Y });
 	this->rotors.emplace_back(enigma::ROTOR_II_WIRING, enigma::ROTOR_II_TURNOVER, Vector2{ enigma::ROTOR_POSITION_2, enigma::ROTOR_POSITION_Y });
 	this->rotors.emplace_back(enigma::ROTOR_III_WIRING, enigma::ROTOR_III_TURNOVER, Vector2{ enigma::ROTOR_POSITION_3, enigma::ROTOR_POSITION_Y });
 
-	this->sfx_key.reserve(4);
 	this->load_sfx();
 }
 

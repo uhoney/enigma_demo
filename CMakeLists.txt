@@ -43,6 +43,7 @@ FetchContent_MakeAvailable(catch2)
 
 # Enigma-kirjasto (jaettu p��ohjelman ja testien kanssa)
 add_library(enigma_libs STATIC
+    "src/core/rotorbutton.cpp"
     "src/core/reflector.cpp"
     "src/core/key.cpp"
     "src/core/keyboard.cpp"
