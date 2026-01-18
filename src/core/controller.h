@@ -57,8 +57,5 @@ public:
 	/**
 	* @brief Handles rotor button press events to manually turn rotors.
 	*/
-	//void handle_rotor_press_event();
-
-	void assign_rotor_buttons();
-
+	void handle_rotor_press_event();
 };

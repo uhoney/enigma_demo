@@ -129,3 +129,28 @@ void Controller::play_random_key_sfx()
 	int random_index = GetRandomValue(0, static_cast<int>(this->sfx_key.size()) - 1);
 	PlaySound(this->sfx_key.at(random_index));
 }
+
+void Controller::handle_rotor_press_event()
+{
+	Vector2 mouse_position = GetMousePosition();
+
+	for (auto& rotor : this->rotors)
+	{
+		if (rotor.is_button_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
+		{
+
+			/*enigma::RotorButton* p_pressed_button = rotor.get_pressed_button();
+			if (p_pressed_button == &rotor.button_up)
+			{
+				rotor.turn_rotor();
+			}
+			else if (p_pressed_button == &rotor.button_down)
+			{
+				rotor.turn_back_rotor();
+			}*/
+		}
+
+		// just assign nullptr is released ==> single click behavior, no hover over
+		rotor.check_if_button_released(IsMouseButtonReleased(MOUSE_LEFT_BUTTON));
+	}
+}

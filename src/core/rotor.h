@@ -65,10 +65,11 @@ namespace enigma
 		*/
 		Vector2 rotor_position{ };
 
-		RotorButton button_up{};
-		RotorButton button_down{};
+		RotorButton* p_button_pressed{ nullptr };
 
 	public:
+		RotorButton button_up{};
+		RotorButton button_down{};
 		/**
 		* @brief Construct a new Rotor object with specified wiring and turnover character.
 		*/
@@ -131,5 +132,12 @@ namespace enigma
 		* @brief Get the position of the rotor in the UI.
 		*/
 		Vector2 get_rotor_position() const;
+
+
+		bool is_button_pressed(Vector2&, bool);
+
+		void check_if_button_released(bool);
+
+		RotorButton* get_pressed_button();
 	};
 }

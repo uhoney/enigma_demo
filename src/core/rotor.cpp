@@ -113,4 +113,58 @@ namespace enigma
 	{
 		return this->rotor_position;
 	}
+
+
+	bool Rotor::is_button_pressed(Vector2& mouse_position, bool is_mouse_pressed)
+	{
+		if (is_mouse_pressed && this->p_button_pressed == nullptr)
+		{
+
+			enigma::Log::debug("This should be logged!");
+
+			//// Check button up
+			//if (CheckCollisionPointRec(mouse_position, 
+			//	Rectangle{ this->button_up.get_button_position().x - ROTOR_BUTTON_SIZE.x / 2,
+			//			   this->button_up.get_button_position().y - ROTOR_BUTTON_SIZE.y / 2,
+			//			   ROTOR_BUTTON_SIZE.x,
+			//			   ROTOR_BUTTON_SIZE.y }))
+			//{
+			//	this->p_button_pressed = &this->button_up;
+			//	enigma::Log::debug("Rotor button UP pressed");
+			//	return true;
+			//}
+
+			//// Check button down
+			//if (CheckCollisionPointRec(mouse_position,
+			//	Rectangle{ this->button_down.get_button_position().x - ROTOR_BUTTON_SIZE.x / 2,
+			//			   this->button_down.get_button_position().y - ROTOR_BUTTON_SIZE.y / 2,
+			//			   ROTOR_BUTTON_SIZE.x,
+			//			   ROTOR_BUTTON_SIZE.y }))
+			//{
+			//	this->p_button_pressed = &this->button_down;
+			//	enigma::Log::debug("Rotor button DOWN pressed");
+			//	return true;
+			//}
+			
+		}
+		return false;
+	}
+
+	void Rotor::check_if_button_released(bool is_mouse_released)
+	{
+		if (is_mouse_released && this->p_button_pressed != nullptr)
+		{
+			this->p_button_pressed = nullptr;
+			enigma::Log::debug("Rotor button released");
+			}
+	}
+
+	RotorButton* Rotor::get_pressed_button()
+	{
+		return this->p_button_pressed;
+	}
+
+
+
+
 }

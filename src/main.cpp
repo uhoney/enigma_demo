@@ -12,7 +12,7 @@ int main(void)
 	InitAudioDevice();
 
 	SetTargetFPS(30);
-	SetTraceLogLevel(LOG_ERROR);
+	SetTraceLogLevel(LOG_DEBUG);
 
 	Font font{ ui::load_font() };
 	Controller controller{};
@@ -28,7 +28,8 @@ int main(void)
 		controller.handle_key_press_event();
 
 		// Check if rotor buttons pressed and handle accordingly
-		//controller.handle_rotor_press_event();
+		controller.handle_rotor_press_event();
+
 
 		// END UPDATE-----------------------------------------------------------------------
 
