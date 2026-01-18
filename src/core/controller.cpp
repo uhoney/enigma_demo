@@ -17,10 +17,8 @@ Controller::~Controller()
 {
 }
 
-void Controller::handle_key_press_event()
+void Controller::handle_key_press_event(Vector2& mouse_position)
 {
-	Vector2 mouse_position = GetMousePosition();
-
 	if (this->keyboard.is_key_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 	{
 		this->play_random_key_sfx();
@@ -130,27 +128,37 @@ void Controller::play_random_key_sfx()
 	PlaySound(this->sfx_key.at(random_index));
 }
 
-void Controller::handle_rotor_press_event()
+void Controller::handle_rotor_press_event(Vector2& mouse_position, bool& mouse_pressed, bool& mouse_released)
 {
-	Vector2 mouse_position = GetMousePosition();
-
 	for (auto& rotor : this->rotors)
 	{
-		if (rotor.is_button_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
+		if (rotor.is_button_pressed(mouse_position, mouse_pressed))
 		{
-
-			/*enigma::RotorButton* p_pressed_button = rotor.get_pressed_button();
+			enigma::RotorButton* p_pressed_button = rotor.get_pressed_button();
 			if (p_pressed_button == &rotor.button_up)
 			{
+				this->play_random_key_sfx();
 				rotor.turn_rotor();
 			}
 			else if (p_pressed_button == &rotor.button_down)
 			{
+				this->play_random_key_sfx();
 				rotor.turn_back_rotor();
-			}*/
+			}
 		}
 
-		// just assign nullptr is released ==> single click behavior, no hover over
-		rotor.check_if_button_released(IsMouseButtonReleased(MOUSE_LEFT_BUTTON));
+		// just assign nullptr if released ==> single click behavior, no hover over multiple clicks
+		rotor.check_if_button_released(mouse_released);
 	}
+
+}
+
+void Controller::handle_mouse_press_event()
+{
+	Vector2 mouse_position = GetMousePosition();
+	bool is_mouse_pressed = IsMouseButtonPressed(MOUSE_LEFT_BUTTON);
+	bool is_mouse_released = IsMouseButtonReleased(MOUSE_LEFT_BUTTON);
+		
+	this->handle_rotor_press_event(mouse_position, is_mouse_pressed, is_mouse_released);
+	this->handle_key_press_event(mouse_position);
 }

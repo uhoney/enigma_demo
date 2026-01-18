@@ -134,9 +134,9 @@ namespace enigma
 		Vector2 get_rotor_position() const;
 
 
-		bool is_button_pressed(Vector2&, bool);
+		bool is_button_pressed(Vector2&, bool&);
 
-		void check_if_button_released(bool);
+		void check_if_button_released(bool&);
 
 		RotorButton* get_pressed_button();
 	};

@@ -93,115 +93,38 @@ $(function(){initNavTree('classenigma_1_1_reflector.html','','classenigma_1_1_re
 <div class="contents">
 
 <p>A reflector component in an Enigma machine that swaps characters based on a wiring configuration.Swaps 1:1 characters based on wiring. i.e. A-&gt;E, E-&gt;A.  
- <a href="#details">More...</a></p>
+</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a619a0d601af38849be64983cfffb0557" id="r_a619a0d601af38849be64983cfffb0557"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a619a0d601af38849be64983cfffb0557">Reflector</a> ()</td></tr>
-<tr class="memdesc:a619a0d601af38849be64983cfffb0557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initialization uses UKW_A_WIRING by default.  <br /></td></tr>
-<tr class="memitem:a1398e6bbf3062a6fd4b0689c2b47938b" id="r_a1398e6bbf3062a6fd4b0689c2b47938b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1398e6bbf3062a6fd4b0689c2b47938b">~Reflector</a> ()</td></tr>
-<tr class="memitem:ac75f1180d139e7efc27e89b87e599be0" id="r_ac75f1180d139e7efc27e89b87e599be0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac75f1180d139e7efc27e89b87e599be0">initialize_UKW</a> (std::string_view)</td></tr>
-<tr class="memdesc:ac75f1180d139e7efc27e89b87e599be0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the reflector with specific wiring. Possible wirings; UKW_A, UKW_B, UKW_C.  <br /></td></tr>
-<tr class="memitem:ab82f9a58b9f6494f12708572f5d9c404" id="r_ab82f9a58b9f6494f12708572f5d9c404"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab82f9a58b9f6494f12708572f5d9c404">get_index_from_char</a> (char) const</td></tr>
-<tr class="memdesc:ab82f9a58b9f6494f12708572f5d9c404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the index of a character in the alphabet.  <br /></td></tr>
+<tr class="memitem:a619a0d601af38849be64983cfffb0557" id="r_a619a0d601af38849be64983cfffb0557"><td class="memItemLeft" align="right" valign="top"><a id="a619a0d601af38849be64983cfffb0557" name="a619a0d601af38849be64983cfffb0557"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Reflector</b> ()</td></tr>
+<tr class="memdesc:a619a0d601af38849be64983cfffb0557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initialization uses UKW_A_WIRING by default. <br /></td></tr>
+<tr class="memitem:aea3a88faea2457c03808f85360f23b36" id="r_aea3a88faea2457c03808f85360f23b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea3a88faea2457c03808f85360f23b36">initialize_reflector</a> (std::string_view)</td></tr>
+<tr class="memdesc:aea3a88faea2457c03808f85360f23b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the reflector with specific wiring. Possible wirings; UKW_A, UKW_B, UKW_C.  <br /></td></tr>
+<tr class="memitem:ab82f9a58b9f6494f12708572f5d9c404" id="r_ab82f9a58b9f6494f12708572f5d9c404"><td class="memItemLeft" align="right" valign="top"><a id="ab82f9a58b9f6494f12708572f5d9c404" name="ab82f9a58b9f6494f12708572f5d9c404"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>get_index_from_char</b> (char) const</td></tr>
+<tr class="memdesc:ab82f9a58b9f6494f12708572f5d9c404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the index of a character in the alphabet. <br /></td></tr>
 <tr class="memitem:a60c5907abccf3ead2083d302666aee7b" id="r_a60c5907abccf3ead2083d302666aee7b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60c5907abccf3ead2083d302666aee7b">swap_character</a> (char)</td></tr>
 <tr class="memdesc:a60c5907abccf3ead2083d302666aee7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the input character according to the reflector wiring.  <br /></td></tr>
-<tr class="memitem:a3266fe2a29d5379a787ddc977e7eccc0" id="r_a3266fe2a29d5379a787ddc977e7eccc0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3266fe2a29d5379a787ddc977e7eccc0">get_wiring</a> ()</td></tr>
-<tr class="memdesc:a3266fe2a29d5379a787ddc977e7eccc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current wiring configuration of the reflector.  <br /></td></tr>
+<tr class="memitem:a3266fe2a29d5379a787ddc977e7eccc0" id="r_a3266fe2a29d5379a787ddc977e7eccc0"><td class="memItemLeft" align="right" valign="top"><a id="a3266fe2a29d5379a787ddc977e7eccc0" name="a3266fe2a29d5379a787ddc977e7eccc0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_wiring</b> ()</td></tr>
+<tr class="memdesc:a3266fe2a29d5379a787ddc977e7eccc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current wiring configuration of the reflector. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a2fdaed768cc6dad81da1eadec878add0" id="r_a2fdaed768cc6dad81da1eadec878add0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fdaed768cc6dad81da1eadec878add0">wiring</a> {}</td></tr>
+<tr class="memitem:a2fdaed768cc6dad81da1eadec878add0" id="r_a2fdaed768cc6dad81da1eadec878add0"><td class="memItemLeft" align="right" valign="top"><a id="a2fdaed768cc6dad81da1eadec878add0" name="a2fdaed768cc6dad81da1eadec878add0"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>wiring</b> {}</td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="reflector_8h_source.html#l00024">24</a> of file <a class="el" href="reflector_8h_source.html">reflector.h</a>.</p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a619a0d601af38849be64983cfffb0557" name="a619a0d601af38849be64983cfffb0557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a619a0d601af38849be64983cfffb0557">&#9670;&#160;</a></span>Reflector()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enigma::Reflector::Reflector </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="reflector_8cpp_source.html#l00006">6</a> of file <a class="el" href="reflector_8cpp_source.html">reflector.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a1398e6bbf3062a6fd4b0689c2b47938b" name="a1398e6bbf3062a6fd4b0689c2b47938b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1398e6bbf3062a6fd4b0689c2b47938b">&#9670;&#160;</a></span>~Reflector()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enigma::Reflector::~Reflector </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="reflector_8cpp_source.html#l00010">10</a> of file <a class="el" href="reflector_8cpp_source.html">reflector.cpp</a>.</p>
-
-</div>
-</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ab82f9a58b9f6494f12708572f5d9c404" name="ab82f9a58b9f6494f12708572f5d9c404"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab82f9a58b9f6494f12708572f5d9c404">&#9670;&#160;</a></span>get_index_from_char()</h2>
+<a id="aea3a88faea2457c03808f85360f23b36" name="aea3a88faea2457c03808f85360f23b36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3a88faea2457c03808f85360f23b36">&#9670;&#160;</a></span>initialize_reflector()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int enigma::Reflector::get_index_from_char </td>
-          <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>character_input</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="reflector_8cpp_source.html#l00019">19</a> of file <a class="el" href="reflector_8cpp_source.html">reflector.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3266fe2a29d5379a787ddc977e7eccc0" name="a3266fe2a29d5379a787ddc977e7eccc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3266fe2a29d5379a787ddc977e7eccc0">&#9670;&#160;</a></span>get_wiring()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string enigma::Reflector::get_wiring </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="reflector_8cpp_source.html#l00038">38</a> of file <a class="el" href="reflector_8cpp_source.html">reflector.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac75f1180d139e7efc27e89b87e599be0" name="ac75f1180d139e7efc27e89b87e599be0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac75f1180d139e7efc27e89b87e599be0">&#9670;&#160;</a></span>initialize_UKW()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void enigma::Reflector::initialize_UKW </td>
+          <td class="memname">void enigma::Reflector::initialize_reflector </td>
           <td>(</td>
           <td class="paramtype">std::string_view</td>          <td class="paramname"><span class="paramname"><em>wiring</em></span></td><td>)</td>
           <td></td>
@@ -214,8 +137,6 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="reflector_8cpp_source.html#l00014">14</a> of file <a class="el" href="reflector_8cpp_source.html">reflector.cpp</a>.</p>
 
 </div>
 </div>
@@ -240,38 +161,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="reflector_8cpp_source.html#l00031">31</a> of file <a class="el" href="reflector_8cpp_source.html">reflector.cpp</a>.</p>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a2fdaed768cc6dad81da1eadec878add0" name="a2fdaed768cc6dad81da1eadec878add0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fdaed768cc6dad81da1eadec878add0">&#9670;&#160;</a></span>wiring</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string enigma::Reflector::wiring {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="reflector_8h_source.html#l00027">27</a> of file <a class="el" href="reflector_8h_source.html">reflector.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/core/<a class="el" href="reflector_8h_source.html">reflector.h</a></li>
-<li>src/core/<a class="el" href="reflector_8cpp_source.html">reflector.cpp</a></li>
+<li>src/core/<b>reflector.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -286,7 +180,7 @@ Private Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="namespaceenigma.html">enigma</a></li><li class="navelem"><a href="classenigma_1_1_reflector.html">Reflector</a></li>
+    <li class="navelem"><b>enigma</b></li><li class="navelem"><a href="classenigma_1_1_reflector.html">Reflector</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

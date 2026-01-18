@@ -8,11 +8,13 @@
 int main(void)
 {
 	// INITIALIZAZTION ----------------------------------------------------------------------
+	SetTraceLogLevel(LOG_NONE); // Disable raylib logging
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Enigma demo");
 	InitAudioDevice();
 
 	SetTargetFPS(30);
-	SetTraceLogLevel(LOG_DEBUG);
+	
+	enigma::Log::set_level(enigma::LogLevel::DEBUG);
 
 	Font font{ ui::load_font() };
 	Controller controller{};
@@ -22,14 +24,10 @@ int main(void)
 	//	Main program loop
 	while (!WindowShouldClose()) // Detect window close button or ESC key
 	{
+
 		// UPDATE --------------------------------------------------------------------------
 
-		// Check if key is pressed/released and handle accordingly
-		controller.handle_key_press_event();
-
-		// Check if rotor buttons pressed and handle accordingly
-		controller.handle_rotor_press_event();
-
+		controller.handle_mouse_press_event();
 
 		// END UPDATE-----------------------------------------------------------------------
 
@@ -40,7 +38,6 @@ int main(void)
 		// Draw my own stuff
 		ui::draw_background();
 		ui::draw_rotor_ui(font, controller);
-
 		ui::draw_keyboard(font, controller.keyboard);
 		ui::draw_lampboard(font, controller.lampboard);
 

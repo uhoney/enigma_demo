@@ -91,39 +91,29 @@ $(function(){initNavTree('fonts_8cpp_source.html','',''); });
   <div class="headertitle"><div class="title">fonts.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="fonts_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="fonts_8h.html">fonts.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;fonts.h&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="namespaceui.html">    3</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceui.html">ui</a></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span>ui</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespaceui.html#adf514a88daf97ac51837df372066f9d4">    5</a></span>    Font <a class="code hl_function" href="namespaceui.html#adf514a88daf97ac51837df372066f9d4">load_font</a>()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    Font load_font()</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        Font font{ LoadFontEx(<a class="code hl_variable" href="namespaceui.html#a6d4c5f98d96cbd331a3687da05345530">ui::FONT_PATH</a>, <a class="code hl_variable" href="namespaceui.html#a5bcaccf1755551f6edb9e0686a8c78e6">ui::FONT_SIZE</a>, <span class="keyword">nullptr</span>, <a class="code hl_variable" href="namespaceui.html#aafa20fc0c9c7525ab148a20a59dbed5f">ui::FONT_CODEPOINTS_COUNT</a>) };</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        Font font{ LoadFontEx(ui::FONT_PATH, ui::FONT_SIZE, <span class="keyword">nullptr</span>, ui::FONT_CODEPOINTS_COUNT) };</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordflow">if</span> (!IsFontValid(font))</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            TraceLog(LOG_ERROR, <span class="stringliteral">&quot;Failed to load font from path: %s&quot;</span>, <a class="code hl_variable" href="namespaceui.html#a6d4c5f98d96cbd331a3687da05345530">ui::FONT_PATH</a>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            enigma::Log::error(<span class="stringliteral">&quot;Failed to load font from path: %s&quot;</span>, ui::FONT_PATH);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            <span class="keywordflow">return</span> GetFontDefault();</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        }</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">return</span> font;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
-</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
-</div>
-<div class="ttc" id="afonts_8h_html"><div class="ttname"><a href="fonts_8h.html">fonts.h</a></div></div>
-<div class="ttc" id="anamespaceui_html"><div class="ttname"><a href="namespaceui.html">ui</a></div><div class="ttdef"><b>Definition</b> <a href="#l00003">fonts.cpp:4</a></div></div>
-<div class="ttc" id="anamespaceui_html_a5bcaccf1755551f6edb9e0686a8c78e6"><div class="ttname"><a href="namespaceui.html#a5bcaccf1755551f6edb9e0686a8c78e6">ui::FONT_SIZE</a></div><div class="ttdeci">constexpr int FONT_SIZE</div><div class="ttdef"><b>Definition</b> <a href="fonts_8h_source.html#l00008">fonts.h:8</a></div></div>
-<div class="ttc" id="anamespaceui_html_a6d4c5f98d96cbd331a3687da05345530"><div class="ttname"><a href="namespaceui.html#a6d4c5f98d96cbd331a3687da05345530">ui::FONT_PATH</a></div><div class="ttdeci">constexpr const char * FONT_PATH</div><div class="ttdef"><b>Definition</b> <a href="fonts_8h_source.html#l00007">fonts.h:7</a></div></div>
-<div class="ttc" id="anamespaceui_html_aafa20fc0c9c7525ab148a20a59dbed5f"><div class="ttname"><a href="namespaceui.html#aafa20fc0c9c7525ab148a20a59dbed5f">ui::FONT_CODEPOINTS_COUNT</a></div><div class="ttdeci">constexpr int FONT_CODEPOINTS_COUNT</div><div class="ttdef"><b>Definition</b> <a href="fonts_8h_source.html#l00009">fonts.h:9</a></div></div>
-<div class="ttc" id="anamespaceui_html_adf514a88daf97ac51837df372066f9d4"><div class="ttname"><a href="namespaceui.html#adf514a88daf97ac51837df372066f9d4">ui::load_font</a></div><div class="ttdeci">Font load_font()</div><div class="ttdef"><b>Definition</b> <a href="#l00005">fonts.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_da5c6b39c0a2f54e57df6799511cd3ab.html">ui</a></li><li class="navelem"><a href="fonts_8cpp.html">fonts.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>ui</b></li><li class="navelem"><b>fonts.cpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

@@ -5,7 +5,6 @@
 namespace enigma
 {
 
-
 	inline constexpr float ROTOR_BUTTON_OFFSET_X{ 60.0f };
 	inline constexpr float ROTOR_BUTTON_OFFSET_Y{ 60.0f };
 	inline constexpr Vector2 ROTOR_BUTTON_SIZE{ 60.0f, 60.0f };

@@ -91,114 +91,136 @@ $(function(){initNavTree('layout_8cpp_source.html','',''); });
   <div class="headertitle"><div class="title">layout.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="layout_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="layout_8h.html">layout.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;layout.h&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceui.html">ui</a></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span>ui</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">    5</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">draw_background</a>()</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="keywordtype">void</span> draw_background()</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        DrawRectangleRec({ <a class="code hl_variable" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">CASE_OUTLINE</a>.x, <a class="code hl_variable" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">CASE_OUTLINE</a>.y, <a class="code hl_variable" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">CASE_OUTLINE</a>.z, <a class="code hl_variable" href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">CASE_OUTLINE</a>.w }, BEIGE);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        DrawRectangleRec({ <a class="code hl_variable" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">CASE_INSIDE</a>.x, <a class="code hl_variable" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">CASE_INSIDE</a>.y, <a class="code hl_variable" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">CASE_INSIDE</a>.z, <a class="code hl_variable" href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">CASE_INSIDE</a>.w }, DARKGRAY);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        DrawRectangleRec({ CASE_OUTLINE.x, CASE_OUTLINE.y, CASE_OUTLINE.z, CASE_OUTLINE.w }, BEIGE);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        DrawRectangleRec({ CASE_INSIDE.x, CASE_INSIDE.y, CASE_INSIDE.z, CASE_INSIDE.w }, DARKGRAY);</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
-</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">   11</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">draw_keyboard</a>(Font font, <a class="code hl_class" href="classenigma_1_1_keyboard.html">enigma::Keyboard</a> keyboard)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">void</span> draw_keyboard(Font font, enigma::Keyboard keyboard)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; key : keyboard.<a class="code hl_function" href="classenigma_1_1_keyboard.html#a22d83c20ac0bd99f2e9087c9a5698333">get_keys</a>())</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_function" href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">draw_key</a>(font, key);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            draw_key(font, key);</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        }</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">draw_key</a>(Font font, <a class="code hl_class" href="classenigma_1_1_key.html">enigma::Key</a> key)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> draw_key(Font font, enigma::Key key)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        DrawCircleV(key.<a class="code hl_function" href="classenigma_1_1_key.html#a872855d498d5b3ea8430317128681a66">get_position</a>(), <a class="code hl_variable" href="namespaceenigma.html#a7f04519141856309cb66749e70df281d">enigma::KEY_OUTER_RING</a>, LIGHTGRAY);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        DrawCircleV(key.<a class="code hl_function" href="classenigma_1_1_key.html#a872855d498d5b3ea8430317128681a66">get_position</a>(), <a class="code hl_variable" href="namespaceenigma.html#a8f78fe2fdad9fc8e1124b583cbeb7fc2">enigma::KEY_INNER_RING</a>, BLACK);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        DrawCircleV(key.<a class="code hl_function" href="classenigma_1_1_key.html#a872855d498d5b3ea8430317128681a66">get_position</a>(), enigma::KEY_OUTER_RING * key.<a class="code hl_function" href="classenigma_1_1_key.html#ad0388cc19fd77caae04aa2453031223a">get_size_multiplier</a>(), LIGHTGRAY);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        DrawCircleV(key.<a class="code hl_function" href="classenigma_1_1_key.html#a872855d498d5b3ea8430317128681a66">get_position</a>(), enigma::KEY_INNER_RING * key.<a class="code hl_function" href="classenigma_1_1_key.html#ad0388cc19fd77caae04aa2453031223a">get_size_multiplier</a>(), BLACK);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        DrawTextEx(</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            font,</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            key.<a class="code hl_function" href="classenigma_1_1_key.html#a3e421fc22327bb5c389c5b78a5c97862">get_text</a>(),</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            { key.get_position().x - enigma::KEY_FONT_OFFSET.x, key.get_position().y - enigma::KEY_FONT_OFFSET.y },</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_variable" href="namespaceenigma.html#af89682fe04a359a235eb5b72b29285aa">enigma::KEY_FONT_SIZE</a>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            { key.get_position().x - enigma::KEY_FONT_OFFSET.x * key.get_size_multiplier(), key.get_position().y - enigma::KEY_FONT_OFFSET.y * key.get_size_multiplier() },</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            enigma::KEY_FONT_SIZE * key.<a class="code hl_function" href="classenigma_1_1_key.html#ad0388cc19fd77caae04aa2453031223a">get_size_multiplier</a>(),</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            0.0f,</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            RAYWHITE);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">   32</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">draw_lampboard</a>(Font font, <a class="code hl_class" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a> lampboard)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> draw_lampboard(Font font, enigma::Lampboard lampboard)</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; lamp : lampboard.<a class="code hl_function" href="classenigma_1_1_lampboard.html#a6afaf7687ea290db8e7ddca273011f1c">get_lamps</a>())</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_function" href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">draw_lamp</a>(font, lamp);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            draw_lamp(font, lamp);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
-</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">   40</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">draw_lamp</a>(Font font, <a class="code hl_class" href="classenigma_1_1_lamp.html">enigma::Lamp</a> lamp)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> draw_lamp(Font font, enigma::Lamp lamp)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#a70f324219f03ab4dfdb2996faa472266">get_is_lit</a>())</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            DrawCircleV(lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#a2ace1e33bdbd0931852b1cef2e9982df">get_position</a>(), <a class="code hl_variable" href="namespaceenigma.html#a2246709289d058e6bfd0cd5f88b33a72">enigma::LAMP_RADIUS</a>, YELLOW);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            DrawCircleV(lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#a2ace1e33bdbd0931852b1cef2e9982df">get_position</a>(), enigma::LAMP_RADIUS, YELLOW);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            DrawTextEx(</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                font,</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#aaca9f92e615c6c5e6e384790b11f7a4a">get_text</a>(),</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                { lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <a class="code hl_variable" href="namespaceenigma.html#abd3a16a042c233d3b15f598e93ff3913">enigma::LAMP_FONT_SIZE</a>,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                enigma::LAMP_FONT_SIZE,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                0.0f,</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                BLACK);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            DrawCircleV(lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#a2ace1e33bdbd0931852b1cef2e9982df">get_position</a>(), <a class="code hl_variable" href="namespaceenigma.html#a2246709289d058e6bfd0cd5f88b33a72">enigma::LAMP_RADIUS</a>, BLACK);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            DrawCircleV(lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#a2ace1e33bdbd0931852b1cef2e9982df">get_position</a>(), enigma::LAMP_RADIUS, BLACK);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            DrawTextEx(</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                font,</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                lamp.<a class="code hl_function" href="classenigma_1_1_lamp.html#aaca9f92e615c6c5e6e384790b11f7a4a">get_text</a>(),</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                { lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <a class="code hl_variable" href="namespaceenigma.html#abd3a16a042c233d3b15f598e93ff3913">enigma::LAMP_FONT_SIZE</a>,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                enigma::LAMP_FONT_SIZE,</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                0.0f,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                GRAY);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                DARKGRAY);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
-</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
-<div class="ttc" id="aclassenigma_1_1_key_html"><div class="ttname"><a href="classenigma_1_1_key.html">enigma::Key</a></div><div class="ttdoc">A key on the Enigma machine keyboard.Represents a key in the Enigma machine.</div><div class="ttdef"><b>Definition</b> <a href="key_8h_source.html#l00027">key.h:28</a></div></div>
-<div class="ttc" id="aclassenigma_1_1_key_html_a3e421fc22327bb5c389c5b78a5c97862"><div class="ttname"><a href="classenigma_1_1_key.html#a3e421fc22327bb5c389c5b78a5c97862">enigma::Key::get_text</a></div><div class="ttdeci">const char * get_text()</div><div class="ttdoc">Returns the character label.</div><div class="ttdef"><b>Definition</b> <a href="key_8cpp_source.html#l00021">key.cpp:21</a></div></div>
-<div class="ttc" id="aclassenigma_1_1_key_html_a872855d498d5b3ea8430317128681a66"><div class="ttname"><a href="classenigma_1_1_key.html#a872855d498d5b3ea8430317128681a66">enigma::Key::get_position</a></div><div class="ttdeci">Vector2 get_position() const</div><div class="ttdoc">Returns the character label as a C-string (for raylib DrawTextEx()).</div><div class="ttdef"><b>Definition</b> <a href="key_8cpp_source.html#l00028">key.cpp:28</a></div></div>
-<div class="ttc" id="aclassenigma_1_1_keyboard_html"><div class="ttname"><a href="classenigma_1_1_keyboard.html">enigma::Keyboard</a></div><div class="ttdoc">Represents an on-screen keyboard with keys that can be pressed and released.The Keyboard class manage...</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8h_source.html#l00023">keyboard.h:24</a></div></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> ui::draw_rotor_index(Font font, Vector2 rect_position, Vector2 rect_size, enigma::Rotor rotor)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// offset inside rectangle to create outline effect</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        DrawRectangleV(rect_position, rect_size, BLACK);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        DrawRectangleV({ rect_position.x + 3.0f, rect_position.y + 3.0f }, { rect_size.x - 6.0f, rect_size.y - 6.0f }, RAYWHITE);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        DrawTextEx(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            font,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            TextFormat(<span class="stringliteral">&quot;%d&quot;</span>, rotor.<a class="code hl_function" href="classenigma_1_1_rotor.html#ac2a5e825af5ef8faf7b187a148217811">get_rotor_index</a>() + 1), <span class="comment">// rotors count from 0, but display from 1</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            { rect_position.x + 10.0f, rect_position.y + 8.0f },</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            40.0f,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            0.0f,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            BLACK);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> ui::draw_rotor_buttons(Controller&amp; controller)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; controller.rotors.size(); ++i)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            Vector2 button_up_pos{ controller.rotors.at(i).get_rotor_position().x,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                   controller.rotors.at(i).get_rotor_position().y - enigma::ROTOR_BUTTON_OFFSET_Y };</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            DrawRectangleV(button_up_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="comment">// TODO: Draw arrow up</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            Vector2 button_down_pos{ controller.rotors.at(i).get_rotor_position().x,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                                     controller.rotors.at(i).get_rotor_position().y + enigma::ROTOR_BUTTON_OFFSET_Y };</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            DrawRectangleV(button_down_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="comment">// TODO: Draw arrow down</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> ui::draw_rotor_ui(Font font, Controller&amp; controller)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; controller.rotors.size(); ++i)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            draw_rotor_index(</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                font,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                controller.rotors.at(i).get_rotor_position(),</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                enigma::ROTOR_UI_INDEX_RECT_SIZE,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                controller.rotors.at(i)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            );</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            draw_rotor_buttons(controller);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
+<div class="ttc" id="aclassenigma_1_1_key_html_a3e421fc22327bb5c389c5b78a5c97862"><div class="ttname"><a href="classenigma_1_1_key.html#a3e421fc22327bb5c389c5b78a5c97862">enigma::Key::get_text</a></div><div class="ttdeci">const char * get_text()</div><div class="ttdoc">Returns the character label.</div><div class="ttdef"><b>Definition</b> <a href="key_8cpp_source.html#l00020">key.cpp:20</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_key_html_a872855d498d5b3ea8430317128681a66"><div class="ttname"><a href="classenigma_1_1_key.html#a872855d498d5b3ea8430317128681a66">enigma::Key::get_position</a></div><div class="ttdeci">Vector2 get_position() const</div><div class="ttdoc">Returns the character label as a C-string (for raylib DrawTextEx()).</div><div class="ttdef"><b>Definition</b> <a href="key_8cpp_source.html#l00027">key.cpp:27</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_key_html_ad0388cc19fd77caae04aa2453031223a"><div class="ttname"><a href="classenigma_1_1_key.html#ad0388cc19fd77caae04aa2453031223a">enigma::Key::get_size_multiplier</a></div><div class="ttdeci">float get_size_multiplier() const</div><div class="ttdoc">Returns the size multiplier.</div><div class="ttdef"><b>Definition</b> <a href="key_8cpp_source.html#l00037">key.cpp:37</a></div></div>
 <div class="ttc" id="aclassenigma_1_1_keyboard_html_a22d83c20ac0bd99f2e9087c9a5698333"><div class="ttname"><a href="classenigma_1_1_keyboard.html#a22d83c20ac0bd99f2e9087c9a5698333">enigma::Keyboard::get_keys</a></div><div class="ttdeci">std::vector&lt; Key &gt; &amp; get_keys()</div><div class="ttdoc">Returns the vector of all keys.</div><div class="ttdef"><b>Definition</b> <a href="keyboard_8cpp_source.html#l00033">keyboard.cpp:33</a></div></div>
-<div class="ttc" id="aclassenigma_1_1_lamp_html"><div class="ttname"><a href="classenigma_1_1_lamp.html">enigma::Lamp</a></div><div class="ttdoc">A lamp that lights up to indicate a cipher/decipher character.Each lamp corresponds to a character in...</div><div class="ttdef"><b>Definition</b> <a href="lamp_8h_source.html#l00024">lamp.h:25</a></div></div>
 <div class="ttc" id="aclassenigma_1_1_lamp_html_a2ace1e33bdbd0931852b1cef2e9982df"><div class="ttname"><a href="classenigma_1_1_lamp.html#a2ace1e33bdbd0931852b1cef2e9982df">enigma::Lamp::get_position</a></div><div class="ttdeci">Vector2 get_position() const</div><div class="ttdoc">Get the position of the lamp.</div><div class="ttdef"><b>Definition</b> <a href="lamp_8cpp_source.html#l00029">lamp.cpp:29</a></div></div>
 <div class="ttc" id="aclassenigma_1_1_lamp_html_a70f324219f03ab4dfdb2996faa472266"><div class="ttname"><a href="classenigma_1_1_lamp.html#a70f324219f03ab4dfdb2996faa472266">enigma::Lamp::get_is_lit</a></div><div class="ttdeci">bool get_is_lit() const</div><div class="ttdoc">Check if the lamp is currently lit.</div><div class="ttdef"><b>Definition</b> <a href="lamp_8cpp_source.html#l00024">lamp.cpp:24</a></div></div>
 <div class="ttc" id="aclassenigma_1_1_lamp_html_aaca9f92e615c6c5e6e384790b11f7a4a"><div class="ttname"><a href="classenigma_1_1_lamp.html#aaca9f92e615c6c5e6e384790b11f7a4a">enigma::Lamp::get_text</a></div><div class="ttdeci">const char * get_text()</div><div class="ttdoc">Get the text representation of the lamp&#39;s character.</div><div class="ttdef"><b>Definition</b> <a href="lamp_8cpp_source.html#l00019">lamp.cpp:19</a></div></div>
-<div class="ttc" id="aclassenigma_1_1_lampboard_html"><div class="ttname"><a href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></div><div class="ttdoc">Represents the lampboard of the Enigma machine.Visual component. Contains multiple Lamp objects arran...</div><div class="ttdef"><b>Definition</b> <a href="lampboard_8h_source.html#l00022">lampboard.h:23</a></div></div>
 <div class="ttc" id="aclassenigma_1_1_lampboard_html_a6afaf7687ea290db8e7ddca273011f1c"><div class="ttname"><a href="classenigma_1_1_lampboard.html#a6afaf7687ea290db8e7ddca273011f1c">enigma::Lampboard::get_lamps</a></div><div class="ttdeci">std::vector&lt; Lamp &gt; &amp; get_lamps()</div><div class="ttdoc">Get the vector of lamps on the lampboard.</div><div class="ttdef"><b>Definition</b> <a href="lampboard_8cpp_source.html#l00032">lampboard.cpp:32</a></div></div>
-<div class="ttc" id="alayout_8h_html"><div class="ttname"><a href="layout_8h.html">layout.h</a></div></div>
-<div class="ttc" id="anamespaceenigma_html_a2246709289d058e6bfd0cd5f88b33a72"><div class="ttname"><a href="namespaceenigma.html#a2246709289d058e6bfd0cd5f88b33a72">enigma::LAMP_RADIUS</a></div><div class="ttdeci">constexpr float LAMP_RADIUS</div><div class="ttdoc">Lamp radius.</div><div class="ttdef"><b>Definition</b> <a href="lamp_8h_source.html#l00013">lamp.h:13</a></div></div>
-<div class="ttc" id="anamespaceenigma_html_a7f04519141856309cb66749e70df281d"><div class="ttname"><a href="namespaceenigma.html#a7f04519141856309cb66749e70df281d">enigma::KEY_OUTER_RING</a></div><div class="ttdeci">constexpr float KEY_OUTER_RING</div><div class="ttdoc">Outer ring radius.</div><div class="ttdef"><b>Definition</b> <a href="key_8h_source.html#l00013">key.h:13</a></div></div>
-<div class="ttc" id="anamespaceenigma_html_a8f78fe2fdad9fc8e1124b583cbeb7fc2"><div class="ttname"><a href="namespaceenigma.html#a8f78fe2fdad9fc8e1124b583cbeb7fc2">enigma::KEY_INNER_RING</a></div><div class="ttdeci">constexpr float KEY_INNER_RING</div><div class="ttdoc">Inner ring radius.</div><div class="ttdef"><b>Definition</b> <a href="key_8h_source.html#l00014">key.h:14</a></div></div>
-<div class="ttc" id="anamespaceenigma_html_abd3a16a042c233d3b15f598e93ff3913"><div class="ttname"><a href="namespaceenigma.html#abd3a16a042c233d3b15f598e93ff3913">enigma::LAMP_FONT_SIZE</a></div><div class="ttdeci">constexpr float LAMP_FONT_SIZE</div><div class="ttdoc">Font size for lamp labels.</div><div class="ttdef"><b>Definition</b> <a href="lamp_8h_source.html#l00015">lamp.h:15</a></div></div>
-<div class="ttc" id="anamespaceenigma_html_af89682fe04a359a235eb5b72b29285aa"><div class="ttname"><a href="namespaceenigma.html#af89682fe04a359a235eb5b72b29285aa">enigma::KEY_FONT_SIZE</a></div><div class="ttdeci">constexpr float KEY_FONT_SIZE</div><div class="ttdoc">Font size for key labels.</div><div class="ttdef"><b>Definition</b> <a href="key_8h_source.html#l00018">key.h:18</a></div></div>
-<div class="ttc" id="anamespaceui_html"><div class="ttname"><a href="namespaceui.html">ui</a></div><div class="ttdef"><b>Definition</b> <a href="fonts_8cpp_source.html#l00003">fonts.cpp:4</a></div></div>
-<div class="ttc" id="anamespaceui_html_a178cc60e0802576d346d32ac9c73ed4f"><div class="ttname"><a href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">ui::draw_lamp</a></div><div class="ttdeci">void draw_lamp(Font font, enigma::Lamp lamp)</div><div class="ttdoc">Draws a single lamp at its position with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">layout.cpp:40</a></div></div>
-<div class="ttc" id="anamespaceui_html_a54444491b94cc392a7e7ae44f59b5447"><div class="ttname"><a href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">ui::draw_keyboard</a></div><div class="ttdeci">void draw_keyboard(Font font, enigma::Keyboard keyboard)</div><div class="ttdoc">Draws the entire keyboard with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">layout.cpp:11</a></div></div>
-<div class="ttc" id="anamespaceui_html_a6bab672e1a497ebf353992fda50f39cd"><div class="ttname"><a href="namespaceui.html#a6bab672e1a497ebf353992fda50f39cd">ui::CASE_OUTLINE</a></div><div class="ttdeci">constexpr Vector4 CASE_OUTLINE</div><div class="ttdoc">Defines the outline rectangle of the Enigma machine layout.</div><div class="ttdef"><b>Definition</b> <a href="layout_8h_source.html#l00014">layout.h:14</a></div></div>
-<div class="ttc" id="anamespaceui_html_a6c612a9549b88f6252fd8b4af2a206e9"><div class="ttname"><a href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">ui::draw_key</a></div><div class="ttdeci">void draw_key(Font font, enigma::Key key)</div><div class="ttdoc">Draws a single key at its position with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">layout.cpp:19</a></div></div>
-<div class="ttc" id="anamespaceui_html_a9821b8c3835309f0132d0ba7260f6c67"><div class="ttname"><a href="namespaceui.html#a9821b8c3835309f0132d0ba7260f6c67">ui::CASE_INSIDE</a></div><div class="ttdeci">constexpr Vector4 CASE_INSIDE</div><div class="ttdef"><b>Definition</b> <a href="layout_8h_source.html#l00015">layout.h:15</a></div></div>
-<div class="ttc" id="anamespaceui_html_ac9514b2a0df0f54ad6bb6ecc005a8278"><div class="ttname"><a href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">ui::draw_lampboard</a></div><div class="ttdeci">void draw_lampboard(Font font, enigma::Lampboard lampboard)</div><div class="ttdoc">Draws the entire lampboard with given font and offset.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">layout.cpp:32</a></div></div>
-<div class="ttc" id="anamespaceui_html_af3affbc3dbe7f3a9f47d4f1587ed7890"><div class="ttname"><a href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">ui::draw_background</a></div><div class="ttdeci">void draw_background()</div><div class="ttdoc">Draws the background (Enigma machine case).</div><div class="ttdef"><b>Definition</b> <a href="#l00005">layout.cpp:5</a></div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html_ac2a5e825af5ef8faf7b187a148217811"><div class="ttname"><a href="classenigma_1_1_rotor.html#ac2a5e825af5ef8faf7b187a148217811">enigma::Rotor::get_rotor_index</a></div><div class="ttdeci">int get_rotor_index() const</div><div class="ttdoc">Get the current position index of the rotor.</div><div class="ttdef"><b>Definition</b> <a href="rotor_8cpp_source.html#l00079">rotor.cpp:79</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_da5c6b39c0a2f54e57df6799511cd3ab.html">ui</a></li><li class="navelem"><a href="layout_8cpp.html">layout.cpp</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>ui</b></li><li class="navelem"><b>layout.cpp</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

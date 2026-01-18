@@ -85,11 +85,16 @@ namespace ui
 		{
 			Vector2 button_up_pos{ controller.rotors.at(i).get_rotor_position().x,
 								   controller.rotors.at(i).get_rotor_position().y - enigma::ROTOR_BUTTON_OFFSET_Y };
-			DrawRectangleV(button_up_pos, enigma::ROTOR_BUTTON_SIZE, DARKGREEN);
+			DrawRectangleV(button_up_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);
+			// TODO: Draw arrow up
+
+
 			
 			Vector2 button_down_pos{ controller.rotors.at(i).get_rotor_position().x,
 									 controller.rotors.at(i).get_rotor_position().y + enigma::ROTOR_BUTTON_OFFSET_Y };
-			DrawRectangleV(button_down_pos, enigma::ROTOR_BUTTON_SIZE, RED);
+			DrawRectangleV(button_down_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);
+			// TODO: Draw arrow down
+
 		}
 	}
 

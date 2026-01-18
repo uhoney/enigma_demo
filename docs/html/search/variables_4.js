@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5flit_0',['is_lit',['../classenigma_1_1_lamp.html#a78a07f697b7fb2c5b18436be361e02d4',1,'enigma::Lamp']]]
+  ['size_5fmultiplier_0',['size_multiplier',['../classenigma_1_1_key.html#ac07125afcc94dc966972e7782d007f5a',1,'enigma::Key']]]
 ];

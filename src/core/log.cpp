@@ -3,7 +3,7 @@
 namespace enigma
 {
 	// Initialize static member
-	LogLevel Log::current_level = LogLevel::INFO;
+	LogLevel Log::current_level = LogLevel::DEBUG;
 
 	void Log::set_level(LogLevel level)
 	{

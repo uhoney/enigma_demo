@@ -14,13 +14,11 @@ namespace enigma
 
 	char Key::get_label() const
 	{
-		return this->character[0];		// null terminate '/0' included in this->character
+		return this->character[0];
 	}
 
 	const char* Key::get_text()
 	{
-		// for raylib DrawTextEx()
-		// TODO: Check if you can magically get rid of this helper
 		return this->character;
 	}
 
