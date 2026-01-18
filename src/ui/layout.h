@@ -6,6 +6,8 @@
 #include "../core/rotor.h"
 #include "../core/controller.h"
 
+class Controller; // circular dependancy, forward declaration
+
 namespace ui
 {
 	/**
@@ -40,17 +42,17 @@ namespace ui
 	void draw_lamp(Font, enigma::Lamp);
 
 	/**
-	* @brief Draws the rotor index rectangle and the rotor index character inside
+	* @brief Draws the rotor index rectangle (display) and the rotor index number inside
 	*/
 	void draw_rotor_index(Font, Vector2, Vector2, enigma::Rotor);
 
 	/**
-	* @brief Draws the rotor buttons (step up/step down)
+	* @brief Draws the rotor UI buttons
 	*/
-	void draw_rotor_buttons();
+	void draw_rotor_buttons(Controller&);
 
 	/**
-	* @brief Draws the rotor UI elements (rectangles, buttons, labels)
+	* @brief Calls all rotor UI element draw functions (display, buttons)
 	*/
-	void draw_rotor_ui(Font, std::vector<enigma::Rotor>&);	
+	void draw_rotor_ui(Font, Controller&);
 }

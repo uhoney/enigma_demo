@@ -79,21 +79,22 @@ namespace ui
 			BLACK);
 	}
 
-	void ui::draw_rotor_ui(Font font, std::vector<enigma::Rotor>& rotors)
+	void ui::draw_rotor_buttons(Controller& controller)
 	{
-		for (size_t i = 0; i < rotors.size(); ++i)
+		// TODO
+	}
+
+	void ui::draw_rotor_ui(Font font, Controller& controller)
+	{
+		for (size_t i = 0; i < controller.rotors.size(); ++i)
 		{
 			draw_rotor_index(
 				font,
-				{ 
-					enigma::ROTOR_INDEX_RECT_OUTLINE_POS.x - (enigma::ROTOR_INDEX_RECT_PADDING * i),
-					enigma::ROTOR_INDEX_RECT_OUTLINE_POS.y
-				},
-				enigma::ROTOR_INDEX_RECT_OUTLINE_SIZE,
-				rotors[i]);
+				controller.rotors.at(i).get_rotor_position(),
+				enigma::ROTOR_UI_INDEX_RECT_SIZE,
+				controller.rotors.at(i)
+			);
+
 		}
-
-		// TODO: draw buttons
-
 	}
 }

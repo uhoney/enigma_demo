@@ -3,7 +3,6 @@
 #include <string_view>
 #include <string>
 #include <assert.h>
-#include <array>
 #include "raylib.h"
 #include "log.h"
 #include "../constants.h"
@@ -22,9 +21,16 @@ namespace enigma
 	inline constexpr char ROTOR_III_TURNOVER = 'V';
 	/** @} */
 
-	inline constexpr Vector2 ROTOR_INDEX_RECT_OUTLINE_POS{ 520.0f, 150.0f };
-	inline constexpr Vector2 ROTOR_INDEX_RECT_OUTLINE_SIZE{ 60.0f, 60.0f };
-	inline constexpr float ROTOR_INDEX_RECT_PADDING{ 150.0f };
+	
+	inline constexpr Vector2 ROTOR_UI_INDEX_RECT_SIZE{ 60.0f, 60.0f };
+
+	// FIXME: Quick testing layout values, adjust as needed
+	inline constexpr float ROTOR_POSITION_OFFSET_X{ 180.0f };
+	inline constexpr float ROTOR_POSITION_3{ ROTOR_POSITION_OFFSET_X};
+	inline constexpr float ROTOR_POSITION_2{ ROTOR_POSITION_OFFSET_X + ROTOR_POSITION_3 };
+	inline constexpr float ROTOR_POSITION_1{ ROTOR_POSITION_OFFSET_X + ROTOR_POSITION_2 };
+	inline constexpr float ROTOR_POSITION_Y{ 150.0f };
+	
 
 	/**
 	* @brief A rotating disc that spins and substitutes characters based on its wiring and position.
@@ -53,13 +59,16 @@ namespace enigma
 		*/
 		int rotor_index{ 0 };
 
+		/**
+		* @brief The position of the rotor in the UI. Also base position for other rotor UI elements.
+		*/
+		Vector2 rotor_position{ };
 		
-
 	public:
 		/**
 		* @brief Construct a new Rotor object with specified wiring and turnover character.
 		*/
-		Rotor(std::string_view, char);
+		Rotor(std::string_view, char, Vector2);
 		~Rotor();
 
 		/**
@@ -113,5 +122,10 @@ namespace enigma
 		* @brief Get the wiring of the rotor.
 		*/
 		std::string get_wiring() const;
+
+		/**
+		* @brief Get the position of the rotor in the UI.
+		*/
+		Vector2 get_rotor_position() const;
 	};
 }

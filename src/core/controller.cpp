@@ -3,9 +3,11 @@
 Controller::Controller()
 {
 	this->rotors.reserve(3);
-	this->rotors.emplace_back(enigma::ROTOR_I_WIRING, enigma::ROTOR_I_TURNOVER);
-	this->rotors.emplace_back(enigma::ROTOR_II_WIRING, enigma::ROTOR_II_TURNOVER);
-	this->rotors.emplace_back(enigma::ROTOR_III_WIRING, enigma::ROTOR_III_TURNOVER);
+
+	// Compiler can't figure out the type when curlybrace init, so give the type explicitly
+	this->rotors.emplace_back(enigma::ROTOR_I_WIRING, enigma::ROTOR_I_TURNOVER, Vector2{ enigma::ROTOR_POSITION_1, enigma::ROTOR_POSITION_Y });
+	this->rotors.emplace_back(enigma::ROTOR_II_WIRING, enigma::ROTOR_II_TURNOVER, Vector2{ enigma::ROTOR_POSITION_2, enigma::ROTOR_POSITION_Y });
+	this->rotors.emplace_back(enigma::ROTOR_III_WIRING, enigma::ROTOR_III_TURNOVER, Vector2{ enigma::ROTOR_POSITION_3, enigma::ROTOR_POSITION_Y });
 
 	this->sfx_key.reserve(4);
 	this->load_sfx();
@@ -23,11 +25,11 @@ void Controller::handle_key_press_event()
 	{
 		this->play_random_key_sfx();
 
-		char temp_char{this->keyboard.get_pressed_key()->get_label()};
+		char temp_char{ this->keyboard.get_pressed_key()->get_label() };
 
 		this->handle_rotor_turnovers();
 
-		for (auto &rotor : this->rotors)
+		for (auto& rotor : this->rotors)
 		{
 			temp_char = rotor.pass_through(temp_char);
 		}
@@ -51,18 +53,18 @@ void Controller::handle_key_press_event()
 char Controller::debug_handle_key_press_event(char input_char)
 {
 	enigma::Log::debug("-----debug_handle_key_press_event(input: %c)", input_char);
-	char temp_char{input_char};
+	char temp_char{ input_char };
 
 	// check & turn rest of rotors if needed
 	this->handle_rotor_turnovers();
 
 	enigma::Log::debug("Rotor positions after turnover handling: R1:%d R2:%d R3:%d",
-					   this->rotors.at(0).get_rotor_index(),
-					   this->rotors.at(1).get_rotor_index(),
-					   this->rotors.at(2).get_rotor_index());
+		this->rotors.at(0).get_rotor_index(),
+		this->rotors.at(1).get_rotor_index(),
+		this->rotors.at(2).get_rotor_index());
 
 	// run through rotors 1,2,3
-	for (auto &rotor : this->rotors)
+	for (auto& rotor : this->rotors)
 	{
 		temp_char = rotor.pass_through(temp_char);
 	}
@@ -102,10 +104,10 @@ void Controller::handle_rotor_turnovers()
 
 void Controller::load_sfx()
 {
-	Sound sfx_key_press_1{LoadSound("assets/sfx/typewriter_1.wav")};
-	Sound sfx_key_press_2{LoadSound("assets/sfx/typewriter_2.wav")};
-	Sound sfx_key_press_3{LoadSound("assets/sfx/typewriter_3.wav")};
-	Sound sfx_key_press_4{LoadSound("assets/sfx/typewriter_4.wav")};
+	Sound sfx_key_press_1{ LoadSound("assets/sfx/typewriter_1.wav") };
+	Sound sfx_key_press_2{ LoadSound("assets/sfx/typewriter_2.wav") };
+	Sound sfx_key_press_3{ LoadSound("assets/sfx/typewriter_3.wav") };
+	Sound sfx_key_press_4{ LoadSound("assets/sfx/typewriter_4.wav") };
 
 	if (sfx_key_press_1.frameCount == 0 || sfx_key_press_2.frameCount == 0 ||
 		sfx_key_press_3.frameCount == 0 || sfx_key_press_4.frameCount == 0)
@@ -127,16 +129,3 @@ void Controller::play_random_key_sfx()
 	int random_index = GetRandomValue(0, static_cast<int>(this->sfx_key.size()) - 1);
 	PlaySound(this->sfx_key.at(random_index));
 }
-
-//void Controller::handle_rotor_press_event()
-//{
-//	Vector2 mouse_position = GetMousePosition();
-//	auto& rotors_ui_positions = ui::get_rotor_ui_positions();
-//	for (size_t i = 0; i < this->rotors.size(); ++i)
-//	{
-//		if (enigma::ui::is_rotor_button_pressed(mouse_position, rotors_ui_positions.at(i)))
-//		{
-//			this->rotors.at(i).turn_rotor();
-//		}
-//	}
-//}

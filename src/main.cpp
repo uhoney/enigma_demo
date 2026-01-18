@@ -1,9 +1,9 @@
+#include <iostream>
 #include "raylib.h"
 #include "ui/fonts.h"
 #include "ui/layout.h"
 #include "constants.h"
-#include <iostream>
-#include "core/controller.h"
+#include "core/controller.h" 
 
 int main(void)
 {
@@ -38,7 +38,7 @@ int main(void)
 
 		// Draw my own stuff
 		ui::draw_background();
-		ui::draw_rotor_ui(font, controller.rotors);
+		ui::draw_rotor_ui(font, controller);
 
 		ui::draw_keyboard(font, controller.keyboard);
 		ui::draw_lampboard(font, controller.lampboard);

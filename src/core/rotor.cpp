@@ -2,8 +2,8 @@
 
 namespace enigma
 {
-	Rotor::Rotor(std::string_view wiring, char turnover) :
-		wiring{ wiring }, turnover{ turnover }
+	Rotor::Rotor(std::string_view wiring, char turnover, Vector2 position) :
+		wiring{ wiring }, turnover{ turnover }, rotor_position{ position }
 	{
 	}
 
@@ -98,5 +98,10 @@ namespace enigma
 	std::string Rotor::get_wiring() const
 	{
 		return this->wiring;
+	}
+
+	Vector2 enigma::Rotor::get_rotor_position() const
+	{
+		return this->rotor_position;
 	}
 }
