@@ -2,10 +2,9 @@
 Work in progress. Working build in main.
 Missing features:
 - Plugboard
-- GUI controls for rotors
 - Rotor & reflector selection (not intended to be implemented at this point, but you never know..)
-- GUI tweaks (fonts, layout, etc)
-- Naming convention: raylib uses PascalCase and I used snake_case. Maybe fix at some point.
+- GUI tweaks (fonts, layout, etc) this is not intended to be fancy
+- Naming convention: raylib uses PascalCase and I used snake_case. Maybe fix at some point. or not.
 
 # enigma_demo
 Trying to mash C++, CMake, Raylib, Doxygen and unit testing in one project. Let's see how it goes.
