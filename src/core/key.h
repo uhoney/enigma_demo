@@ -23,7 +23,7 @@ namespace enigma
 		/**
 		 * @brief Character label of the key. Includes null terminate '\0'
 		 */
-		char character[2]{};
+		char character{};
 
 		/**
 		 * @brief Position (x, y) of the key center
@@ -50,11 +50,6 @@ namespace enigma
 		 * @brief Return the character label of the key (without null terminate)
 		 */
 		char get_label() const;
-
-		/**
-		 * @brief Return the character label as a C-string (for raylib DrawTextEx())
-		 */
-		const char* get_text();
 
 		/**
 		 * @brief Return Vector2 position of the key center

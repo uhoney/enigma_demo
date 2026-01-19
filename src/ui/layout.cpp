@@ -22,7 +22,7 @@ namespace ui
 		DrawCircleV(key.get_position(), enigma::KEY_INNER_RING * key.get_size_multiplier(), BLACK);
 		DrawTextEx(
 			font,
-			key.get_text(),
+			TextFormat("%c", key.get_label()),
 			{ key.get_position().x - enigma::KEY_FONT_OFFSET.x * key.get_size_multiplier(), key.get_position().y - enigma::KEY_FONT_OFFSET.y * key.get_size_multiplier() },
 			enigma::KEY_FONT_SIZE * key.get_size_multiplier(),
 			0.0f,
@@ -44,7 +44,7 @@ namespace ui
 			DrawCircleV(lamp.get_position(), enigma::LAMP_RADIUS, YELLOW);
 			DrawTextEx(
 				font,
-				lamp.get_text(),
+				TextFormat("%c", lamp.get_label()),
 				{ lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },
 				enigma::LAMP_FONT_SIZE,
 				0.0f,
@@ -56,7 +56,7 @@ namespace ui
 			DrawCircleV(lamp.get_position(), enigma::LAMP_RADIUS, BLACK);
 			DrawTextEx(
 				font,
-				lamp.get_text(),
+				TextFormat("%c", lamp.get_label()),
 				{ lamp.get_position().x - enigma::LAMP_FONT_OFFSET.x, lamp.get_position().y - enigma::LAMP_FONT_OFFSET.y },
 				enigma::LAMP_FONT_SIZE,
 				0.0f,
@@ -106,7 +106,7 @@ namespace ui
 				{ button_down_pos.x + 10.0f, button_down_pos.y + 10.0f },
 				BLACK
 			);
-			
+
 		}
 	}
 

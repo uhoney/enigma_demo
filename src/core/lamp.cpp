@@ -3,7 +3,7 @@
 namespace enigma
 {
 	Lamp::Lamp(char character, const Vector2 position) :
-		character{ character, '\0' }, position{ position }
+		character{ character }, position{ position }
 	{
 	}
 
@@ -12,11 +12,6 @@ namespace enigma
 	}
 
 	char Lamp::get_label() const
-	{
-		return this->character[0];
-	}
-
-	const char* Lamp::get_text()
 	{
 		return this->character;
 	}

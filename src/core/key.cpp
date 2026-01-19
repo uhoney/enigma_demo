@@ -3,7 +3,7 @@
 namespace enigma
 {
 	Key::Key(char character, Vector2 position) :
-		character{ character, '\0' },
+		character{ character},
 		position{ position }
 	{
 	}
@@ -13,11 +13,6 @@ namespace enigma
 	}
 
 	char Key::get_label() const
-	{
-		return this->character[0];
-	}
-
-	const char* Key::get_text()
 	{
 		return this->character;
 	}
