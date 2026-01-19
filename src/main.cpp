@@ -13,7 +13,7 @@ int main(void)
 	SetTargetFPS(30);
 
 	enigma::Log::set_level(enigma::LogLevel::DEBUG);
-	bool draw_coordinates{ true };	// Draw mouse coordinates for debugging
+	bool draw_coordinates{ false };	// Draw mouse coordinates for debugging
 	Font font{ ui::load_font() };
 	Controller controller{};
 
@@ -33,8 +33,8 @@ int main(void)
 
 		if (draw_coordinates)
 		{
-			Vector2 mouse_pos{ GetMouseX(), GetMouseY() };
-			DrawTextEx(font, TextFormat("Mouse: [%.0f, %.0f]", mouse_pos.x, mouse_pos.y), { 10.0f, 10.0f }, static_cast<float>(font.baseSize), 1.0f, GRAY);
+			Vector2 mouse_pos{ GetMousePosition() };
+			DrawTextEx(font, TextFormat("Mouse: [%.0f, %.0f]", mouse_pos.x, mouse_pos.y), { 10.0f, 10.0f }, 40.0f, 1.0f, RED);
 		}
 		
 		EndDrawing();

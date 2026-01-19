@@ -64,7 +64,7 @@ namespace ui
 		}
 	}
 
-	void ui::draw_rotor_index(Font font, Vector2 rect_position, Vector2 rect_size, enigma::Rotor rotor)
+	void draw_rotor_index(Font font, Vector2 rect_position, Vector2 rect_size, enigma::Rotor rotor)
 	{
 		// offset inside rectangle to create outline effect
 		DrawRectangleV(rect_position, rect_size, BLACK);
@@ -79,7 +79,7 @@ namespace ui
 			BLACK);
 	}
 
-	void ui::draw_rotor_buttons(Controller& controller)
+	void draw_rotor_buttons(Controller& controller)
 	{
 		for (size_t i = 0; i < controller.rotors.size(); ++i)
 		{
@@ -110,7 +110,7 @@ namespace ui
 		}
 	}
 
-	void ui::draw_rotor_ui(Font font, Controller& controller)
+	void draw_rotor_ui(Font font, Controller& controller)
 	{
 		for (size_t i = 0; i < controller.rotors.size(); ++i)
 		{

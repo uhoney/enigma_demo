@@ -2,17 +2,17 @@
 # PROJECT CONFIGURATION
 # ==============================================================================
 
-# CMaken minimiversio
+# CMake required version
 cmake_minimum_required(VERSION 3.20)
 
-# Projektin nimi ja kieli
+# Project name and language
 project(enigma_demo LANGUAGES CXX)
 
-# C++ Standardi koko projektille
+# C++ standard for project
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
-# Enemm�n tietoa build-prosessista
+# Show detailed build output
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # ==============================================================================
@@ -29,7 +29,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
-# Catch2 (testauskirjasto)
+# Catch2 (unit test library)
 FetchContent_Declare(
     catch2
     GIT_REPOSITORY https://github.com/catchorg/Catch2.git
@@ -41,7 +41,7 @@ FetchContent_MakeAvailable(catch2)
 # LIBRARY TARGET
 # ==============================================================================
 
-# Enigma-kirjasto (jaettu p��ohjelman ja testien kanssa)
+# Enigma-library (shared between main build and tests)
 add_library(enigma_libs STATIC
     "src/core/rotorbutton.cpp"
     "src/core/reflector.cpp"
@@ -67,7 +67,7 @@ set_target_properties(enigma_libs PROPERTIES
 # MAIN EXECUTABLE
 # ==============================================================================
 
-# Pääohjelma
+# Main build
 add_executable(enigma_demo
     src/main.cpp
 )
@@ -83,7 +83,7 @@ set_target_properties(enigma_demo PROPERTIES
 # TEST EXECUTABLE
 # ==============================================================================
 
-# Testit
+# Test build
 add_executable(tests_enigma
     tests/test_controller.cpp    
     tests/test_dummy.cpp
@@ -105,7 +105,7 @@ set_target_properties(tests_enigma PROPERTIES
     CXX_STANDARD_REQUIRED YES
 )
 
-# CTest-integraatio
+# CTest-integration for Catch2
 include(CTest)
 include(Catch)
 catch_discover_tests(tests_enigma)
