@@ -9,7 +9,7 @@ namespace enigma
 {
 
 	inline constexpr float KEYBOARD_POSITION_X{ (SCREEN_WIDTH - (8 * KEY_PADDING)) / 2 };			///< Starting x position. 8 keys + keypadding = width.
-	inline constexpr float KEYBOARD_POSITION_Y{ 600.0f };			///< Starting y position. Not yet decided
+	inline constexpr float KEYBOARD_POSITION_Y{ 575.0f };			///< Starting y position. Not yet decided
 
 	/**
 	* Represents an on-screen keyboard with keys that can be pressed and released.

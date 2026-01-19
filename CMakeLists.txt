@@ -85,13 +85,13 @@ set_target_properties(enigma_demo PROPERTIES
 
 # Testit
 add_executable(tests_enigma
+    tests/test_controller.cpp    
     tests/test_dummy.cpp
-    #tests/test_controller.cpp    
-    #tests/test_keyboard.cpp
+    tests/test_keyboard.cpp
     #tests/test_lamp.cpp            # Can not really test visual components
     #tests/test_lampboard.cpp       # Can not really test visual components
-    #tests/test_reflector.cpp
-    #tests/test_rotor.cpp
+    tests/test_reflector.cpp
+    tests/test_rotor.cpp
     
 )
 

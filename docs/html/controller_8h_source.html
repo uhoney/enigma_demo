@@ -91,62 +91,76 @@ $(function(){initNavTree('controller_8h_source.html','',''); });
   <div class="headertitle"><div class="title">controller.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="controller_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;log.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;keyboard.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;key.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;rotor.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;reflector.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;lampboard.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../ui/layout.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="log_8h.html">log.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="keyboard_8h.html">keyboard.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="key_8h.html">key.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="rotor_8h.html">rotor.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="reflector_8h.html">reflector.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="lampboard_8h.html">lampboard.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="layout_8h.html">../ui/layout.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_controller.html">   15</a></span><span class="keyword">class </span>Controller</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="classenigma_1_1_keyboard.html">enigma::Keyboard</a> keyboard{};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a> lampboard{};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;enigma::Rotor&gt; rotors{};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="classenigma_1_1_reflector.html">enigma::Reflector</a> reflector{};</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::vector&lt;Sound&gt; sfx_key{};</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Controller();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ~Controller();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a379e766f64b44089df8aeedb1dfc66a6">handle_key_press_event</a>(Vector2&amp;);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">char</span> <a class="code hl_function" href="class_controller.html#af7c73e014d262db935b2eade1ad17263">debug_handle_key_press_event</a>(<span class="keywordtype">char</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a9653d8c98dc5636403ca02ee134590e6">handle_rotor_turnovers</a>();</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_controller.html">   17</a></span><span class="keyword">class </span><a class="code hl_function" href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_controller.html#a1aeba6992e55e821b05745bb2a3072f9">   20</a></span>    <a class="code hl_class" href="classenigma_1_1_keyboard.html">enigma::Keyboard</a> <a class="code hl_variable" href="class_controller.html#a1aeba6992e55e821b05745bb2a3072f9">keyboard</a>{};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_controller.html#a0f5b13014e006a17cd133d73484dc4bd">   21</a></span>    <a class="code hl_class" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a> <a class="code hl_variable" href="class_controller.html#a0f5b13014e006a17cd133d73484dc4bd">lampboard</a>{};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_controller.html#a4dc7ef2c23931580a16f6359dbe6e7ef">   22</a></span>    std::vector&lt;enigma::Rotor&gt; <a class="code hl_variable" href="class_controller.html#a4dc7ef2c23931580a16f6359dbe6e7ef">rotors</a>{};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_controller.html#a982b051c51c789da2754c0193c1afe10">   23</a></span>    <a class="code hl_class" href="classenigma_1_1_reflector.html">enigma::Reflector</a> <a class="code hl_variable" href="class_controller.html#a982b051c51c789da2754c0193c1afe10">reflector</a>{};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_controller.html#a44a1eecf99d55849e56ba7289dbaf1c7">   24</a></span>    std::vector&lt;Sound&gt; <a class="code hl_variable" href="class_controller.html#a44a1eecf99d55849e56ba7289dbaf1c7">sfx_key</a>{};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a379e766f64b44089df8aeedb1dfc66a6">handle_key_press_event</a>(Vector2&amp;);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">char</span> <a class="code hl_function" href="class_controller.html#af7c73e014d262db935b2eade1ad17263">debug_handle_key_press_event</a>(<span class="keywordtype">char</span>);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a46d8172b76b0a3327ca51d52fa442c2c">load_sfx</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a63f8d77017c359709fe234a5ab96bc56">play_random_key_sfx</a>();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a262e7045b7e12279310ab913b5c07b9c">handle_rotor_press_event</a>(Vector2&amp;, <span class="keywordtype">bool</span>&amp;, <span class="keywordtype">bool</span>&amp;);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#ad9f3c7b8b703038b6170de55d626d941">handle_mouse_press_event</a>();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a9653d8c98dc5636403ca02ee134590e6">handle_rotor_turnovers</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a46d8172b76b0a3327ca51d52fa442c2c">load_sfx</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a63f8d77017c359709fe234a5ab96bc56">play_random_key_sfx</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#a262e7045b7e12279310ab913b5c07b9c">handle_rotor_press_event</a>(Vector2&amp;, <span class="keywordtype">bool</span>&amp;, <span class="keywordtype">bool</span>&amp;);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller.html#ad9f3c7b8b703038b6170de55d626d941">handle_mouse_press_event</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
 </div>
-<div class="ttc" id="aclass_controller_html_a262e7045b7e12279310ab913b5c07b9c"><div class="ttname"><a href="class_controller.html#a262e7045b7e12279310ab913b5c07b9c">Controller::handle_rotor_press_event</a></div><div class="ttdeci">void handle_rotor_press_event(Vector2 &amp;, bool &amp;, bool &amp;)</div><div class="ttdef"><b>Definition</b> controller.cpp:131</div></div>
-<div class="ttc" id="aclass_controller_html_a379e766f64b44089df8aeedb1dfc66a6"><div class="ttname"><a href="class_controller.html#a379e766f64b44089df8aeedb1dfc66a6">Controller::handle_key_press_event</a></div><div class="ttdeci">void handle_key_press_event(Vector2 &amp;)</div><div class="ttdef"><b>Definition</b> controller.cpp:20</div></div>
-<div class="ttc" id="aclass_controller_html_a46d8172b76b0a3327ca51d52fa442c2c"><div class="ttname"><a href="class_controller.html#a46d8172b76b0a3327ca51d52fa442c2c">Controller::load_sfx</a></div><div class="ttdeci">void load_sfx()</div><div class="ttdef"><b>Definition</b> controller.cpp:103</div></div>
-<div class="ttc" id="aclass_controller_html_a63f8d77017c359709fe234a5ab96bc56"><div class="ttname"><a href="class_controller.html#a63f8d77017c359709fe234a5ab96bc56">Controller::play_random_key_sfx</a></div><div class="ttdeci">void play_random_key_sfx()</div><div class="ttdef"><b>Definition</b> controller.cpp:125</div></div>
-<div class="ttc" id="aclass_controller_html_a9653d8c98dc5636403ca02ee134590e6"><div class="ttname"><a href="class_controller.html#a9653d8c98dc5636403ca02ee134590e6">Controller::handle_rotor_turnovers</a></div><div class="ttdeci">void handle_rotor_turnovers()</div><div class="ttdef"><b>Definition</b> controller.cpp:84</div></div>
-<div class="ttc" id="aclass_controller_html_ad9f3c7b8b703038b6170de55d626d941"><div class="ttname"><a href="class_controller.html#ad9f3c7b8b703038b6170de55d626d941">Controller::handle_mouse_press_event</a></div><div class="ttdeci">void handle_mouse_press_event()</div><div class="ttdef"><b>Definition</b> controller.cpp:156</div></div>
-<div class="ttc" id="aclass_controller_html_af7c73e014d262db935b2eade1ad17263"><div class="ttname"><a href="class_controller.html#af7c73e014d262db935b2eade1ad17263">Controller::debug_handle_key_press_event</a></div><div class="ttdeci">char debug_handle_key_press_event(char)</div><div class="ttdef"><b>Definition</b> controller.cpp:51</div></div>
+<div class="ttc" id="aclass_controller_html_a0ab87934c4f7a266cfdb86e0f36bc1b5"><div class="ttname"><a href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">Controller::~Controller</a></div><div class="ttdeci">~Controller()</div><div class="ttdef"><b>Definition</b> controller.cpp:16</div></div>
+<div class="ttc" id="aclass_controller_html_a0f5b13014e006a17cd133d73484dc4bd"><div class="ttname"><a href="class_controller.html#a0f5b13014e006a17cd133d73484dc4bd">Controller::lampboard</a></div><div class="ttdeci">enigma::Lampboard lampboard</div><div class="ttdef"><b>Definition</b> controller.h:21</div></div>
+<div class="ttc" id="aclass_controller_html_a1aeba6992e55e821b05745bb2a3072f9"><div class="ttname"><a href="class_controller.html#a1aeba6992e55e821b05745bb2a3072f9">Controller::keyboard</a></div><div class="ttdeci">enigma::Keyboard keyboard</div><div class="ttdef"><b>Definition</b> controller.h:20</div></div>
+<div class="ttc" id="aclass_controller_html_a262e7045b7e12279310ab913b5c07b9c"><div class="ttname"><a href="class_controller.html#a262e7045b7e12279310ab913b5c07b9c">Controller::handle_rotor_press_event</a></div><div class="ttdeci">void handle_rotor_press_event(Vector2 &amp;, bool &amp;, bool &amp;)</div><div class="ttdoc">Handles rotor button press event.</div><div class="ttdef"><b>Definition</b> controller.cpp:138</div></div>
+<div class="ttc" id="aclass_controller_html_a379e766f64b44089df8aeedb1dfc66a6"><div class="ttname"><a href="class_controller.html#a379e766f64b44089df8aeedb1dfc66a6">Controller::handle_key_press_event</a></div><div class="ttdeci">void handle_key_press_event(Vector2 &amp;)</div><div class="ttdoc">Handles a keyboard key press event.</div><div class="ttdef"><b>Definition</b> controller.cpp:20</div></div>
+<div class="ttc" id="aclass_controller_html_a44a1eecf99d55849e56ba7289dbaf1c7"><div class="ttname"><a href="class_controller.html#a44a1eecf99d55849e56ba7289dbaf1c7">Controller::sfx_key</a></div><div class="ttdeci">std::vector&lt; Sound &gt; sfx_key</div><div class="ttdef"><b>Definition</b> controller.h:24</div></div>
+<div class="ttc" id="aclass_controller_html_a46d8172b76b0a3327ca51d52fa442c2c"><div class="ttname"><a href="class_controller.html#a46d8172b76b0a3327ca51d52fa442c2c">Controller::load_sfx</a></div><div class="ttdeci">void load_sfx()</div><div class="ttdoc">Loads sound effects.</div><div class="ttdef"><b>Definition</b> controller.cpp:103</div></div>
+<div class="ttc" id="aclass_controller_html_a4dc7ef2c23931580a16f6359dbe6e7ef"><div class="ttname"><a href="class_controller.html#a4dc7ef2c23931580a16f6359dbe6e7ef">Controller::rotors</a></div><div class="ttdeci">std::vector&lt; enigma::Rotor &gt; rotors</div><div class="ttdef"><b>Definition</b> controller.h:22</div></div>
+<div class="ttc" id="aclass_controller_html_a63f8d77017c359709fe234a5ab96bc56"><div class="ttname"><a href="class_controller.html#a63f8d77017c359709fe234a5ab96bc56">Controller::play_random_key_sfx</a></div><div class="ttdeci">void play_random_key_sfx()</div><div class="ttdoc">Plays a random sound effect.</div><div class="ttdef"><b>Definition</b> controller.cpp:126</div></div>
+<div class="ttc" id="aclass_controller_html_a95c56822d667e94b031451729ce069a9"><div class="ttname"><a href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller::Controller</a></div><div class="ttdeci">Controller()</div><div class="ttdef"><b>Definition</b> controller.cpp:3</div></div>
+<div class="ttc" id="aclass_controller_html_a9653d8c98dc5636403ca02ee134590e6"><div class="ttname"><a href="class_controller.html#a9653d8c98dc5636403ca02ee134590e6">Controller::handle_rotor_turnovers</a></div><div class="ttdeci">void handle_rotor_turnovers()</div><div class="ttdoc">Handles rotor turnovers.</div><div class="ttdef"><b>Definition</b> controller.cpp:84</div></div>
+<div class="ttc" id="aclass_controller_html_a982b051c51c789da2754c0193c1afe10"><div class="ttname"><a href="class_controller.html#a982b051c51c789da2754c0193c1afe10">Controller::reflector</a></div><div class="ttdeci">enigma::Reflector reflector</div><div class="ttdef"><b>Definition</b> controller.h:23</div></div>
+<div class="ttc" id="aclass_controller_html_ad9f3c7b8b703038b6170de55d626d941"><div class="ttname"><a href="class_controller.html#ad9f3c7b8b703038b6170de55d626d941">Controller::handle_mouse_press_event</a></div><div class="ttdeci">void handle_mouse_press_event()</div><div class="ttdoc">Handles mouse press events.</div><div class="ttdef"><b>Definition</b> controller.cpp:163</div></div>
+<div class="ttc" id="aclass_controller_html_af7c73e014d262db935b2eade1ad17263"><div class="ttname"><a href="class_controller.html#af7c73e014d262db935b2eade1ad17263">Controller::debug_handle_key_press_event</a></div><div class="ttdeci">char debug_handle_key_press_event(char)</div><div class="ttdoc">DEBUG USE ONLY.</div><div class="ttdef"><b>Definition</b> controller.cpp:51</div></div>
 <div class="ttc" id="aclassenigma_1_1_keyboard_html"><div class="ttname"><a href="classenigma_1_1_keyboard.html">enigma::Keyboard</a></div><div class="ttdef"><b>Definition</b> keyboard.h:19</div></div>
 <div class="ttc" id="aclassenigma_1_1_lampboard_html"><div class="ttname"><a href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></div><div class="ttdoc">Represents the lampboard of the Enigma machine.Visual component. Contains multiple Lamp objects arran...</div><div class="ttdef"><b>Definition</b> lampboard.h:23</div></div>
 <div class="ttc" id="aclassenigma_1_1_reflector_html"><div class="ttname"><a href="classenigma_1_1_reflector.html">enigma::Reflector</a></div><div class="ttdoc">A reflector component in an Enigma machine that swaps characters based on a wiring configuration....</div><div class="ttdef"><b>Definition</b> reflector.h:25</div></div>
+<div class="ttc" id="akey_8h_html"><div class="ttname"><a href="key_8h.html">key.h</a></div></div>
+<div class="ttc" id="akeyboard_8h_html"><div class="ttname"><a href="keyboard_8h.html">keyboard.h</a></div></div>
+<div class="ttc" id="alampboard_8h_html"><div class="ttname"><a href="lampboard_8h.html">lampboard.h</a></div></div>
+<div class="ttc" id="alayout_8h_html"><div class="ttname"><a href="layout_8h.html">layout.h</a></div></div>
+<div class="ttc" id="alog_8h_html"><div class="ttname"><a href="log_8h.html">log.h</a></div></div>
+<div class="ttc" id="areflector_8h_html"><div class="ttname"><a href="reflector_8h.html">reflector.h</a></div></div>
+<div class="ttc" id="arotor_8h_html"><div class="ttname"><a href="rotor_8h.html">rotor.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>core</b></li><li class="navelem"><b>controller.h</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a href="controller_8h.html">controller.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

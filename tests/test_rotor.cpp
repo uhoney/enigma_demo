@@ -6,7 +6,7 @@
 
 TEST_CASE("Rotor test", "[rotor]")
 {
-	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER };
+	enigma::Rotor rotor{ enigma::ROTOR_I_WIRING , enigma::ROTOR_I_TURNOVER, Vector2{ enigma::ROTOR_POSITION_1, enigma::ROTOR_POSITION_Y } };
 	REQUIRE(rotor.get_turnover_char() == 'Q');
 
 	REQUIRE(rotor.get_index_of_char(enigma::ALPHABETS, 'A') == 0);

@@ -91,26 +91,26 @@ $(function(){initNavTree('lampboard_8h_source.html','',''); });
   <div class="headertitle"><div class="title">lampboard.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="lampboard_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;lamp.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="lamp_8h.html">lamp.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../constants.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">../constants.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span>enigma</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceenigma.html">enigma</a></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> LAMPBOARD_POSITION_X{ 100.0f }; </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> LAMPBOARD_POSITION_Y{ 350.0f }; </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceenigma.html#a5931c46026acbca73f6dbe39ad9e3a1e">   13</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespaceenigma.html#a5931c46026acbca73f6dbe39ad9e3a1e">LAMPBOARD_POSITION_X</a>{ 100.0f }; </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespaceenigma.html#ae8376d65809484cde1ca9093c1d5e15e">   14</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespaceenigma.html#ae8376d65809484cde1ca9093c1d5e15e">LAMPBOARD_POSITION_Y</a>{ 325.0f }; </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classenigma_1_1_lampboard.html">   22</a></span>    <span class="keyword">class </span>Lampboard</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classenigma_1_1_lampboard.html">   22</a></span>    <span class="keyword">class </span><a class="code hl_function" href="classenigma_1_1_lampboard.html#a10d80ef4b5d14ada9e24daecb22a9140">Lampboard</a></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::vector&lt;Lamp&gt; lamps{};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classenigma_1_1_lampboard.html#a5d9d613a795dfbbc7f775bacf9a81302">   25</a></span>        std::vector&lt;Lamp&gt; <a class="code hl_variable" href="classenigma_1_1_lampboard.html#a5d9d613a795dfbbc7f775bacf9a81302">lamps</a>{};</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        Lampboard();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        ~Lampboard();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_function" href="classenigma_1_1_lampboard.html#a10d80ef4b5d14ada9e24daecb22a9140">Lampboard</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_function" href="classenigma_1_1_lampboard.html#ac79476d210035dcc2a76fa028699dfee">~Lampboard</a>();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        std::vector&lt;Lamp&gt;&amp; <a class="code hl_function" href="classenigma_1_1_lampboard.html#a6afaf7687ea290db8e7ddca273011f1c">get_lamps</a>();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
@@ -122,16 +122,24 @@ $(function(){initNavTree('lampboard_8h_source.html','',''); });
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    };</div>
 </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <span class="comment">// namespace enigma</span></div>
+<div class="ttc" id="aclassenigma_1_1_lampboard_html_a10d80ef4b5d14ada9e24daecb22a9140"><div class="ttname"><a href="classenigma_1_1_lampboard.html#a10d80ef4b5d14ada9e24daecb22a9140">enigma::Lampboard::Lampboard</a></div><div class="ttdeci">Lampboard()</div><div class="ttdef"><b>Definition</b> lampboard.cpp:5</div></div>
+<div class="ttc" id="aclassenigma_1_1_lampboard_html_a5d9d613a795dfbbc7f775bacf9a81302"><div class="ttname"><a href="classenigma_1_1_lampboard.html#a5d9d613a795dfbbc7f775bacf9a81302">enigma::Lampboard::lamps</a></div><div class="ttdeci">std::vector&lt; Lamp &gt; lamps</div><div class="ttdef"><b>Definition</b> lampboard.h:25</div></div>
 <div class="ttc" id="aclassenigma_1_1_lampboard_html_a6afaf7687ea290db8e7ddca273011f1c"><div class="ttname"><a href="classenigma_1_1_lampboard.html#a6afaf7687ea290db8e7ddca273011f1c">enigma::Lampboard::get_lamps</a></div><div class="ttdeci">std::vector&lt; Lamp &gt; &amp; get_lamps()</div><div class="ttdoc">Get the vector of lamps on the lampboard.</div><div class="ttdef"><b>Definition</b> lampboard.cpp:32</div></div>
 <div class="ttc" id="aclassenigma_1_1_lampboard_html_a734dedcd3e9658392c6e0751de722ee7"><div class="ttname"><a href="classenigma_1_1_lampboard.html#a734dedcd3e9658392c6e0751de722ee7">enigma::Lampboard::turn_on_lamp</a></div><div class="ttdeci">void turn_on_lamp(char)</div><div class="ttdoc">Turn on the lamp corresponding to the given character.</div><div class="ttdef"><b>Definition</b> lampboard.cpp:37</div></div>
 <div class="ttc" id="aclassenigma_1_1_lampboard_html_a98202a51b8c03aefa41a60e204eeaee6"><div class="ttname"><a href="classenigma_1_1_lampboard.html#a98202a51b8c03aefa41a60e204eeaee6">enigma::Lampboard::reset_lamps</a></div><div class="ttdeci">void reset_lamps()</div><div class="ttdoc">Reset all lamps to the unlit state.</div><div class="ttdef"><b>Definition</b> lampboard.cpp:52</div></div>
+<div class="ttc" id="aclassenigma_1_1_lampboard_html_ac79476d210035dcc2a76fa028699dfee"><div class="ttname"><a href="classenigma_1_1_lampboard.html#ac79476d210035dcc2a76fa028699dfee">enigma::Lampboard::~Lampboard</a></div><div class="ttdeci">~Lampboard()</div><div class="ttdef"><b>Definition</b> lampboard.cpp:28</div></div>
+<div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
+<div class="ttc" id="alamp_8h_html"><div class="ttname"><a href="lamp_8h.html">lamp.h</a></div></div>
+<div class="ttc" id="anamespaceenigma_html"><div class="ttname"><a href="namespaceenigma.html">enigma</a></div><div class="ttdef"><b>Definition</b> constants.h:9</div></div>
+<div class="ttc" id="anamespaceenigma_html_a5931c46026acbca73f6dbe39ad9e3a1e"><div class="ttname"><a href="namespaceenigma.html#a5931c46026acbca73f6dbe39ad9e3a1e">enigma::LAMPBOARD_POSITION_X</a></div><div class="ttdeci">constexpr float LAMPBOARD_POSITION_X</div><div class="ttdoc">Starting x position.</div><div class="ttdef"><b>Definition</b> lampboard.h:13</div></div>
+<div class="ttc" id="anamespaceenigma_html_ae8376d65809484cde1ca9093c1d5e15e"><div class="ttname"><a href="namespaceenigma.html#ae8376d65809484cde1ca9093c1d5e15e">enigma::LAMPBOARD_POSITION_Y</a></div><div class="ttdeci">constexpr float LAMPBOARD_POSITION_Y</div><div class="ttdoc">Starting y position.</div><div class="ttdef"><b>Definition</b> lampboard.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>core</b></li><li class="navelem"><b>lampboard.h</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a href="lampboard_8h.html">lampboard.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

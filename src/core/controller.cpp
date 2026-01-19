@@ -110,10 +110,11 @@ void Controller::load_sfx()
 	if (sfx_key_press_1.frameCount == 0 || sfx_key_press_2.frameCount == 0 ||
 		sfx_key_press_3.frameCount == 0 || sfx_key_press_4.frameCount == 0)
 	{
-		std::cerr << "Error loading sound effects!" << std::endl;
+		// Just unload any loaded sounds to avoid memory leaks
 		CloseAudioDevice();
-		CloseWindow();
-		exit(1);
+
+		enigma::Log::debug("Error loading sound effects!");
+		return;
 	}
 
 	this->sfx_key.emplace_back(sfx_key_press_1);
@@ -124,6 +125,12 @@ void Controller::load_sfx()
 
 void Controller::play_random_key_sfx()
 {
+	// No sound effects loaded
+	if (this->sfx_key.empty())
+	{
+		return;
+	}
+
 	int random_index = GetRandomValue(0, static_cast<int>(this->sfx_key.size()) - 1);
 	PlaySound(this->sfx_key.at(random_index));
 }
@@ -158,7 +165,7 @@ void Controller::handle_mouse_press_event()
 	Vector2 mouse_position = GetMousePosition();
 	bool is_mouse_pressed = IsMouseButtonPressed(MOUSE_LEFT_BUTTON);
 	bool is_mouse_released = IsMouseButtonReleased(MOUSE_LEFT_BUTTON);
-		
+
 	this->handle_rotor_press_event(mouse_position, is_mouse_pressed, is_mouse_released);
 	this->handle_key_press_event(mouse_position);
 }

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wiring_0',['wiring',['../classenigma_1_1_reflector.html#a2fdaed768cc6dad81da1eadec878add0',1,'enigma::Reflector::wiring'],['../classenigma_1_1_rotor.html#ae5975189d6df011040b765e983e927c9',1,'enigma::Rotor::wiring']]]
+  ['ukw_5fa_5fwiring_0',['UKW_A_WIRING',['../namespaceenigma.html#a1546548d30dec94e4275ce7ca33daeae',1,'enigma']]],
+  ['ukw_5fb_5fwiring_1',['UKW_B_WIRING',['../namespaceenigma.html#ac97c20afb2c957c4986bfa78f11dd99c',1,'enigma']]],
+  ['ukw_5fc_5fwiring_2',['UKW_C_WIRING',['../namespaceenigma.html#aa15eb64dee08080cefc595e793dc939f',1,'enigma']]]
 ];

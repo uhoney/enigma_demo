@@ -85,16 +85,28 @@ namespace ui
 		{
 			Vector2 button_up_pos{ controller.rotors.at(i).get_rotor_position().x,
 								   controller.rotors.at(i).get_rotor_position().y - enigma::ROTOR_BUTTON_OFFSET_Y };
+
 			DrawRectangleV(button_up_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);
-			// TODO: Draw arrow up
 
+			DrawTriangle(
+				{ button_up_pos.x + enigma::ROTOR_BUTTON_SIZE.x / 2.0f, button_up_pos.y + 10.0f },
+				{ button_up_pos.x + 10.0f, button_up_pos.y + enigma::ROTOR_BUTTON_SIZE.y - 10.0f },
+				{ button_up_pos.x + enigma::ROTOR_BUTTON_SIZE.x - 10.0f, button_up_pos.y + enigma::ROTOR_BUTTON_SIZE.y - 10.0f },
+				BLACK
+			);
 
-			
 			Vector2 button_down_pos{ controller.rotors.at(i).get_rotor_position().x,
 									 controller.rotors.at(i).get_rotor_position().y + enigma::ROTOR_BUTTON_OFFSET_Y };
-			DrawRectangleV(button_down_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);
-			// TODO: Draw arrow down
 
+			DrawRectangleV(button_down_pos, enigma::ROTOR_BUTTON_SIZE, GRAY);
+
+			DrawTriangle(
+				{ button_down_pos.x + enigma::ROTOR_BUTTON_SIZE.x / 2.0f, button_down_pos.y + enigma::ROTOR_BUTTON_SIZE.y - 10.0f },
+				{ button_down_pos.x + enigma::ROTOR_BUTTON_SIZE.x - 10.0f, button_down_pos.y + 10.0f },
+				{ button_down_pos.x + 10.0f, button_down_pos.y + 10.0f },
+				BLACK
+			);
+			
 		}
 	}
 

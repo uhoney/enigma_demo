@@ -91,45 +91,68 @@ $(function(){initNavTree('layout_8h_source.html','',''); });
   <div class="headertitle"><div class="title">layout.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="layout_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../constants.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../core/keyboard.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../core/lampboard.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../core/rotor.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../core/controller.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">../constants.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="keyboard_8h.html">../core/keyboard.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="lampboard_8h.html">../core/lampboard.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="rotor_8h.html">../core/rotor.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="controller_8h.html">../core/controller.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_controller.html">Controller</a>; <span class="comment">// circular dependancy, forward declaration</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span>ui</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceui.html">ui</a></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 CASE_OUTLINE{ 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 CASE_INSIDE{ 25, 25, SCREEN_WIDTH - 50, SCREEN_HEIGHT - 50 };</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="group___machine.html#ga6bab672e1a497ebf353992fda50f39cd">   15</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 <a class="code hl_variable" href="group___machine.html#ga6bab672e1a497ebf353992fda50f39cd">CASE_OUTLINE</a>{ 0, 0, <a class="code hl_variable" href="constants_8h.html#a99b684b1821066f3a8b1e5477cc5eb34">SCREEN_WIDTH</a>, <a class="code hl_variable" href="constants_8h.html#a4ae60e21767f04fbdb318afcdfae058d">SCREEN_HEIGHT</a> }; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="group___machine.html#ga9821b8c3835309f0132d0ba7260f6c67">   16</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> Vector4 <a class="code hl_variable" href="group___machine.html#ga9821b8c3835309f0132d0ba7260f6c67">CASE_INSIDE</a>{ 25, 25, <a class="code hl_variable" href="constants_8h.html#a99b684b1821066f3a8b1e5477cc5eb34">SCREEN_WIDTH</a> - 50, <a class="code hl_variable" href="constants_8h.html#a4ae60e21767f04fbdb318afcdfae058d">SCREEN_HEIGHT</a> - 50 }; </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> draw_background();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> draw_keyboard(Font, enigma::Keyboard);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> draw_key(Font, enigma::Key);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> draw_lampboard(Font, enigma::Lampboard);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> draw_lamp(Font, enigma::Lamp);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> draw_rotor_index(Font, Vector2, Vector2, enigma::Rotor);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> draw_rotor_buttons(Controller&amp;);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">draw_background</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">draw_keyboard</a>(Font, <a class="code hl_class" href="classenigma_1_1_keyboard.html">enigma::Keyboard</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">draw_key</a>(Font, <a class="code hl_class" href="classenigma_1_1_key.html">enigma::Key</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">draw_lampboard</a>(Font, <a class="code hl_class" href="classenigma_1_1_lampboard.html">enigma::Lampboard</a>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">draw_lamp</a>(Font, <a class="code hl_class" href="classenigma_1_1_lamp.html">enigma::Lamp</a>);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> draw_rotor_ui(Font, Controller&amp;);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
-<div class="ttc" id="aclass_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition</b> controller.h:16</div></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a9472e59141cbab7f048697700365bf32">draw_rotor_index</a>(Font, Vector2, Vector2, <a class="code hl_class" href="classenigma_1_1_rotor.html">enigma::Rotor</a>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a5e755d504d6a0806717d5fca63846ce6">draw_rotor_buttons</a>(<a class="code hl_class" href="class_controller.html">Controller</a>&amp;);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceui.html#a4c40906852904920ff410dcef997c87a">draw_rotor_ui</a>(Font, <a class="code hl_class" href="class_controller.html">Controller</a>&amp;);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="ttc" id="aclass_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition</b> controller.h:18</div></div>
+<div class="ttc" id="aclassenigma_1_1_key_html"><div class="ttname"><a href="classenigma_1_1_key.html">enigma::Key</a></div><div class="ttdef"><b>Definition</b> key.h:21</div></div>
+<div class="ttc" id="aclassenigma_1_1_keyboard_html"><div class="ttname"><a href="classenigma_1_1_keyboard.html">enigma::Keyboard</a></div><div class="ttdef"><b>Definition</b> keyboard.h:19</div></div>
+<div class="ttc" id="aclassenigma_1_1_lamp_html"><div class="ttname"><a href="classenigma_1_1_lamp.html">enigma::Lamp</a></div><div class="ttdoc">A lamp that lights up to indicate a cipher/decipher character.Each lamp corresponds to a character in...</div><div class="ttdef"><b>Definition</b> lamp.h:25</div></div>
+<div class="ttc" id="aclassenigma_1_1_lampboard_html"><div class="ttname"><a href="classenigma_1_1_lampboard.html">enigma::Lampboard</a></div><div class="ttdoc">Represents the lampboard of the Enigma machine.Visual component. Contains multiple Lamp objects arran...</div><div class="ttdef"><b>Definition</b> lampboard.h:23</div></div>
+<div class="ttc" id="aclassenigma_1_1_rotor_html"><div class="ttname"><a href="classenigma_1_1_rotor.html">enigma::Rotor</a></div><div class="ttdoc">A rotating disc that spins and substitutes characters based on its wiring and position....</div><div class="ttdef"><b>Definition</b> rotor.h:46</div></div>
+<div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a4ae60e21767f04fbdb318afcdfae058d"><div class="ttname"><a href="constants_8h.html#a4ae60e21767f04fbdb318afcdfae058d">SCREEN_HEIGHT</a></div><div class="ttdeci">constexpr int SCREEN_HEIGHT</div><div class="ttdef"><b>Definition</b> constants.h:6</div></div>
+<div class="ttc" id="aconstants_8h_html_a99b684b1821066f3a8b1e5477cc5eb34"><div class="ttname"><a href="constants_8h.html#a99b684b1821066f3a8b1e5477cc5eb34">SCREEN_WIDTH</a></div><div class="ttdeci">constexpr int SCREEN_WIDTH</div><div class="ttdef"><b>Definition</b> constants.h:5</div></div>
+<div class="ttc" id="acontroller_8h_html"><div class="ttname"><a href="controller_8h.html">controller.h</a></div></div>
+<div class="ttc" id="agroup___machine_html_ga6bab672e1a497ebf353992fda50f39cd"><div class="ttname"><a href="group___machine.html#ga6bab672e1a497ebf353992fda50f39cd">ui::CASE_OUTLINE</a></div><div class="ttdeci">constexpr Vector4 CASE_OUTLINE</div><div class="ttdoc">Outer dimensions of the machine &#39;case&#39; outline.</div><div class="ttdef"><b>Definition</b> layout.h:15</div></div>
+<div class="ttc" id="agroup___machine_html_ga9821b8c3835309f0132d0ba7260f6c67"><div class="ttname"><a href="group___machine.html#ga9821b8c3835309f0132d0ba7260f6c67">ui::CASE_INSIDE</a></div><div class="ttdeci">constexpr Vector4 CASE_INSIDE</div><div class="ttdoc">Inner dimensions of the machine &#39;case&#39; inside area.</div><div class="ttdef"><b>Definition</b> layout.h:16</div></div>
+<div class="ttc" id="akeyboard_8h_html"><div class="ttname"><a href="keyboard_8h.html">keyboard.h</a></div></div>
+<div class="ttc" id="alampboard_8h_html"><div class="ttname"><a href="lampboard_8h.html">lampboard.h</a></div></div>
+<div class="ttc" id="anamespaceui_html"><div class="ttname"><a href="namespaceui.html">ui</a></div><div class="ttdef"><b>Definition</b> fonts.cpp:4</div></div>
+<div class="ttc" id="anamespaceui_html_a178cc60e0802576d346d32ac9c73ed4f"><div class="ttname"><a href="namespaceui.html#a178cc60e0802576d346d32ac9c73ed4f">ui::draw_lamp</a></div><div class="ttdeci">void draw_lamp(Font font, enigma::Lamp lamp)</div><div class="ttdoc">Draws a single lamp.</div><div class="ttdef"><b>Definition</b> layout.cpp:40</div></div>
+<div class="ttc" id="anamespaceui_html_a4c40906852904920ff410dcef997c87a"><div class="ttname"><a href="namespaceui.html#a4c40906852904920ff410dcef997c87a">ui::draw_rotor_ui</a></div><div class="ttdeci">void draw_rotor_ui(Font, Controller &amp;)</div><div class="ttdoc">Handles all rotor UI drawing.</div><div class="ttdef"><b>Definition</b> layout.cpp:113</div></div>
+<div class="ttc" id="anamespaceui_html_a54444491b94cc392a7e7ae44f59b5447"><div class="ttname"><a href="namespaceui.html#a54444491b94cc392a7e7ae44f59b5447">ui::draw_keyboard</a></div><div class="ttdeci">void draw_keyboard(Font font, enigma::Keyboard keyboard)</div><div class="ttdoc">Handles drawing the entire keyboard.</div><div class="ttdef"><b>Definition</b> layout.cpp:11</div></div>
+<div class="ttc" id="anamespaceui_html_a5e755d504d6a0806717d5fca63846ce6"><div class="ttname"><a href="namespaceui.html#a5e755d504d6a0806717d5fca63846ce6">ui::draw_rotor_buttons</a></div><div class="ttdeci">void draw_rotor_buttons(Controller &amp;)</div><div class="ttdoc">Draws the rotor UI buttons.</div><div class="ttdef"><b>Definition</b> layout.cpp:82</div></div>
+<div class="ttc" id="anamespaceui_html_a6c612a9549b88f6252fd8b4af2a206e9"><div class="ttname"><a href="namespaceui.html#a6c612a9549b88f6252fd8b4af2a206e9">ui::draw_key</a></div><div class="ttdeci">void draw_key(Font font, enigma::Key key)</div><div class="ttdoc">Draws a single key.</div><div class="ttdef"><b>Definition</b> layout.cpp:19</div></div>
+<div class="ttc" id="anamespaceui_html_a9472e59141cbab7f048697700365bf32"><div class="ttname"><a href="namespaceui.html#a9472e59141cbab7f048697700365bf32">ui::draw_rotor_index</a></div><div class="ttdeci">void draw_rotor_index(Font, Vector2, Vector2, enigma::Rotor)</div><div class="ttdoc">Draws the rotor index display.</div><div class="ttdef"><b>Definition</b> layout.cpp:67</div></div>
+<div class="ttc" id="anamespaceui_html_ac9514b2a0df0f54ad6bb6ecc005a8278"><div class="ttname"><a href="namespaceui.html#ac9514b2a0df0f54ad6bb6ecc005a8278">ui::draw_lampboard</a></div><div class="ttdeci">void draw_lampboard(Font font, enigma::Lampboard lampboard)</div><div class="ttdoc">Handles drawing the entire lampboard.</div><div class="ttdef"><b>Definition</b> layout.cpp:32</div></div>
+<div class="ttc" id="anamespaceui_html_af3affbc3dbe7f3a9f47d4f1587ed7890"><div class="ttname"><a href="namespaceui.html#af3affbc3dbe7f3a9f47d4f1587ed7890">ui::draw_background</a></div><div class="ttdeci">void draw_background()</div><div class="ttdoc">Draws the background.</div><div class="ttdef"><b>Definition</b> layout.cpp:5</div></div>
+<div class="ttc" id="arotor_8h_html"><div class="ttname"><a href="rotor_8h.html">rotor.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>src</b></li><li class="navelem"><b>ui</b></li><li class="navelem"><b>layout.h</b></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_da5c6b39c0a2f54e57df6799511cd3ab.html">ui</a></li><li class="navelem"><a href="layout_8h.html">layout.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

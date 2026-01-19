@@ -30,7 +30,7 @@ namespace enigma
 	inline constexpr float ROTOR_POSITION_3{ ROTOR_POSITION_OFFSET_X };
 	inline constexpr float ROTOR_POSITION_2{ ROTOR_POSITION_OFFSET_X + ROTOR_POSITION_3 };
 	inline constexpr float ROTOR_POSITION_1{ ROTOR_POSITION_OFFSET_X + ROTOR_POSITION_2 };
-	inline constexpr float ROTOR_POSITION_Y{ 150.0f };
+	inline constexpr float ROTOR_POSITION_Y{ 125.0f };
 
 
 	/**

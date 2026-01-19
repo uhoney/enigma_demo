@@ -6,6 +6,9 @@
 
 TEST_CASE("Controller test", "[controller]")
 {
+	InitAudioDevice();				// Initialize audio context
+	SetTraceLogLevel(LOG_DEBUG);	// Audio loading might produce logs
+
 	enigma::Log::set_level(enigma::LogLevel::ERROR);	// DEBUG level for prints
 	Controller controller{};
 
@@ -57,5 +60,5 @@ TEST_CASE("Controller test", "[controller]")
 	REQUIRE(controller.debug_handle_key_press_event('T') == 'S');
 	REQUIRE(controller.debug_handle_key_press_event('M') == 'T');
 
-
+	CloseAudioDevice(); // Close audio context
 }
