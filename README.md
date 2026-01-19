@@ -43,6 +43,10 @@ It's a bit more complex than that, but that's the basic idea.
 Project uses information from [cryptmuseum](https://www.cryptomuseum.com/crypto/enigma/index.htm)
 Machine model is the I-type Enigma machine used by the German Army and Air Force during World War II.
 
+## Documentation
+Documentation generated with Doxygen. See `docs/index.html` folder or generate with `doxygen Doxyfile`.
+I know. Some methods are not alphabetically ordered. It is annoying. Also 'variable documentation' refuses to hide.
+
 ## Build instructions
 Cmake provided, fetches raylib and catch2. Cmake 3.20 and C++17 required. Builds demo or tests.
 

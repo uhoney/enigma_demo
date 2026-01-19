@@ -13,8 +13,7 @@ var searchData=
   ['get_5frotor_5findex_10',['get_rotor_index',['../classenigma_1_1_rotor.html#ac2a5e825af5ef8faf7b187a148217811',1,'enigma::Rotor']]],
   ['get_5frotor_5fposition_11',['get_rotor_position',['../classenigma_1_1_rotor.html#a209ad50eb64ae6622485539498cfcd53',1,'enigma::Rotor']]],
   ['get_5fsize_5fmultiplier_12',['get_size_multiplier',['../classenigma_1_1_key.html#ad0388cc19fd77caae04aa2453031223a',1,'enigma::Key']]],
-  ['get_5ftext_13',['get_text',['../classenigma_1_1_key.html#a3e421fc22327bb5c389c5b78a5c97862',1,'enigma::Key::get_text()'],['../classenigma_1_1_lamp.html#aaca9f92e615c6c5e6e384790b11f7a4a',1,'enigma::Lamp::get_text()']]],
-  ['get_5fturnover_5fchar_14',['get_turnover_char',['../classenigma_1_1_rotor.html#a881487b933c191a738846f1fb91b65c3',1,'enigma::Rotor']]],
-  ['get_5fturnover_5findex_15',['get_turnover_index',['../classenigma_1_1_rotor.html#aa09dab27c3dc5f4276f2e6dfafde5f72',1,'enigma::Rotor']]],
-  ['get_5fwiring_16',['get_wiring',['../classenigma_1_1_reflector.html#a3266fe2a29d5379a787ddc977e7eccc0',1,'enigma::Reflector::get_wiring()'],['../classenigma_1_1_rotor.html#ac71dd8140f6cc816092cafc4eeb3862b',1,'enigma::Rotor::get_wiring()']]]
+  ['get_5fturnover_5fchar_13',['get_turnover_char',['../classenigma_1_1_rotor.html#a881487b933c191a738846f1fb91b65c3',1,'enigma::Rotor']]],
+  ['get_5fturnover_5findex_14',['get_turnover_index',['../classenigma_1_1_rotor.html#aa09dab27c3dc5f4276f2e6dfafde5f72',1,'enigma::Rotor']]],
+  ['get_5fwiring_15',['get_wiring',['../classenigma_1_1_reflector.html#a3266fe2a29d5379a787ddc977e7eccc0',1,'enigma::Reflector::get_wiring()'],['../classenigma_1_1_rotor.html#ac71dd8140f6cc816092cafc4eeb3862b',1,'enigma::Rotor::get_wiring()']]]
 ];

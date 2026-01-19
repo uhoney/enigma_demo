@@ -91,32 +91,25 @@ $(function(){initNavTree('classenigma_1_1_lamp.html','','classenigma_1_1_lamp-me
   <div class="headertitle"><div class="title">enigma::Lamp Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>A lamp that lights up to indicate a cipher/decipher character.Each lamp corresponds to a character in the alphabet and lights up when that character is the output of the Enigma machine.  
-</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae5025af789dfc2757771659470dc9301" id="r_ae5025af789dfc2757771659470dc9301"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5025af789dfc2757771659470dc9301">Lamp</a> (char, const Vector2)</td></tr>
 <tr class="memitem:aea6eb803f12c7911b5e297611676fa3d" id="r_aea6eb803f12c7911b5e297611676fa3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea6eb803f12c7911b5e297611676fa3d">~Lamp</a> ()</td></tr>
 <tr class="memitem:aad691300654e34b84e794dc036b5a7cd" id="r_aad691300654e34b84e794dc036b5a7cd"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad691300654e34b84e794dc036b5a7cd">get_label</a> () const</td></tr>
-<tr class="memdesc:aad691300654e34b84e794dc036b5a7cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label character of the lamp.  <br /></td></tr>
-<tr class="memitem:aaca9f92e615c6c5e6e384790b11f7a4a" id="r_aaca9f92e615c6c5e6e384790b11f7a4a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaca9f92e615c6c5e6e384790b11f7a4a">get_text</a> ()</td></tr>
-<tr class="memdesc:aaca9f92e615c6c5e6e384790b11f7a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the text representation of the lamp's character.  <br /></td></tr>
 <tr class="memitem:a70f324219f03ab4dfdb2996faa472266" id="r_a70f324219f03ab4dfdb2996faa472266"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70f324219f03ab4dfdb2996faa472266">get_is_lit</a> () const</td></tr>
-<tr class="memdesc:a70f324219f03ab4dfdb2996faa472266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the lamp is currently lit.  <br /></td></tr>
 <tr class="memitem:a2ace1e33bdbd0931852b1cef2e9982df" id="r_a2ace1e33bdbd0931852b1cef2e9982df"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ace1e33bdbd0931852b1cef2e9982df">get_position</a> () const</td></tr>
-<tr class="memdesc:a2ace1e33bdbd0931852b1cef2e9982df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the position of the lamp.  <br /></td></tr>
 <tr class="memitem:a91566a5fcf2d209257cc38eed87c2e88" id="r_a91566a5fcf2d209257cc38eed87c2e88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91566a5fcf2d209257cc38eed87c2e88">toggle_lamp</a> ()</td></tr>
-<tr class="memdesc:a91566a5fcf2d209257cc38eed87c2e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle the lamp's lit state.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a57ed70a3eeb14d194824420c917fe55b" id="r_a57ed70a3eeb14d194824420c917fe55b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57ed70a3eeb14d194824420c917fe55b">character</a> [2] {}</td></tr>
+<tr class="memitem:a804e1dce83cce6f28067a40248738ba8" id="r_a804e1dce83cce6f28067a40248738ba8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a804e1dce83cce6f28067a40248738ba8">character</a> {}</td></tr>
 <tr class="memitem:a78a07f697b7fb2c5b18436be361e02d4" id="r_a78a07f697b7fb2c5b18436be361e02d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78a07f697b7fb2c5b18436be361e02d4">is_lit</a> { false }</td></tr>
 <tr class="memitem:a31be624f6aba31c5d76e7346c9477eca" id="r_a31be624f6aba31c5d76e7346c9477eca"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31be624f6aba31c5d76e7346c9477eca">position</a> {}</td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Each lamp corresponds to a character in the alphabet and lights up when that character is the output of the Enigma machine. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae5025af789dfc2757771659470dc9301" name="ae5025af789dfc2757771659470dc9301"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5025af789dfc2757771659470dc9301">&#9670;&#160;</a></span>Lamp()</h2>
 
@@ -187,6 +180,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the character of the lamp. </p>
 
 </div>
 </div>
@@ -201,23 +195,6 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaca9f92e615c6c5e6e384790b11f7a4a" name="aaca9f92e615c6c5e6e384790b11f7a4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaca9f92e615c6c5e6e384790b11f7a4a">&#9670;&#160;</a></span>get_text()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * enigma::Lamp::get_text </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -242,8 +219,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a57ed70a3eeb14d194824420c917fe55b" name="a57ed70a3eeb14d194824420c917fe55b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57ed70a3eeb14d194824420c917fe55b">&#9670;&#160;</a></span>character</h2>
+<a id="a804e1dce83cce6f28067a40248738ba8" name="a804e1dce83cce6f28067a40248738ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804e1dce83cce6f28067a40248738ba8">&#9670;&#160;</a></span>character</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +229,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char enigma::Lamp::character[2] {}</td>
+          <td class="memname">char enigma::Lamp::character {}</td>
         </tr>
       </table>
   </td>

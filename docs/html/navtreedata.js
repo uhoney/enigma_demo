@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "Enigma demo", "index.html", [
-    [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -58,7 +57,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"namespaceenigma.html#a761a113186278cf5d7219c40a95b9bfc"
+"namespaceenigma.html#aa15eb64dee08080cefc595e793dc939f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
