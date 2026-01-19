@@ -44,7 +44,7 @@ Project uses information from [cryptmuseum](https://www.cryptomuseum.com/crypto/
 Machine model is the I-type Enigma machine used by the German Army and Air Force during World War II.
 
 ## Documentation
-Documentation generated with Doxygen. See `docs/index.html` folder or generate with `doxygen Doxyfile`.
+Documentation (`docs/html/index.html`) generated with Doxygen. Or generate with `doxygen Doxyfile`.
 I know. Some methods are not alphabetically ordered. It is annoying. Also 'variable documentation' refuses to hide.
 
 ## Build instructions
