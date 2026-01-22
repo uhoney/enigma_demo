@@ -17,7 +17,7 @@ Controller::~Controller()
 {
 }
 
-void Controller::handle_key_press_event(Vector2& mouse_position)
+void Controller::handle_key_press_event(const Vector2& mouse_position)
 {
 	if (this->keyboard.is_key_pressed(mouse_position, IsMouseButtonPressed(MOUSE_LEFT_BUTTON)))
 	{

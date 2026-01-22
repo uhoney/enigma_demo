@@ -40,9 +40,9 @@ int main(void)
 		EndDrawing();
 	}
 	
-	UnloadFont(font); // Unload font from VRAM
-	CloseAudioDevice(); // Close audio context
-	CloseWindow(); // Close window and OpenGL context
+	UnloadFont(font);	// Unload font from VRAM
+	CloseAudioDevice();	// Close audio context
+	CloseWindow();		// Close window and OpenGL context
 
 	return 0;
 }

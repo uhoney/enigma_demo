@@ -34,7 +34,7 @@ public:
 	 * 
 	 * Unit tests are done separately for this function. Mouse simulation is painful and not worth the effort to change methods JUST for unit tests.
 	 */
-	void handle_key_press_event(Vector2&);
+	void handle_key_press_event(const Vector2&);
 
 	/**
 	 * DEBUG USE ONLY. This is basically a copy&paste version on handle_key_press_event but without mouse input handling and returns the output char.

@@ -43,7 +43,7 @@ namespace enigma
 		 * @param character Character label of the key
 		 * @param position Center position of the key
 		 */
-		Key(char, Vector2);
+		Key(const char, const Vector2&);
 		~Key();
 
 		char get_label() const;
@@ -51,7 +51,7 @@ namespace enigma
 		/**
 		 * Returns the center position of a key
 		 */
-		Vector2 get_position() const;
+		const Vector2& get_position() const;
 
 		void set_size_multiplier(float);
 

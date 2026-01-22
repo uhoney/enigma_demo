@@ -5,11 +5,12 @@ Working:
 - Manual rotor stepping
 - Simple GUI with raylib
 
-Missing:
+Todo:
 - Plugboard
 - Rotor & reflector selection (not intended to be implemented at this point, but you never know..)
 - Naming convention: raylib uses PascalCase and project uses snake_case. Maybe fix at some point. or not.
 - Fancy graphics (not intended)
+- Rework obsolete methods and variables (const, ref)
 
 # enigma_demo
 Trying to mash C++, CMake, Raylib, Doxygen and unit testing in one project. Let's see how it goes.

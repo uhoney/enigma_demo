@@ -35,7 +35,7 @@ namespace enigma
 		return this->keys;
 	}
 
-	bool Keyboard::is_key_pressed(Vector2& mouse_position, bool is_mouse_pressed)
+	bool Keyboard::is_key_pressed(const Vector2& mouse_position, bool is_mouse_pressed)
 	{
 		if (is_mouse_pressed && this->p_key_pressed == nullptr)
 		{

@@ -2,7 +2,7 @@
 
 namespace enigma
 {
-	Key::Key(char character, Vector2 position) :
+	Key::Key(char character, const Vector2& position) :
 		character{ character},
 		position{ position }
 	{
@@ -17,7 +17,7 @@ namespace enigma
 		return this->character;
 	}
 
-	Vector2 Key::get_position() const
+	const Vector2& Key::get_position() const
 	{
 		return this->position;
 	}

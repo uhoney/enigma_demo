@@ -42,7 +42,7 @@ namespace enigma
 	class Rotor
 	{
 	private:
-		std::string wiring{};
+		std::string_view wiring{};
 
 		/**
 		* The turnover character that indicates when the next rotor will be turned.
@@ -78,7 +78,7 @@ namespace enigma
 		*/
 		RotorButton button_down{};
 		
-		Rotor(std::string_view, char, Vector2);
+		Rotor(std::string_view, char, const Vector2&);
 		~Rotor();
 
 		/**
@@ -127,7 +127,7 @@ namespace enigma
 		*/
 		int get_turnover_index() const;
 
-		std::string get_wiring() const;
+		std::string_view get_wiring() const;
 
 		/**
 		* Get the position of the rotor in the UI.
@@ -137,7 +137,7 @@ namespace enigma
 		/**
 		* Checks if either (up or down) button is pressed (in this rotor).
 		*/
-		bool is_button_pressed(Vector2&, bool&);
+		bool is_button_pressed(const Vector2&, const bool&);
 
 		/**
 		* Just sets p_button_pressed to nullptr if mouse released.

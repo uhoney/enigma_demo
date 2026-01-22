@@ -2,7 +2,7 @@
 
 namespace enigma
 {
-	Rotor::Rotor(std::string_view wiring, char turnover, Vector2 position) :
+	Rotor::Rotor(std::string_view wiring, char turnover, const Vector2& position) :
 		wiring{ wiring },
 		turnover{ turnover },
 		rotor_position{ position }
@@ -104,7 +104,7 @@ namespace enigma
 		return this->get_index_of_char(this->wiring, this->turnover);
 	}
 
-	std::string Rotor::get_wiring() const
+	std::string_view Rotor::get_wiring() const
 	{
 		return this->wiring;
 	}
@@ -115,7 +115,7 @@ namespace enigma
 	}
 
 
-	bool Rotor::is_button_pressed(Vector2& mouse_position, bool& mouse_pressed)
+	bool Rotor::is_button_pressed(const Vector2& mouse_position, const bool& mouse_pressed)
 	{
 		if (mouse_pressed && this->p_button_pressed == nullptr)
 		{

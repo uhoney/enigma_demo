@@ -41,7 +41,7 @@ namespace enigma
 		/**
 		* Checks if a key is pressed and sets the pointer p_key_pressed to the pressed key. Boolean added for easier unit testing, mouse input can be simulated
 		*/
-		bool is_key_pressed(Vector2&, bool);
+		bool is_key_pressed(const Vector2&, bool);
 
 		/**
 		* Checks if a key is released and sets p_pressed_key to nullptr. Boolean added for easier unit testing, mouse input can be simulated.

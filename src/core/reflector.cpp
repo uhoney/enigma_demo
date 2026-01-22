@@ -35,7 +35,7 @@ namespace enigma
 		return this->wiring[get_index_from_char(character)];
 	}
 
-	std::string Reflector::get_wiring()
+	std::string_view Reflector::get_wiring() const
 	{
 		return this->wiring;
 	}

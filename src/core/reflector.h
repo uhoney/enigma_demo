@@ -23,7 +23,7 @@ namespace enigma
 	class Reflector
 	{
 	private:
-		std::string wiring{};
+		std::string_view wiring{};
 
 	public:
 		/**
@@ -50,6 +50,6 @@ namespace enigma
 		 */
 		char swap_character(char);
 
-		std::string get_wiring();
+		std::string_view get_wiring() const; 
 	};
 }
